@@ -1,0 +1,103 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% block extra_css %}
+{% load static %} 
+<link href="{% static 'core\static\core\css\signup.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="h-100 bg-light">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Регистрация клиента</h3>
+            
+            <form method="post">
+              {% csrf_token %}
+              
+              <!-- Основная информация -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    {{ form.username|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    {{ form.email|as_crispy_field }}
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    {{ form.first_name|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    {{ form.last_name|as_crispy_field }}
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Контактные данные -->
+              <div class="mb-4">
+                {{ form.phone|as_crispy_field }}
+              </div>
+              
+              <!-- Пароли -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    {{ form.password1|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    {{ form.password2|as_crispy_field }}
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Данные клиента -->
+              <div class="mb-4">
+                {{ form.passport|as_crispy_field }}
+              </div>
+              
+              <div class="mb-4">
+                {{ form.address|as_crispy_field }}
+              </div>
+              
+              <div class="mb-4">
+                {{ form.birth_date|as_crispy_field }}
+              </div>
+              
+              <div class="d-flex justify-content-between pt-3">
+                <a href="{% url 'home' %}" class="btn btn-secondary btn-lg">На главную</a>
+                <button type="submit" class="btn btn-primary btn-lg">Зарегистрироваться</button>
+              </div>
+              
+              <p class="text-center mt-3">Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .card-registration {
+    border-radius: 15px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  .form-outline {
+    position: relative;
+  }
+</style>
+{% endblock %}

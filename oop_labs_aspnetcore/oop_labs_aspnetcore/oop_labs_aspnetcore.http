@@ -1,0 +1,6 @@
+@oop_labs_aspnetcore_HostAddress = http://localhost:5125
+
+GET {{oop_labs_aspnetcore_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
