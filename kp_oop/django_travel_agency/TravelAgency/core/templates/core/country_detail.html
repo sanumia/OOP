@@ -1,0 +1,269 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ country.name }} | TravelDream{% endblock %}
+
+{% block extra_css %}
+<style>
+    .weather-card {
+        background: linear-gradient(135deg, #23a6d5, #23d5ab);
+        color: white;
+        border-radius: 15px;
+    }
+    .hotel-card {
+        transition: transform 0.2s;
+    }
+    .hotel-card:hover {
+        transform: translateY(-5px);
+    }
+    .tour-card {
+        transition: transform 0.2s;
+    }
+    .tour-card:hover {
+        transform: translateY(-5px);
+    }
+    .sticky-sidebar {
+        position: sticky;
+        top: 20px;
+    }
+    .weather-icon {
+        width: 64px;
+        height: 64px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Главная</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'core:country_list' %}">Страны</a></li>
+            <li class="breadcrumb-item active">{{ country.name }}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8">
+            <!-- Country Header -->
+            <div class="mb-4">
+                <h1 class="display-4">{{ country.name }}</h1>
+                {% if country.description %}
+                <p class="lead">{{ country.description }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Country Image -->
+            {% if country.image %}
+            <div class="mb-4">
+                <img src="{{ country.image.url }}" alt="{{ country.name }}" class="img-fluid rounded shadow-sm" style="width: 100%; height: 400px; object-fit: cover;">
+            </div>
+            {% endif %}
+
+            <!-- Hotels Section -->
+            <section class="mb-5">
+                <h2 class="h3 mb-4">
+                    <i class="fas fa-hotel me-2"></i>Отели в {{ country.name }}
+                </h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    {% for hotel in hotels %}
+                    <div class="col">
+                        <div class="card h-100 shadow-sm hotel-card">
+                            {% if hotel.image %}
+                            <img src="{{ hotel.image.url }}" class="card-img-top" alt="{{ hotel.name }}" style="height: 200px; object-fit: cover;">
+                            {% else %}
+                            <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                                <i class="fas fa-hotel fa-3x text-muted"></i>
+                            </div>
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ hotel.name }}</h5>
+                                <div class="mb-2">
+                                    {% for i in ""|ljust:hotel.stars %}
+                                    <i class="fas fa-star text-warning"></i>
+                                    {% endfor %}
+                                </div>
+                                {% if hotel.description %}
+                                <p class="card-text">{{ hotel.description|truncatewords:20 }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <a href="{% url 'core:hotel_detail' hotel.pk %}" class="btn btn-outline-primary">
+                                    <i class="fas fa-info-circle me-1"></i>Подробнее об отеле
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="col-12">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>В этой стране пока нет отелей
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Tours Section -->
+            <section class="mb-5">
+                <h2 class="h3 mb-4">
+                    <i class="fas fa-suitcase me-2"></i>Доступные туры
+                </h2>
+                <div class="row row-cols-1 g-4">
+                    {% for tour in tours %}
+                    <div class="col">
+                        <div class="card h-100 shadow-sm tour-card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        {% if tour.hotel.image %}
+                                        <img src="{{ tour.hotel.image.url }}" class="img-fluid rounded" alt="{{ tour.hotel.name }}" style="height: 200px; object-fit: cover;">
+                                        {% else %}
+                                        <div class="bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                                            <i class="fas fa-hotel fa-3x text-muted"></i>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5 class="card-title">{{ tour.hotel.name }}</h5>
+                                        <div class="mb-2">
+                                            {% for i in ""|ljust:tour.hotel.stars %}
+                                            <i class="fas fa-star text-warning"></i>
+                                            {% endfor %}
+                                        </div>
+                                        <p class="card-text">
+                                            <i class="fas fa-calendar me-2"></i>{{ tour.departure_date|date:"d.m.Y" }} - {{ tour.return_date|date:"d.m.Y" }}<br>
+                                            <i class="fas fa-clock me-2"></i>{{ tour.duration_weeks }} {% if tour.duration_weeks == 1 %}неделя{% elif tour.duration_weeks < 5 %}недели{% else %}недель{% endif %}<br>
+                                            <i class="fas fa-users me-2"></i>{{ tour.current_participants }}/{{ tour.max_participants }} участников
+                                        </p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h4 mb-0">{{ tour.total_price }} ₽</span>
+                                            <a href="{% url 'core:tour_detail' tour.pk %}" class="btn btn-primary">
+                                                <i class="fas fa-info-circle me-1"></i>Подробнее
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="col-12">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>Нет доступных туров в эту страну
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="sticky-sidebar">
+                <!-- Weather Card -->
+                <div class="card weather-card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-cloud-sun me-2"></i>Погода
+                        </h5>
+                        <div class="text-center py-3">
+                            {% with weather=country.get_current_weather %}
+                            {% if weather %}
+                                <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Weather" class="weather-icon mb-3">
+                                <h2 class="display-4 mb-3">{{ weather.temp }}°C</h2>
+                                <p class="mb-0">{{ weather.description }}</p>
+                                <div class="row mt-3">
+                                    <div class="col-6">
+                                        <p class="mb-0">
+                                            <i class="fas fa-tint me-2"></i>
+                                            {{ weather.humidity }}%
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-0">
+                                            <i class="fas fa-wind me-2"></i>
+                                            {{ weather.wind_speed }} м/с
+                                        </p>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <p class="mb-0">Информация о погоде недоступна</p>
+                            {% endif %}
+                            {% endwith %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-chart-bar me-2"></i>Статистика
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i class="fas fa-hotel me-2"></i>
+                                <strong>Отелей:</strong> {{ hotels|length }}
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-suitcase me-2"></i>
+                                <strong>Туров:</strong> {{ tours|length }}
+                            </li>
+                            {% if country.min_price %}
+                            <li>
+                                <i class="fas fa-tag me-2"></i>
+                                <strong>Цены от:</strong> {{ country.min_price }} ₽
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="card bg-primary text-white">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Хотите посетить {{ country.name }}?</h5>
+                        <p class="card-text">Забронируйте тур прямо сейчас!</p>
+                        <a href="{% url 'core:tour_list' %}?country={{ country.id }}" class="btn btn-light">
+                            <i class="fas fa-search me-1"></i>Найти тур
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Weather API integration
+    function updateWeather() {
+        fetch(`{% url 'core:country_weather' country.id %}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    console.error('Weather data error:', data.error);
+                    return;
+                }
+                // Update weather display
+                const weatherCard = document.querySelector('.weather-card');
+                if (weatherCard && data) {
+                    // Update weather information
+                    weatherCard.querySelector('.weather-icon').src = `http://openweathermap.org/img/w/${data.icon}.png`;
+                    weatherCard.querySelector('.display-4').textContent = `${data.temp}°C`;
+                    weatherCard.querySelector('p.mb-0').textContent = data.description;
+                }
+            })
+            .catch(error => console.error('Error fetching weather:', error));
+    }
+
+    // Update weather every 30 minutes
+    updateWeather();
+    setInterval(updateWeather, 30 * 60 * 1000);
+});
+</script>
+{% endblock %} 

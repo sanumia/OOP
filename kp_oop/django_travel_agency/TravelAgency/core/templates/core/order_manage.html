@@ -1,0 +1,346 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Управление заказами - TravelDream{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'core:home' %}"><i class="fas fa-home"></i> Главная</a></li>
+            <li class="breadcrumb-item active"><i class="fas fa-tasks"></i> Управление заказами</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0"><i class="fas fa-filter"></i> Фильтры</h5>
+                </div>
+                <div class="card-body">
+                    <form method="get" id="filterForm">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-flag"></i> Статус</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="status" value="pending" id="status_pending" {% if 'pending' in request.GET.getlist('status') %}checked{% endif %}>
+                                <label class="form-check-label" for="status_pending">
+                                    <i class="fas fa-clock text-warning"></i> Ожидает
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="status" value="confirmed" id="status_confirmed" {% if 'confirmed' in request.GET.getlist('status') %}checked{% endif %}>
+                                <label class="form-check-label" for="status_confirmed">
+                                    <i class="fas fa-check text-info"></i> Подтверждено
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="status" value="paid" id="status_paid" {% if 'paid' in request.GET.getlist('status') %}checked{% endif %}>
+                                <label class="form-check-label" for="status_paid">
+                                    <i class="fas fa-money-bill-wave text-success"></i> Оплачено
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="status" value="cancelled" id="status_cancelled" {% if 'cancelled' in request.GET.getlist('status') %}checked{% endif %}>
+                                <label class="form-check-label" for="status_cancelled">
+                                    <i class="fas fa-ban text-danger"></i> Отменено
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="status" value="completed" id="status_completed" {% if 'completed' in request.GET.getlist('status') %}checked{% endif %}>
+                                <label class="form-check-label" for="status_completed">
+                                    <i class="fas fa-check-circle text-success"></i> Завершено
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="date_from" class="form-label">
+                                <i class="fas fa-calendar"></i> Дата от
+                            </label>
+                            <input type="date" class="form-control" id="date_from" name="date_from" value="{{ request.GET.date_from }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="date_to" class="form-label">
+                                <i class="fas fa-calendar"></i> Дата до
+                            </label>
+                            <input type="date" class="form-control" id="date_to" name="date_to" value="{{ request.GET.date_to }}">
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i> Применить
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0"><i class="fas fa-list"></i> Заказы</h5>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+                                <i class="fas fa-download"></i> Экспорт
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'core:export_orders_excel' %}">
+                                        <i class="fas fa-file-excel text-success"></i> Excel
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'core:export_orders_pdf' %}">
+                                        <i class="fas fa-file-pdf text-danger"></i> PDF
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th><i class="fas fa-hashtag"></i> ID</th>
+                                    <th><i class="fas fa-user"></i> Клиент</th>
+                                    <th><i class="fas fa-suitcase"></i> Тур</th>
+                                    <th><i class="fas fa-flag"></i> Статус</th>
+                                    <th><i class="fas fa-calendar"></i> Дата создания</th>
+                                    <th><i class="fas fa-money-bill"></i> Сумма</th>
+                                    <th><i class="fas fa-cog"></i> Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                <tr>
+                                    <td>{{ order.id }}</td>
+                                    <td>
+                                        <a href="{% url 'core:user_profile' order.client.id %}" class="text-decoration-none">
+                                            <i class="fas fa-user-circle"></i>
+                                            {{ order.client.get_full_name|default:order.client.username }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'core:tour_detail' order.tour.id %}" class="text-decoration-none">
+                                            <i class="fas fa-hotel"></i>
+                                            {{ order.tour.hotel.name }} ({{ order.tour.departure_date|date:"d.m.Y" }})
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <span class="badge {% if order.status == 'pending' %}bg-warning
+                                                         {% elif order.status == 'confirmed' %}bg-info
+                                                         {% elif order.status == 'paid' %}bg-success
+                                                         {% elif order.status == 'cancelled' %}bg-danger
+                                                         {% else %}bg-secondary{% endif %}">
+                                            <i class="fas {% if order.status == 'pending' %}fa-clock
+                                                        {% elif order.status == 'confirmed' %}fa-check
+                                                        {% elif order.status == 'paid' %}fa-money-bill-wave
+                                                        {% elif order.status == 'cancelled' %}fa-ban
+                                                        {% else %}fa-check-circle{% endif %}"></i>
+                                            {{ order.get_status_display }}
+                                        </span>
+                                    </td>
+                                    <td>{{ order.created_at|date:"d.m.Y H:i" }}</td>
+                                    <td>{{ order.total_price }} руб.</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                                <i class="fas fa-ellipsis-h"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#orderModal{{ order.id }}">
+                                                        <i class="fas fa-info-circle"></i> Подробности
+                                                    </button>
+                                                </li>
+                                                {% if order.status == 'pending' %}
+                                                <li>
+                                                    <form method="post" action="{% url 'core:confirm_order' order.id %}" class="d-inline">
+                                                        {% csrf_token %}
+                                                        <button type="submit" class="dropdown-item text-success">
+                                                            <i class="fas fa-check"></i> Подтвердить
+                                                        </button>
+                                                    </form>
+                                                </li>
+                                                {% endif %}
+                                                {% if order.status == 'confirmed' %}
+                                                <li>
+                                                    <form method="post" action="{% url 'core:mark_paid' order.id %}" class="d-inline">
+                                                        {% csrf_token %}
+                                                        <button type="submit" class="dropdown-item text-success">
+                                                            <i class="fas fa-money-bill-wave"></i> Отметить оплаченным
+                                                        </button>
+                                                    </form>
+                                                </li>
+                                                {% endif %}
+                                                {% if order.status != 'cancelled' and order.status != 'completed' %}
+                                                <li>
+                                                    <form method="post" action="{% url 'core:cancel_order' order.id %}" class="d-inline">
+                                                        {% csrf_token %}
+                                                        <button type="submit" class="dropdown-item text-danger">
+                                                            <i class="fas fa-ban"></i> Отменить
+                                                        </button>
+                                                    </form>
+                                                </li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Modal for order details -->
+                                <div class="modal fade" id="orderModal{{ order.id }}" tabindex="-1">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-primary text-white">
+                                                <h5 class="modal-title">
+                                                    <i class="fas fa-info-circle"></i> Заказ #{{ order.id }}
+                                                </h5>
+                                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <h6><i class="fas fa-user"></i> Информация о клиенте</h6>
+                                                        <p><i class="fas fa-user-circle"></i> <strong>Имя:</strong> {{ order.client.get_full_name }}</p>
+                                                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> {{ order.client.email }}</p>
+                                                        <p><i class="fas fa-phone"></i> <strong>Телефон:</strong> {{ order.client.phone_number|default:"Не указан" }}</p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <h6><i class="fas fa-suitcase"></i> Информация о туре</h6>
+                                                        <p><i class="fas fa-hotel"></i> <strong>Отель:</strong> {{ order.tour.hotel.name }}</p>
+                                                        <p><i class="fas fa-globe"></i> <strong>Страна:</strong> {{ order.tour.hotel.country.name }}</p>
+                                                        <p><i class="fas fa-calendar"></i> <strong>Даты:</strong> {{ order.tour.departure_date|date:"d.m.Y" }} - {{ order.tour.return_date|date:"d.m.Y" }}</p>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h6><i class="fas fa-history"></i> История заказа</h6>
+                                                        <div class="table-responsive">
+                                                            <table class="table table-sm">
+                                                                <thead class="table-light">
+                                                                    <tr>
+                                                                        <th><i class="fas fa-calendar"></i> Дата</th>
+                                                                        <th><i class="fas fa-flag"></i> Статус</th>
+                                                                        <th><i class="fas fa-user-tie"></i> Менеджер</th>
+                                                                        <th><i class="fas fa-comment"></i> Комментарий</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    {% for history in order.orderhistory_set.all %}
+                                                                    <tr>
+                                                                        <td>{{ history.created_at|date:"d.m.Y H:i" }}</td>
+                                                                        <td>
+                                                                            <span class="badge {% if history.status == 'pending' %}bg-warning
+                                                                                             {% elif history.status == 'confirmed' %}bg-info
+                                                                                             {% elif history.status == 'paid' %}bg-success
+                                                                                             {% elif history.status == 'cancelled' %}bg-danger
+                                                                                             {% else %}bg-secondary{% endif %}">
+                                                                                {{ history.get_status_display }}
+                                                                            </span>
+                                                                        </td>
+                                                                        <td>{{ history.manager.get_full_name|default:history.manager.username }}</td>
+                                                                        <td>{{ history.comment|default:"-" }}</td>
+                                                                    </tr>
+                                                                    {% empty %}
+                                                                    <tr>
+                                                                        <td colspan="4" class="text-center">
+                                                                            <i class="fas fa-info-circle"></i> История отсутствует
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% endfor %}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    <i class="fas fa-times"></i> Закрыть
+                                                </button>
+                                                <a href="{% url 'core:print_order' order.id %}" class="btn btn-primary" target="_blank">
+                                                    <i class="fas fa-print"></i> Печать
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="7" class="text-center">
+                                        <i class="fas fa-info-circle"></i> Заказы не найдены
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            {% if is_paginated %}
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.urlencode %}&{{ request.GET.urlencode }}{% endif %}">
+                                <i class="fas fa-chevron-left"></i> Предыдущая
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                        <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                            <a class="page-link" href="?page={{ num }}{% if request.GET.urlencode %}&{{ request.GET.urlencode }}{% endif %}">
+                                {{ num }}
+                            </a>
+                        </li>
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.urlencode %}&{{ request.GET.urlencode }}{% endif %}">
+                                Следующая <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Автоматическая отправка формы при изменении фильтров
+        const filterForm = document.querySelector('#filterForm');
+        const filterInputs = filterForm.querySelectorAll('input[type="checkbox"], input[type="date"]');
+        
+        filterInputs.forEach(input => {
+            input.addEventListener('change', () => {
+                filterForm.submit();
+            });
+        });
+
+        // Подтверждение отмены заказа
+        const cancelForms = document.querySelectorAll('form[action*="cancel_order"]');
+        cancelForms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                if (!confirm('Вы уверены, что хотите отменить этот заказ?')) {
+                    e.preventDefault();
+                }
+            });
+        });
+    });
+</script>
+{% endblock %} 

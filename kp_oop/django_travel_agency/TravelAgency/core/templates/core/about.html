@@ -1,0 +1,239 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}О нашем турагенстве | TravelDream{% endblock %}
+
+{% block content %}
+<!-- Герой-секция -->
+<section class="hero-section-about text-white">
+    <div class="hero-overlay d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4">О нашем турагенстве</h1>
+            <p class="lead mb-5">15 лет создаём незабываемые путешествия</p>
+        </div>
+    </div>
+</section>
+
+<!-- О компании -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="mb-4">Наша история</h2>
+                <p class="lead">TravelDream - это команда профессиональных путешественников</p>
+                <p>Основанное в 2008 году, наше агентство начинало с небольших групповых туров по Европе. Сегодня мы предлагаем более 500 направлений по всему миру.</p>
+                <p>За эти годы мы организовали путешествия для более чем 50,000 клиентов, многие из которых стали нашими постоянными гостями.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                <i class="fas fa-globe fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">50+</h4>
+                                <p class="mb-0">Стран</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                <i class="fas fa-users fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">50,000+</h4>
+                                <p class="mb-0">Клиентов</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                     alt="Наша команда" 
+                     class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Наши преимущества -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Почему выбирают нас</h2>
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <div class="bg-white p-4 rounded h-100 shadow-sm">
+                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <h4>Безопасность</h4>
+                    <p>Все отели проходят строгий отбор. Мы работаем только с проверенными перевозчиками и страховыми компаниями.</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="bg-white p-4 rounded h-100 shadow-sm">
+                    <i class="fas fa-wallet fa-3x text-primary mb-3"></i>
+                    <h4>Лучшие цены</h4>
+                    <p>Прямые контракты с отелями и авиакомпаниями позволяют предлагать вам самые выгодные условия.</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="bg-white p-4 rounded h-100 shadow-sm">
+                    <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                    <h4>Поддержка 24/7</h4>
+                    <p>Наша служба поддержки всегда на связи, чтобы помочь в любой ситуации во время вашего путешествия.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Наша команда -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Наша команда</h2>
+        <div class="row g-4">
+            {% for employee in employees %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-img-top text-center pt-4">
+                        {% if employee.photo %}
+                        <img src="{{ employee.photo.url }}" 
+                             class="rounded-circle" 
+                             width="150" 
+                             height="150"
+                             alt="{{ employee.name }}"
+                             style="object-fit: cover;">
+                        {% else %}
+                        <div class="rounded-circle bg-secondary d-inline-flex align-items-center justify-content-center" 
+                             style="width: 150px; height: 150px;">
+                            <i class="fas fa-user text-white fa-3x"></i>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ employee.name }}</h5>
+                        <p class="text-muted">{{ employee.position }}</p>
+                        <p class="card-text">{{ employee.bio|truncatewords:20 }}</p>
+                    </div>
+                    <div class="card-footer bg-white border-0 text-center">
+                        {% if employee.is_contact %}
+                        <div class="mb-2">
+                            <a href="tel:{{ employee.phone }}" class="text-decoration-none">
+                                <i class="fas fa-phone me-2"></i>{{ employee.phone }}
+                            </a>
+                        </div>
+                        <div>
+                            <a href="mailto:{{ employee.email }}" class="text-decoration-none">
+                                <i class="fas fa-envelope me-2"></i>{{ employee.email }}
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Отзывы -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Отзывы наших клиентов</h2>
+        
+        <!-- Форма добавления отзыва -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        {% if user.is_authenticated %}
+                        <h5 class="mb-4">Оставьте свой отзыв</h5>
+                        <form method="post" action="{% url 'core:add_review' %}">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                {{ review_form.text }}
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    {{ review_form.rating }}
+                                </div>
+                                <div class="col-md-6 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        Отправить отзыв
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        {% else %}
+                        <div class="text-center py-3">
+                            <p class="mb-3">Чтобы оставить отзыв, пожалуйста, авторизуйтесь</p>
+                            <a href="{% url 'users:login' %}?next={% url 'core:about' %}" class="btn btn-primary me-2">
+                                Войти
+                            </a>
+                            <a href="{% url 'users:registration' %}" class="btn btn-outline-primary">
+                                Зарегистрироваться
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Список отзывов -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                {% if reviews %}
+                {% for review in reviews %}
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    {% if review.author.image %}
+                                    <img src="{{ review.author.image.url }}" 
+                                         class="rounded-circle" 
+                                         width="50" 
+                                         height="50"
+                                         alt="{{ review.get_author_name }}">
+                                    {% else %}
+                                    <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center" 
+                                         style="width: 50px; height: 50px;">
+                                        <i class="fas fa-user text-white"></i>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">{{ review.get_author_name }}</h6>
+                                    <small class="text-muted">{{ review.created_at|date:"d.m.Y" }}</small>
+                                </div>
+                            </div>
+                            <div class="text-warning">
+                                {{ review.get_rating_display }}
+                            </div>
+                        </div>
+                        <p class="mb-0">{{ review.text }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="text-center py-4">
+                    <i class="fas fa-comment-slash fa-3x text-muted mb-3"></i>
+                    <p>Пока нет отзывов. Будьте первым!</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero-section-about {
+        background: url('https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+        background-size: cover;
+        height: 50vh;
+        position: relative;
+    }
+</style>
+{% endblock %}

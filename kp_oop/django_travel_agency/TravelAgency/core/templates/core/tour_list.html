@@ -1,0 +1,229 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Туры | TravelDream{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Search and Filter Section -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <form method="get" class="card shadow-sm">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label for="search" class="form-label">Поиск</label>
+                            <input type="text" class="form-control" id="search" name="search" 
+                                   value="{{ current_search.search }}" placeholder="Страна или отель...">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="country" class="form-label">Страна</label>
+                            <select class="form-select" id="country" name="country">
+                                <option value="">Все страны</option>
+                                {% for country in countries %}
+                                <option value="{{ country.id }}" 
+                                        {% if current_search.country|stringformat:"s" == country.id|stringformat:"s" %}selected{% endif %}>
+                                    {{ country.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="departure_date" class="form-label">Дата вылета</label>
+                            <input type="date" class="form-control" id="departure_date" name="departure_date"
+                                   value="{{ current_search.departure_date }}" min="{% now 'Y-m-d' %}">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="sort" class="form-label">Сортировка</label>
+                            <select class="form-select" id="sort" name="sort">
+                                <option value="departure_date" {% if current_search.sort == 'departure_date' %}selected{% endif %}>По дате вылета</option>
+                                <option value="price_asc" {% if current_search.sort == 'price_asc' %}selected{% endif %}>Цена ↑</option>
+                                <option value="price_desc" {% if current_search.sort == 'price_desc' %}selected{% endif %}>Цена ↓</option>
+                                <option value="duration" {% if current_search.sort == 'duration' %}selected{% endif %}>По длительности</option>
+                                <option value="country" {% if current_search.sort == 'country' %}selected{% endif %}>По стране</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search me-2"></i>Найти туры
+                            </button>
+                            <a href="{% url 'core:tour_list' %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-redo me-2"></i>Сбросить
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popular Countries Section (if on first page) -->
+    {% if page_obj.number == 1 and popular_countries %}
+    <div class="row mb-4">
+        <div class="col-12">
+            <h4 class="mb-3">Популярные направления</h4>
+            <div class="d-flex flex-wrap gap-2">
+                {% for country in popular_countries %}
+                <a href="?country={{ country.id }}" class="btn btn-outline-primary">
+                    {{ country.name }}
+                    {% if country.min_price %}
+                    <small class="d-block">от {{ country.min_price }} ₽</small>
+                    {% endif %}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Tours Grid -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for tour in tours %}
+        <div class="col">
+            <div class="card h-100 shadow-sm tour-card">
+                {% if tour.hotel.image %}
+                <img src="{{ tour.hotel.image.url }}" class="card-img-top" alt="{{ tour.hotel.name }}" 
+                     style="height: 200px; object-fit: cover;">
+                {% else %}
+                <img src="{% static 'images/default-hotel.jpg' %}" class="card-img-top" alt="Default hotel image" 
+                     style="height: 200px; object-fit: cover;">
+                {% endif %}
+                
+                <!-- Price Badge -->
+                <div class="position-absolute top-0 end-0 m-3">
+                    <span class="badge bg-primary fs-5">
+                        {{ tour.total_price }} ₽
+                    </span>
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ tour.hotel.name }}</h5>
+                    <p class="card-text text-muted">
+                        <i class="fas fa-map-marker-alt me-2"></i>{{ tour.hotel.country.name }}
+                    </p>
+                    
+                    <!-- Hotel Rating -->
+                    <div class="mb-2">
+                        {% for i in "12345"|make_list %}
+                        {% if forloop.counter <= tour.hotel.stars %}
+                        <i class="fas fa-star text-warning"></i>
+                        {% else %}
+                        <i class="far fa-star text-warning"></i>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <!-- Tour Details -->
+                    <div class="tour-details mb-3">
+                        <p class="mb-1">
+                            <i class="fas fa-plane-departure me-2"></i>
+                            Вылет: {{ tour.departure_date|date:"d.m.Y" }}
+                        </p>
+                        <p class="mb-1">
+                            <i class="fas fa-clock me-2"></i>
+                            {{ tour.duration_weeks }} {% if tour.duration_weeks == 1 %}неделя{% else %}недель{% endif %}
+                        </p>
+                        <p class="mb-1">
+                            <i class="fas fa-users me-2"></i>
+                            Осталось мест: {{ tour.available_places }}
+                        </p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'core:tour_detail' tour.pk %}" class="btn btn-outline-primary">
+                            <i class="fas fa-info-circle me-2"></i>Подробнее
+                        </a>
+                        {% if tour.is_available %}
+                        <form action="{% url 'core:basket_add' tour.id %}" method="post" class="d-grid">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-shopping-cart me-2"></i>В корзину
+                            </button>
+                        </form>
+                        {% else %}
+                        <button class="btn btn-secondary" disabled>
+                            <i class="fas fa-ban me-2"></i>Нет мест
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center py-5">
+            <h3>Туры не найдены</h3>
+            <p class="text-muted">Попробуйте изменить параметры поиска</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <nav class="mt-4" aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1{% if current_search.search %}&search={{ current_search.search }}{% endif %}{% if current_search.country %}&country={{ current_search.country }}{% endif %}{% if current_search.departure_date %}&departure_date={{ current_search.departure_date }}{% endif %}{% if current_search.sort %}&sort={{ current_search.sort }}{% endif %}">
+                    <i class="fas fa-angle-double-left"></i>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if current_search.search %}&search={{ current_search.search }}{% endif %}{% if current_search.country %}&country={{ current_search.country }}{% endif %}{% if current_search.departure_date %}&departure_date={{ current_search.departure_date }}{% endif %}{% if current_search.sort %}&sort={{ current_search.sort }}{% endif %}">
+                    <i class="fas fa-angle-left"></i>
+                </a>
+            </li>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ num }}{% if current_search.search %}&search={{ current_search.search }}{% endif %}{% if current_search.country %}&country={{ current_search.country }}{% endif %}{% if current_search.departure_date %}&departure_date={{ current_search.departure_date }}{% endif %}{% if current_search.sort %}&sort={{ current_search.sort }}{% endif %}">
+                    {{ num }}
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if current_search.search %}&search={{ current_search.search }}{% endif %}{% if current_search.country %}&country={{ current_search.country }}{% endif %}{% if current_search.departure_date %}&departure_date={{ current_search.departure_date }}{% endif %}{% if current_search.sort %}&sort={{ current_search.sort }}{% endif %}">
+                    <i class="fas fa-angle-right"></i>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if current_search.search %}&search={{ current_search.search }}{% endif %}{% if current_search.country %}&country={{ current_search.country }}{% endif %}{% if current_search.departure_date %}&departure_date={{ current_search.departure_date }}{% endif %}{% if current_search.sort %}&sort={{ current_search.sort }}{% endif %}">
+                    <i class="fas fa-angle-double-right"></i>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.tour-card {
+    transition: transform 0.2s;
+}
+.tour-card:hover {
+    transform: translateY(-5px);
+}
+.badge {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize any JavaScript functionality here
+});
+</script>
+{% endblock %} 

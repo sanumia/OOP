@@ -1,174 +1,412 @@
 {% extends 'core/base.html' %}
 
+{% block title %}TravelDream - Ваше идеальное путешествие{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    .feature-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .destination-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+    .destination-card img {
+        transition: transform 0.3s ease;
+    }
+
+    .destination-card:hover img {
+        transform: scale(1.1);
+    }
+
+    .destination-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        color: white;
+    }
+
+    .testimonial-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        margin: 20px 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    .stats-section {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+        padding: 60px 0;
+    }
+
+    .stat-item i {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
-<!-- Герой-секция -->
-<section class="hero-section text-white">
-    <div class="hero-overlay d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-3 fw-bold mb-4">Откройте мир с нами</h1>
-            <p class="lead mb-5">Лучшие направления по самым выгодным ценам</p>
-            <a href="{% url 'core:tour_list' %}" class="btn btn-primary btn-lg px-4 me-2">
-                <i class="fas fa-suitcase"></i> Найти тур
-            </a>
-            {% if user.is_authenticated %}
-            <a href="{% url 'core:order_list' %}" class="btn btn-outline-light btn-lg px-4">
-                <i class="fas fa-list-alt"></i> Мои заказы
-            </a>
-            {% endif %}
-        </div>
-    </div>
-</section>
-
-<!-- Популярные направления -->
-<section class="py-5" id="popular-countries">
+<!-- Hero Section -->
+<section class="hero-section">
     <div class="container">
-        <h2 class="text-center mb-5">Популярные направления</h2>
-        <div class="row g-4">
-            {% for country in countries %}
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm card-hover">
-                    {% if country.image %}
-                    <img src="{{ country.image.url }}" class="card-img-top" alt="{{ country.name }}" style="height: 200px; object-fit: cover;">
-                    {% else %}
-                    <img src="https://via.placeholder.com/300x200?text=No+Image" class="card-img-top" alt="{{ country.name }}">
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">{{ country.name }}</h5>
-                        <p class="card-text">
-                            <small class="text-muted">
-                                <i class="fas fa-snowflake"></i> {{ country.winter_climate }}<br>
-                                <i class="fas fa-sun"></i> {{ country.summer_climate }}
-                            </small>
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="badge bg-primary">
-                                {% with country.tourpackage_set.all|first as tour %}
-                                от {{ tour.total_price|floatformat:"0" }} ₽
-                                {% endwith %}
-                            </span>
-                            <a href="{% url 'core:tour_list' %}?country={{ country.id }}" class="btn btn-sm btn-outline-primary">Туры</a>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="display-3 fw-bold mb-4">Откройте мир с TravelDream</h1>
+                <p class="lead mb-4">Лучшие направления, незабываемые впечатления и комфортный отдых</p>
+                <form action="{% url 'core:tour_list' %}" method="get" class="mb-4">
+                    <div class="row g-2">
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="destination" name="search" placeholder="Куда хотите поехать?">
+                                <label for="destination">Куда хотите поехать?</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" id="date" name="departure_date">
+                                <label for="date">Когда?</label>
+                            </div>
+                        </div>
+                        <div class="col-md-auto">
+                            <button type="submit" class="btn btn-primary btn-lg h-100">
+                                <i class="fas fa-search"></i> Найти тур
+                            </button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
-            {% endfor %}
-        </div>
-        <div class="text-center mt-4">
-            <a href="{% url 'core:tour_list' %}" class="btn btn-outline-primary">Все направления</a>
         </div>
     </div>
 </section>
 
-<!-- Рекомендуемые туры -->
-<section class="py-5 bg-light" id="featured-tours">
-    <div class="container">
-        <h2 class="text-center mb-5">Рекомендуемые туры</h2>
-        <div class="row g-4">
-            {% for tour in featured_tours %}
-            <div class="col-md-3">
-                <div class="card h-100 border-0 shadow-sm card-hover">
-                    {% if tour.hotel.image %}
-                    <img src="{{ tour.hotel.image.url }}" class="card-img-top" alt="{{ tour.hotel.name }}" style="height: 150px; object-fit: cover;">
-                    {% else %}
-                    <img src="https://via.placeholder.com/300x150?text=No+Image" class="card-img-top" alt="{{ tour.hotel.name }}">
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">{{ tour.hotel.name }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">
-                            <i class="fas fa-map-marker-alt"></i> {{ tour.hotel.country.name }}
-                            <span class="float-end">
-                                {% for _ in "12345" %}
-                                    {% if forloop.counter <= tour.hotel.stars %}
-                                        <i class="fas fa-star text-warning"></i>
-                                    {% else %}
-                                        <i class="far fa-star text-warning"></i>
-                                    {% endif %}
-                                {% endfor %}
-                            </span>
-                        </h6>
-                        <p class="card-text small">
-                            <i class="far fa-calendar-alt"></i> {{ tour.departure_date|date:"d.m.Y" }} - {{ tour.return_date|date:"d.m.Y" }}<br>
-                            <i class="far fa-clock"></i> {{ tour.duration_weeks }} недели
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <span class="fw-bold text-primary">{{ tour.total_price|floatformat:"0" }} ₽</span>
-                            {% if tour.is_available %}
-                            <a href="{% url 'core:tour_detail' tour.id %}" class="btn btn-sm btn-primary">Подробнее</a>
-                            {% else %}
-                            <span class="badge bg-danger">Нет мест</span>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Почему мы -->
-<section class="py-5" id="advantages">
+<!-- Features Section -->
+<section class="py-5">
     <div class="container">
         <h2 class="text-center mb-5">Почему выбирают нас</h2>
         <div class="row g-4">
-            <div class="col-md-4 text-center">
-                <div class="bg-light p-4 rounded h-100">
-                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
-                    <h4>Безопасность</h4>
-                    <p>Все отели проходят строгий отбор. Мы гарантируем безопасность вашего отдыха.</p>
+            <div class="col-md-3">
+                <div class="card h-100 feature-card border-0 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-globe-americas text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5 class="card-title">Лучшие направления</h5>
+                        <p class="card-text">Тщательно отобранные места для незабываемого отдыха</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="bg-light p-4 rounded h-100">
-                    <i class="fas fa-wallet fa-3x text-primary mb-3"></i>
-                    <h4>Лучшие цены</h4>
-                    <p>Прямые контракты с отелями позволяют предлагать вам самые выгодные условия.</p>
+            <div class="col-md-3">
+                <div class="card h-100 feature-card border-0 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-hand-holding-usd text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5 class="card-title">Лучшие цены</h5>
+                        <p class="card-text">Гарантия лучшей цены и система скидок</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="bg-light p-4 rounded h-100">
-                    <i class="fas fa-headset fa-3x text-primary mb-3"></i>
-                    <h4>Поддержка 24/7</h4>
-                    <p>Наша служба поддержки всегда на связи, чтобы помочь в любой ситуации.</p>
+            <div class="col-md-3">
+                <div class="card h-100 feature-card border-0 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-headset text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5 class="card-title">24/7 поддержка</h5>
+                        <p class="card-text">Всегда на связи и готовы помочь</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 feature-card border-0 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-shield-alt text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5 class="card-title">Безопасность</h5>
+                        <p class="card-text">Гарантия безопасности и страховка</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- О нас -->
-<section class="py-5 bg-light" id="about">
+<!-- Popular Tours Section -->
+<section class="py-5 bg-light">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h2>О нашем турагенстве</h2>
-                <p class="lead">Мы работаем на туристическом рынке более 15 лет</p>
-                <p>Наша компания предлагает широкий выбор туров по всему миру. Мы сотрудничаем только с проверенными отелями и авиакомпаниями, чтобы обеспечить нашим клиентам максимально комфортный отдых.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="bg-primary text-white rounded-circle p-3 me-3">
-                        <i class="fas fa-users fa-2x"></i>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Популярные туры</h2>
+            <a href="{% url 'core:tour_list' %}" class="btn btn-outline-primary">
+                Все туры <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+        <div class="row g-4">
+            {% for tour in popular_tours %}
+            <div class="col-md-4">
+                <div class="card h-100 feature-card">
+                    {% if tour.hotel.image %}
+                        <img src="{{ tour.hotel.image.url }}" class="card-img-top" alt="{{ tour.hotel.name }}" style="height: 200px; object-fit: cover;">
+                    {% else %}
+                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-hotel fa-3x"></i>
+                        </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ tour.hotel.name }}</h5>
+                        <p class="card-text text-muted">
+                            <i class="fas fa-map-marker-alt"></i> {{ tour.hotel.country.name }}
+                        </p>
+                        <div class="mb-3">
+                            {% for i in "12345"|make_list %}
+                                {% if forloop.counter <= tour.hotel.stars %}
+                                    <i class="fas fa-star text-warning"></i>
+                                {% else %}
+                                    <i class="far fa-star text-muted"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <p class="card-text">
+                            <i class="fas fa-calendar-alt text-primary"></i> {{ tour.duration_weeks }} {% if tour.duration_weeks == 1 %}неделя{% else %}недели{% endif %}
+                        </p>
+                        <p class="card-text">
+                            <i class="fas fa-tag text-primary"></i> От {{ tour.total_price }} руб.
+                        </p>
                     </div>
-                    <div>
-                        <h4 class="mb-0">{{ total_clients }}+</h4>
-                        <p class="mb-0">Довольных клиентов</p>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="bg-primary text-white rounded-circle p-3 me-3">
-                        <i class="fas fa-globe-americas fa-2x"></i>
-                    </div>
-                    <div>
-                        <h4 class="mb-0">{{ total_countries }}+</h4>
-                        <p class="mb-0">Стран для отдыха</p>
+                    <div class="card-footer bg-white border-0">
+                        <a href="{% url 'core:tour_detail' tour.id %}" class="btn btn-primary w-100">
+                            <i class="fas fa-info-circle"></i> Подробнее
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="О нашем турагенстве" allowfullscreen></iframe>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Popular Destinations -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Популярные направления</h2>
+        <div class="row g-4">
+            {% for country in popular_countries %}
+            <div class="col-md-4">
+                <div class="destination-card">
+                    {% if country.image %}
+                        <img src="{{ country.image.url }}" class="img-fluid" alt="{{ country.name }}">
+                    {% else %}
+                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 250px;">
+                            <i class="fas fa-globe-europe fa-3x"></i>
+                        </div>
+                    {% endif %}
+                    <div class="destination-overlay">
+                        <h4>{{ country.name }}</h4>
+                        <p class="mb-0">
+                            <i class="fas fa-hotel"></i> {{ country.hotels_count }} отелей
+                            <span class="ms-3">
+                                <i class="fas fa-tag"></i> от {{ country.min_price }} руб.
+                            </span>
+                        </p>
+                    </div>
                 </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Довольных клиентов</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Стран</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-item">
+                    <i class="fas fa-hotel"></i>
+                    <div class="stat-number">1,000+</div>
+                    <div class="stat-label">Отелей</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-item">
+                    <i class="fas fa-award"></i>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Лет опыта</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Что говорят наши клиенты</h2>
+        <div class="row">
+            {% for testimonial in testimonials %}
+            <div class="col-md-4">
+                <div class="testimonial-card text-center">
+                    {% if testimonial.avatar %}
+                        <img src="{{ testimonial.avatar.url }}" alt="{{ testimonial.name }}" class="testimonial-avatar">
+                    {% else %}
+                        <i class="fas fa-user-circle fa-4x text-primary mb-3"></i>
+                    {% endif %}
+                    <h5>{{ testimonial.name }}</h5>
+                    <p class="text-muted mb-3">{{ testimonial.destination }}</p>
+                    <div class="mb-3">
+                        {% for i in "12345"|make_list %}
+                            {% if forloop.counter <= testimonial.rating %}
+                                <i class="fas fa-star text-warning"></i>
+                            {% else %}
+                                <i class="far fa-star text-muted"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="mb-0">{{ testimonial.text }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">Подпишитесь на наши новости</h2>
+                <p class="text-muted mb-4">Получайте лучшие предложения и новости о путешествиях</p>
+                <form class="row g-2 justify-content-center" method="post" action="{% url 'core:subscribe_newsletter' %}">
+                    {% csrf_token %}
+                    <div class="col-md-8">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="newsletter_email" name="email" placeholder="Ваш email" required>
+                            <label for="newsletter_email">Ваш email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <button type="submit" class="btn btn-primary h-100">
+                            <i class="fas fa-paper-plane"></i> Подписаться
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
 {% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Анимация для статистики
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        current = target;
+                    }
+                    stat.textContent = Math.round(current) + (stat.textContent.includes('+') ? '+' : '');
+                }, 30);
+            });
+        }
+
+        // Запуск анимации при прокрутке до секции
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Валидация формы поиска
+        const searchForm = document.querySelector('form[action*="tour_search"]');
+        if (searchForm) {
+            searchForm.addEventListener('submit', function(e) {
+                const destination = document.getElementById('destination');
+                const date = document.getElementById('date');
+                
+                if (!destination.value.trim()) {
+                    e.preventDefault();
+                    alert('Пожалуйста, укажите направление');
+                    destination.focus();
+                }
+            });
+        }
+
+        // Валидация формы подписки
+        const newsletterForm = document.querySelector('form[action*="subscribe_newsletter"]');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                const email = document.getElementById('newsletter_email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (!emailRegex.test(email.value)) {
+                    e.preventDefault();
+                    alert('Пожалуйста, введите корректный email');
+                    email.focus();
+                }
+            });
+        }
+    });
+</script>
+{% endblock %} 

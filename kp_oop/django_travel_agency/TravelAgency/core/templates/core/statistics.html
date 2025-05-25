@@ -1,0 +1,71 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Статистика турагентства</h1>
+    
+    <div class="row">
+        <!-- График популярных стран -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Популярные направления</h5>
+                    {% if popular_chart %}
+                        <img src="data:image/png;base64,{{ popular_chart }}" 
+                             alt="График популярных стран" class="img-fluid">
+                    {% else %}
+                        <p>Нет данных для отображения</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- График прибыльных стран -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Прибыльные направления</h5>
+                    {% if profitable_chart %}
+                        <img src="data:image/png;base64,{{ profitable_chart }}" 
+                             alt="График прибыльных стран" class="img-fluid">
+                    {% else %}
+                        <p>Нет данных для отображения</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <!-- Распределение сумм заказов -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Распределение сумм заказов</h5>
+                    {% if amounts_chart %}
+                        <img src="data:image/png;base64,{{ amounts_chart }}" 
+                             alt="Распределение сумм заказов" class="img-fluid">
+                    {% else %}
+                        <p>Нет данных для отображения</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Распределение возрастов клиентов -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Распределение возрастов клиентов</h5>
+                    {% if age_chart %}
+                        <img src="data:image/png;base64,{{ age_chart }}" 
+                             alt="Распределение возрастов" class="img-fluid">
+                    {% else %}
+                        <p>Нет данных для отображения</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

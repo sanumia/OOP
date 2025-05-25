@@ -1,0 +1,241 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ hotel.name }} - TravelDream{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'core:home' %}"><i class="fas fa-home"></i> Главная</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'core:hotel_list' %}"><i class="fas fa-hotel"></i> Отели</a></li>
+            <li class="breadcrumb-item active">{{ hotel.name }}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4 shadow-sm">
+                {% if hotel.image %}
+                    <img src="{{ hotel.image.url }}" class="card-img-top" alt="{{ hotel.name }}" style="max-height: 400px; object-fit: cover;">
+                {% else %}
+                    <div class="bg-light text-secondary d-flex align-items-center justify-content-center" style="height: 400px;">
+                        <i class="fas fa-hotel fa-5x"></i>
+                    </div>
+                {% endif %}
+                <div class="card-body">
+                    <h1 class="card-title h2">
+                        {{ hotel.name }}
+                        <small class="text-muted fs-5 ms-2">
+                            {% for i in "12345"|make_list %}
+                                {% if forloop.counter <= hotel.stars %}
+                                    <i class="fas fa-star text-warning"></i>
+                                {% else %}
+                                    <i class="far fa-star text-muted"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </small>
+                    </h1>
+                    <p class="card-text lead">{{ hotel.description }}</p>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0"><i class="fas fa-concierge-bell"></i> Удобства</h3>
+                </div>
+                <div class="card-body">
+                    {{ hotel.amenities|linebreaks }}
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0"><i class="fas fa-suitcase-rolling"></i> Доступные туры</h3>
+                </div>
+                <div class="card-body">
+                    {% for tour in hotel.tourpackage_set.all %}
+                        <div class="card mb-3 card-hover">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="card-title">
+                                            <i class="fas fa-calendar-alt text-primary"></i>
+                                            {{ tour.duration_weeks }} {% if tour.duration_weeks == 1 %}неделя{% else %}недели{% endif %}
+                                        </h5>
+                                        <p class="card-text">
+                                            <small class="text-muted">
+                                                <i class="fas fa-plane-departure"></i> Отправление: {{ tour.departure_date|date:"d.m.Y" }}<br>
+                                                <i class="fas fa-plane-arrival"></i> Возвращение: {{ tour.return_date|date:"d.m.Y" }}
+                                            </small>
+                                        </p>
+                                        <p class="card-text">
+                                            <i class="fas fa-tag text-primary"></i>
+                                            <strong>Цена:</strong> {{ tour.total_price }} руб.
+                                        </p>
+                                    </div>
+                                    <div class="text-end">
+                                        <p class="card-text">
+                                            <small class="text-muted">
+                                                <i class="fas fa-users"></i>
+                                                Осталось мест: {{ tour.max_participants|sub:tour.current_participants }}
+                                            </small>
+                                        </p>
+                                        {% if tour.is_available %}
+                                            <form method="post" action="{% url 'core:add_to_basket' tour.id %}" class="d-inline">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="fas fa-shopping-cart"></i> В корзину
+                                                </button>
+                                            </form>
+                                        {% else %}
+                                            <button class="btn btn-secondary" disabled>
+                                                <i class="fas fa-ban"></i> Нет мест
+                                            </button>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> На данный момент нет доступных туров в этот отель.
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0"><i class="fas fa-globe"></i> Информация о стране</h3>
+                </div>
+                <div class="card-body">
+                    <h4>{{ hotel.country.name }}</h4>
+                    <p>{{ hotel.country.description }}</p>
+                    
+                    <h5><i class="fas fa-cloud-sun"></i> Климат</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-snowflake text-primary"></i> <strong>Зимой:</strong> {{ hotel.country.winter_climate }}</li>
+                        <li><i class="fas fa-sun text-warning"></i> <strong>Летом:</strong> {{ hotel.country.summer_climate }}</li>
+                    </ul>
+
+                    {% if hotel.country.weather_data %}
+                    <h5><i class="fas fa-temperature-high"></i> Текущая погода</h5>
+                    <div class="current-weather">
+                        {% with weather=hotel.country.get_current_weather %}
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Weather icon">
+                                <span class="h4 mb-0 ms-2">{{ weather.temp }}°C</span>
+                            </div>
+                            <p class="mb-1">{{ weather.description|capfirst }}</p>
+                            <p class="mb-1"><i class="fas fa-thermometer-half"></i> Ощущается как: {{ weather.feels_like }}°C</p>
+                            <p class="mb-1"><i class="fas fa-tint"></i> Влажность: {{ weather.humidity }}%</p>
+                            <p class="mb-0"><i class="fas fa-wind"></i> Ветер: {{ weather.wind_speed }} м/с</p>
+                            <small class="text-muted">
+                                <i class="fas fa-clock"></i> Обновлено: {{ weather.last_updated|date:"d.m.Y H:i" }}
+                            </small>
+                        {% endwith %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0"><i class="fas fa-address-card"></i> Контакты</h3>
+                </div>
+                <div class="card-body">
+                    <p class="mb-2">
+                        <i class="fas fa-phone text-primary"></i>
+                        <strong>Телефон:</strong><br>
+                        +7 (XXX) XXX-XX-XX
+                    </p>
+                    <p class="mb-2">
+                        <i class="fas fa-envelope text-primary"></i>
+                        <strong>Email:</strong><br>
+                        info@traveldream.com
+                    </p>
+                    <p class="mb-0">
+                        <i class="fas fa-map-marker-alt text-primary"></i>
+                        <strong>Адрес:</strong><br>
+                        г. Минск, ул. Туристическая, д. 15
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Обработка добавления в корзину через AJAX
+        const addToBasketForms = document.querySelectorAll('form[action^="/add_to_basket/"]');
+        addToBasketForms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(form);
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Обновить счетчик корзины
+                        const basketCount = document.querySelector('.badge');
+                        if (basketCount) {
+                            basketCount.textContent = data.basket_count;
+                        }
+                        // Показать уведомление
+                        const toast = new bootstrap.Toast(document.createElement('div'));
+                        toast.show();
+                        const notification = document.createElement('div');
+                        notification.className = 'position-fixed bottom-0 end-0 p-3';
+                        notification.style.zIndex = '5';
+                        notification.innerHTML = `
+                            <div class="toast show" role="alert">
+                                <div class="toast-header">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong class="me-auto">Успешно</strong>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                                </div>
+                                <div class="toast-body">
+                                    Тур добавлен в корзину!
+                                </div>
+                            </div>
+                        `;
+                        document.body.appendChild(notification);
+                        setTimeout(() => notification.remove(), 3000);
+                    } else {
+                        alert(data.error || 'Произошла ошибка');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Произошла ошибка при добавлении в корзину');
+                });
+            });
+        });
+
+        // Анимация карточек туров
+        const cards = document.querySelectorAll('.card-hover');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.transition = 'transform 0.3s ease';
+                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    });
+</script>
+{% endblock %} 

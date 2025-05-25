@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ news.title }} | TravelDream{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'news_list' %}">Новости</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ news.title|truncatechars:30 }}</li>
+            </ol>
+        </nav>
+        
+        <article>
+            <div class="mb-4">
+                <span class="badge bg-primary">{{ news.get_category_display }}</span>
+                <small class="text-muted ms-2">{{ news.created_at|date:"d.m.Y H:i" }}</small>
+                <small class="text-muted ms-2"><i class="far fa-eye"></i> {{ news.views }}</small>
+            </div>
+            
+            <h1 class="mb-4">{{ news.title }}</h1>
+            
+            {% if news.image %}
+            <img src="{{ news.image.url }}" 
+                 class="img-fluid rounded mb-4" 
+                 alt="{{ news.title }}"
+                 style="max-height: 400px; width: 100%; object-fit: cover;">
+            {% endif %}
+            
+            <div class="mb-4">
+                <p class="lead">{{ news.summary }}</p>
+            </div>
+            
+            <div class="news-content mb-5">
+                {{ news.content|linebreaks }}
+            </div>
+            
+            <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                {% if news.author %}
+                <div>
+                    <small class="text-muted">Автор: {{ news.author.get_full_name }}</small>
+                </div>
+                {% endif %}
+                <a href="{% url 'news_list' %}" class="btn btn-outline-primary">
+                    <i class="fas fa-arrow-left me-2"></i>Назад к новостям
+                </a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<style>
+    .news-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    .news-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+</style>
+{% endblock %}

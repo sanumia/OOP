@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Политика конфиденциальности | TravelDream{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Главная</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Политика конфиденциальности</li>
+                    </ol>
+                </nav>
+                
+                <h1 class="mb-4">Политика конфиденциальности</h1>
+                
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Страница находится в разработке. Приносим извинения за временные неудобства.
+                        </div>
+                        
+                        <p>Тут будет размещена подробная информация о политике конфиденциальности нашего турагенства.</p>
+                        
+                        <h4 class="mt-4">Основные принципы:</h4>
+                        <ul>
+                            <li>Защита персональных данных клиентов</li>
+                            <li>Прозрачность сбора информации</li>
+                            <li>Безопасность хранения данных</li>
+                            <li>Соблюдение законодательства</li>
+                        </ul>
+                        
+                        <div class="mt-4 text-muted small">
+                            <p>Последнее обновление: {% now "d.m.Y" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

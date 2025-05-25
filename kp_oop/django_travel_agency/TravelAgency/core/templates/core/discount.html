@@ -1,0 +1,92 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Акции и скидки | TravelDream{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="mb-5 text-center">Акции и скидки</h1>
+        
+        <!-- Фильтр по статусу -->
+        <div class="mb-4">
+            <div class="btn-group" role="group">
+                <a href="{% url 'core:discounts' %}" class="btn btn-outline-primary">Все акции</a>
+                <a href="?status=active" class="btn btn-outline-primary">Активные</a>
+                <a href="?status=archived" class="btn btn-outline-primary">Архив</a>
+            </div>
+        </div>
+        
+        <!-- Список промокодов -->
+        <div class="row g-4">
+            {% for promo in promos %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm {% if promo.is_active %}border-primary{% else %}border-secondary{% endif %}">
+                    {% if promo.image %}
+                    <img src="{{ promo.image.url }}" 
+                         class="card-img-top" 
+                         alt="{{ promo.code }}" 
+                         style="height: 200px; object-fit: cover;">
+                    {% else %}
+                    <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
+                         style="height: 200px;">
+                        <i class="fas fa-tag fa-4x text-primary"></i>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-{% if promo.is_active %}success{% else %}secondary{% endif %}">
+                                {{ promo.get_status_display }}
+                            </span>
+                            <span class="text-primary fw-bold">{{ promo.get_discount_display }}</span>
+                        </div>
+                        <h5 class="card-title">{{ promo.code }}</h5>
+                        <p class="card-text">{{ promo.description|truncatewords:20 }}</p>
+                        {% if promo.min_order_amount %}
+                        <p class="small text-muted">
+                            <i class="fas fa-info-circle me-1"></i>
+                            Минимальная сумма заказа: {{ promo.min_order_amount }} руб.
+                        </p>
+                        {% endif %}
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                Действует до: {{ promo.end_date|date:"d.m.Y" }}
+                            </small>
+                            <button class="btn btn-sm btn-outline-primary copy-promo" 
+                                    data-code="{{ promo.code }}"
+                                    {% if not promo.is_active %}disabled{% endif %}>
+                                <i class="far fa-copy me-1"></i>Копировать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info">Активные промокоды не найдены</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Копирование промокода
+    document.querySelectorAll('.copy-promo').forEach(button => {
+        button.addEventListener('click', function() {
+            const code = this.getAttribute('data-code');
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check me-1"></i>Скопировано';
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+    });
+});
+</script>
+{% endblock %}

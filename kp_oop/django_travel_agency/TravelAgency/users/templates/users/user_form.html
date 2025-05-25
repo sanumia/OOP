@@ -1,0 +1,14 @@
+{% comment %} {% extends "users/base.html" %} {% endcomment %}
+
+{% block title %}{% if form.instance.pk %}Редактирование{% else %}Создание{% endif %} пользователя{% endblock %}
+
+{% block content %}
+<h1>{% if form.instance.pk %}Редактирование{% else %}Создание{% endif %} пользователя</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a href="{% url 'users:user_list' %}" class="btn btn-secondary">Отмена</a>
+</form>
+{% endblock %}

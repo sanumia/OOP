@@ -1,0 +1,11 @@
+pyproject.toml
+setup.py
+django_serializer_lib/__init__.py
+django_serializer_lib/exceptions.py
+django_serializer_lib/json_serializer.py
+django_serializer_lib/serializer.py
+django_serializer_lib/xml_serializer.py
+django_serializer_lib.egg-info/PKG-INFO
+django_serializer_lib.egg-info/SOURCES.txt
+django_serializer_lib.egg-info/dependency_links.txt
+django_serializer_lib.egg-info/top_level.txt

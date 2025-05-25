@@ -1,0 +1,218 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{% if form.instance.pk %}Редактировать тур{% else %}Создать новый тур{% endif %} - TravelDream{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'core:home' %}"><i class="fas fa-home"></i> Главная</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'core:tour_list' %}"><i class="fas fa-suitcase"></i> Туры</a></li>
+            <li class="breadcrumb-item active">
+                {% if form.instance.pk %}Редактировать тур{% else %}Создать новый тур{% endif %}
+            </li>
+        </ol>
+    </nav>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="card-title h4 mb-0">
+                        <i class="fas {% if form.instance.pk %}fa-edit{% else %}fa-plus-circle{% endif %}"></i>
+                        {% if form.instance.pk %}
+                            Редактировать тур
+                        {% else %}
+                            Создать новый тур
+                        {% endif %}
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                {% for error in form.non_field_errors %}
+                                    <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <div class="mb-3">
+                            <label for="{{ form.hotel.id_for_label }}" class="form-label">
+                                <i class="fas fa-hotel"></i> Отель
+                            </label>
+                            {{ form.hotel }}
+                            {% if form.hotel.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.hotel.errors %}
+                                        <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            {% if form.hotel.help_text %}
+                                <div class="form-text"><i class="fas fa-info-circle"></i> {{ form.hotel.help_text }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.duration_weeks.id_for_label }}" class="form-label">
+                                <i class="fas fa-calendar-alt"></i> Длительность (недели)
+                            </label>
+                            {{ form.duration_weeks }}
+                            {% if form.duration_weeks.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.duration_weeks.errors %}
+                                        <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.departure_date.id_for_label }}" class="form-label">
+                                <i class="fas fa-plane-departure"></i> Дата отправления
+                            </label>
+                            {{ form.departure_date }}
+                            {% if form.departure_date.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.departure_date.errors %}
+                                        <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.max_participants.id_for_label }}" class="form-label">
+                                <i class="fas fa-users"></i> Максимальное количество участников
+                            </label>
+                            {{ form.max_participants }}
+                            {% if form.max_participants.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.max_participants.errors %}
+                                        <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.total_price.id_for_label }}" class="form-label">
+                                <i class="fas fa-tag"></i> Общая стоимость
+                            </label>
+                            {{ form.total_price }}
+                            {% if form.total_price.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.total_price.errors %}
+                                        <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <div class="form-text">
+                                <i class="fas fa-info-circle"></i> Оставьте пустым для автоматического расчета
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                {{ form.is_active }}
+                                <label class="form-check-label" for="{{ form.is_active.id_for_label }}">
+                                    <i class="fas fa-toggle-on"></i> Активный тур
+                                </label>
+                            </div>
+                            {% if form.is_active.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.is_active.errors %}
+                                        <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas {% if form.instance.pk %}fa-save{% else %}fa-plus-circle{% endif %}"></i>
+                                {% if form.instance.pk %}
+                                    Сохранить изменения
+                                {% else %}
+                                    Создать тур
+                                {% endif %}
+                            </button>
+                            <a href="{% url 'core:tour_list' %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-times"></i> Отмена
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Добавление классов Bootstrap к полям формы
+        const formControls = document.querySelectorAll('input, select, textarea');
+        formControls.forEach(control => {
+            if (!control.classList.contains('form-check-input')) {
+                control.classList.add('form-control');
+            }
+        });
+
+        // Инициализация date picker для поля даты
+        const departureDateInput = document.getElementById('{{ form.departure_date.id_for_label }}');
+        if (departureDateInput) {
+            departureDateInput.type = 'date';
+            departureDateInput.classList.add('form-control');
+        }
+
+        // Автоматический расчет общей стоимости
+        const hotelSelect = document.getElementById('{{ form.hotel.id_for_label }}');
+        const durationSelect = document.getElementById('{{ form.duration_weeks.id_for_label }}');
+        const totalPriceInput = document.getElementById('{{ form.total_price.id_for_label }}');
+
+        function updateTotalPrice() {
+            const hotelId = hotelSelect.value;
+            const duration = parseInt(durationSelect.value);
+            
+            if (hotelId && duration) {
+                // Получаем цену за день выбранного отеля через API
+                fetch(`/api/hotels/${hotelId}/price/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const pricePerDay = parseFloat(data.price_per_day);
+                        const totalPrice = pricePerDay * duration * 7;
+                        totalPriceInput.value = totalPrice.toFixed(2);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        const notification = document.createElement('div');
+                        notification.className = 'alert alert-danger alert-dismissible fade show';
+                        notification.innerHTML = `
+                            <i class="fas fa-exclamation-circle"></i> Ошибка при расчете стоимости
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        `;
+                        form.insertBefore(notification, form.firstChild);
+                    });
+            }
+        }
+
+        hotelSelect.addEventListener('change', updateTotalPrice);
+        durationSelect.addEventListener('change', updateTotalPrice);
+
+        // Валидация формы
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+    });
+</script>
+{% endblock %} 

@@ -1,0 +1,162 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Отели | TravelDream{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Search and Filter Section -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <form method="get" class="card shadow-sm">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label for="search" class="form-label">Поиск</label>
+                            <input type="text" class="form-control" id="search" name="search" 
+                                   value="{{ current_filters.search }}" placeholder="Название отеля...">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="country" class="form-label">Страна</label>
+                            <select class="form-select" id="country" name="country">
+                                <option value="">Все страны</option>
+                                {% for country in countries %}
+                                <option value="{{ country.id }}" 
+                                        {% if current_filters.country|stringformat:"s" == country.id|stringformat:"s" %}selected{% endif %}>
+                                    {{ country.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="stars" class="form-label">Звездность</label>
+                            <select class="form-select" id="stars" name="stars">
+                                <option value="">Любая</option>
+                                {% for star in "12345"|make_list %}
+                                <option value="{{ star }}" {% if current_filters.stars == star %}selected{% endif %}>
+                                    {{ star }}★
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="sort" class="form-label">Сортировка</label>
+                            <select class="form-select" id="sort" name="sort">
+                                <option value="name" {% if current_filters.sort == 'name' %}selected{% endif %}>По названию</option>
+                                <option value="price_asc" {% if current_filters.sort == 'price_asc' %}selected{% endif %}>Цена ↑</option>
+                                <option value="price_desc" {% if current_filters.sort == 'price_desc' %}selected{% endif %}>Цена ↓</option>
+                                <option value="stars" {% if current_filters.sort == 'stars' %}selected{% endif %}>По звездам</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Найти отели</button>
+                            <a href="{% url 'core:hotel_list' %}" class="btn btn-outline-secondary">Сбросить</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hotels Grid -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for hotel in hotels %}
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                {% if hotel.image %}
+                <img src="{{ hotel.image.url }}" class="card-img-top" alt="{{ hotel.name }}" style="height: 200px; object-fit: cover;">
+                {% else %}
+                <img src="{% static 'images/default-hotel.jpg' %}" class="card-img-top" alt="Default hotel image" style="height: 200px; object-fit: cover;">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ hotel.name }}</h5>
+                    <p class="card-text text-muted">
+                        <i class="fas fa-map-marker-alt me-2"></i>{{ hotel.country.name }}
+                    </p>
+                    <div class="mb-2">
+                        {% for i in "12345"|make_list %}
+                        {% if forloop.counter <= hotel.stars %}
+                        <i class="fas fa-star text-warning"></i>
+                        {% else %}
+                        <i class="far fa-star text-warning"></i>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="card-text">{{ hotel.description|truncatewords:30 }}</p>
+                    <div class="d-flex justify-content-between align-items-end">
+                        <div class="price-block">
+                            <small class="text-muted">Цена за день</small>
+                            <p class="h4 mb-0">{{ hotel.price_per_day }} BYN</p>
+                        </div>
+                        <a href="{% url 'core:hotel_detail' hotel.pk %}" class="btn btn-primary">
+                            <i class="fas fa-info-circle"></i> Подробнее
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center py-5">
+            <h3>Отели не найдены</h3>
+            <p class="text-muted">Попробуйте изменить параметры поиска</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <nav class="mt-4" aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1{% if current_filters.search %}&search={{ current_filters.search }}{% endif %}{% if current_filters.country %}&country={{ current_filters.country }}{% endif %}{% if current_filters.stars %}&stars={{ current_filters.stars }}{% endif %}{% if current_filters.sort %}&sort={{ current_filters.sort }}{% endif %}">
+                    <i class="fas fa-angle-double-left"></i>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if current_filters.search %}&search={{ current_filters.search }}{% endif %}{% if current_filters.country %}&country={{ current_filters.country }}{% endif %}{% if current_filters.stars %}&stars={{ current_filters.stars }}{% endif %}{% if current_filters.sort %}&sort={{ current_filters.sort }}{% endif %}">
+                    <i class="fas fa-angle-left"></i>
+                </a>
+            </li>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ num }}{% if current_filters.search %}&search={{ current_filters.search }}{% endif %}{% if current_filters.country %}&country={{ current_filters.country }}{% endif %}{% if current_filters.stars %}&stars={{ current_filters.stars }}{% endif %}{% if current_filters.sort %}&sort={{ current_filters.sort }}{% endif %}">
+                    {{ num }}
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if current_filters.search %}&search={{ current_filters.search }}{% endif %}{% if current_filters.country %}&country={{ current_filters.country }}{% endif %}{% if current_filters.stars %}&stars={{ current_filters.stars }}{% endif %}{% if current_filters.sort %}&sort={{ current_filters.sort }}{% endif %}">
+                    <i class="fas fa-angle-right"></i>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if current_filters.search %}&search={{ current_filters.search }}{% endif %}{% if current_filters.country %}&country={{ current_filters.country }}{% endif %}{% if current_filters.stars %}&stars={{ current_filters.stars }}{% endif %}{% if current_filters.sort %}&sort={{ current_filters.sort }}{% endif %}">
+                    <i class="fas fa-angle-double-right"></i>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.card {
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+</style>
+{% endblock %} 

@@ -25,5 +25,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
 <script src="{%static 'vendor\js\auth-admin.js'%}"></script>
+<script>
+// Определяем часовой пояс браузера
+document.cookie = `user_timezone=${Intl.DateTimeFormat().resolvedOptions().timeZone}; path=/`;
+</script>
 </body>
 </html>
