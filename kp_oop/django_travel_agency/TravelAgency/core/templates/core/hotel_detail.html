@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load core_extras %}
 
 {% block title %}{{ hotel.name }} - TravelDream{% endblock %}
 
@@ -77,11 +78,11 @@
                                         <p class="card-text">
                                             <small class="text-muted">
                                                 <i class="fas fa-users"></i>
-                                                Осталось мест: {{ tour.max_participants|sub:tour.current_participants }}
+                                                Осталось мест: {{ tour.max_participants|add:"-tour.current_participants" }}
                                             </small>
                                         </p>
                                         {% if tour.is_available %}
-                                            <form method="post" action="{% url 'core:add_to_basket' tour.id %}" class="d-inline">
+                                            <form method="post" action="{% url 'core:basket_add' tour.id %}" class="d-inline">
                                                 {% csrf_token %}
                                                 <button type="submit" class="btn btn-primary">
                                                     <i class="fas fa-shopping-cart"></i> В корзину
@@ -101,6 +102,66 @@
                             <i class="fas fa-info-circle"></i> На данный момент нет доступных туров в этот отель.
                         </div>
                     {% endfor %}
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0"><i class="fas fa-comments"></i> Отзывы</h3>
+                </div>
+                <div class="card-body">
+                    {% if user.is_authenticated %}
+                    <div class="mb-4">
+                        <h5>Оставьте свой отзыв</h5>
+                        <form method="post" action="{% url 'core:add_review' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="hotel" value="{{ hotel.id }}">
+                            <div class="mb-3">
+                                {{ review_form.text }}
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    {{ review_form.rating }}
+                                </div>
+                                <div class="col-md-6 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        Отправить отзыв
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {% endif %}
+                    
+                    {% if reviews %}
+                        {% for review in reviews %}
+                        <div class="review-item mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="d-flex align-items-center">
+                                    <div class="me-3">
+                                        {% if review.author.image %}
+                                            <img src="{{ review.author.image.url }}" class="rounded-circle" width="40" height="40" alt="{{ review.get_author_name }}">
+                                        {% else %}
+                                            <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                                <i class="fas fa-user text-white"></i>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">{{ review.get_author_name }}</h6>
+                                        <small class="text-muted">{{ review.created_at|date:"d.m.Y" }}</small>
+                                    </div>
+                                </div>
+                                <div class="text-warning">
+                                    {{ review.get_rating_display }}
+                                </div>
+                            </div>
+                            <p class="mb-0">{{ review.text }}</p>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-muted">Пока нет отзывов об этом отеле.</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -172,7 +233,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Обработка добавления в корзину через AJAX
-        const addToBasketForms = document.querySelectorAll('form[action^="/add_to_basket/"]');
+        const addToBasketForms = document.querySelectorAll('form[action*="basket/add"]');
         addToBasketForms.forEach(form => {
             form.addEventListener('submit', function(e) {
                 e.preventDefault();

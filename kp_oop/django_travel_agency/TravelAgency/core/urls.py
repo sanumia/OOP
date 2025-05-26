@@ -39,6 +39,10 @@ app_name = 'core'  # Пространство имен приложения
 urlpatterns = [
     # Главная страница
     path('', views.home, name='home'),
+    
+    # Статистика
+    path('statistics/', views.statistics_view, name='statistics'),
+    
     # Страны
     path('countries/', CountryListView.as_view(), name='country_list'),
     path('countries/<int:pk>/', CountryDetailView.as_view(), name='country_detail'),
@@ -67,6 +71,12 @@ urlpatterns = [
     path('orders/<int:pk>/cancel/', OrderCancelView.as_view(), name='order_cancel'),
     path('orders/manage/', order_manage, name='order_manage'),
     path('orders/<int:pk>/update/', order_update_status, name='order_update_status'),
+    path('orders/<int:pk>/confirm/', views.confirm_order, name='confirm_order'),
+    path('orders/<int:pk>/mark-paid/', views.mark_paid, name='mark_paid'),
+    path('orders/<int:pk>/cancel-order/', views.cancel_order, name='cancel_order'),
+    path('orders/export/excel/', views.export_orders_excel, name='export_orders_excel'),
+    path('orders/export/pdf/', views.export_orders_pdf, name='export_orders_pdf'),
+    path('orders/<int:pk>/print/', views.print_order, name='print_order'),
 
     # Дополнительные страницы
     path('about/', AboutView.as_view(), name='about'),

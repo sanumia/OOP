@@ -19,6 +19,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.admin.views.decorators import staff_member_required
 from django.core.paginator import Paginator
 from django.db.models import Count, Sum, Q, Min, Avg
+from django.db.models.functions import TruncMonth
 from django.urls import reverse, reverse_lazy
 from django.utils import timezone
 from django.views.generic import ListView, DetailView, View, TemplateView, CreateView
@@ -445,8 +446,8 @@ class HotelDetailView(DetailView):
             stars=hotel.stars
         ).exclude(id=hotel.id)[:3]
         
-        # Get weather data if implemented
-        # context['weather'] = get_weather_data(hotel.city)  # Implement this function if needed
+        # Add review form to context
+        context['review_form'] = ReviewForm(initial={'hotel': hotel.id})
         
         return context
 
@@ -546,6 +547,41 @@ def order_update_status(request, pk):
             messages.success(request, 'Статус заказа обновлен!')
     return redirect('core:order_manage')
 
+@staff_member_required
+def confirm_order(request, pk):
+    order = get_object_or_404(Order, pk=pk)
+    if request.method == 'POST':
+        if order.status == 'pending':
+            order.status = 'confirmed'
+            order.save(update_fields=['status'])
+            messages.success(request, f'Заказ #{order.id} успешно подтвержден')
+        else:
+            messages.error(request, 'Этот заказ нельзя подтвердить')
+    return redirect('core:order_manage')
+
+@staff_member_required
+def mark_paid(request, pk):
+    order = get_object_or_404(Order, pk=pk)
+    if request.method == 'POST':
+        if order.status == 'confirmed':
+            order.status = 'paid'
+            order.save(update_fields=['status'])
+            messages.success(request, f'Заказ #{order.id} отмечен как оплаченный')
+        else:
+            messages.error(request, 'Этот заказ нельзя отметить как оплаченный')
+    return redirect('core:order_manage')
+
+@staff_member_required
+def cancel_order(request, pk):
+    order = get_object_or_404(Order, pk=pk)
+    if request.method == 'POST':
+        if order.status not in ['cancelled', 'completed']:
+            order.status = 'cancelled'
+            order.save(update_fields=['status'])
+            messages.success(request, f'Заказ #{order.id} отменен')
+        else:
+            messages.error(request, 'Этот заказ нельзя отменить')
+    return redirect('core:order_manage')
 
 class AboutView(TemplateView):
     template_name = 'core/about.html'
@@ -606,7 +642,11 @@ class AboutView(TemplateView):
 class AddReviewView(CreateView):
     model = Review
     form_class = ReviewForm
-    success_url = reverse_lazy('core:about')
+    
+    def get_success_url(self):
+        if self.object.hotel:
+            return reverse('core:hotel_detail', kwargs={'pk': self.object.hotel.pk})
+        return reverse('core:about')
     
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -647,10 +687,69 @@ def generate_chart(fig):
     plt.close(fig)
     return image_base64
 
+@staff_member_required
 def statistics_view(request):
+    if not request.user.is_superuser:
+        messages.error(request, "У вас нет доступа к этой странице.")
+        return redirect('core:home')
+
     # Получаем статистические данные
     popular = TourPackage.objects.values('hotel__country__name').annotate(count=Count('id')).order_by('-count')[:5]
     profitable = TourPackage.objects.values('hotel__country__name').annotate(total=Sum('total_price')).order_by('-total')[:5]
+    
+    # Статистика продаж
+    total_orders = Order.objects.count()
+    confirmed_orders = Order.objects.filter(status='confirmed').count()
+    cancelled_orders = Order.objects.filter(status='cancelled').count()
+    pending_orders = Order.objects.filter(status='pending').count()
+    
+    # Финансовая статистика
+    total_revenue = Order.objects.filter(status='confirmed').aggregate(total=Sum('total_price'))['total'] or 0
+    avg_order_value = Order.objects.filter(status='confirmed').aggregate(avg=Avg('total_price'))['avg'] or 0
+    
+    # Monthly sales data for the last 12 months
+    today = date.today()
+    last_year = today - timedelta(days=365)
+    monthly_sales = Order.objects.filter(
+        created_at__gte=last_year,
+        status='confirmed'
+    ).annotate(
+        month=TruncMonth('created_at')
+    ).values('month').annotate(
+        total=Sum('total_price'),
+        count=Count('id')
+    ).order_by('month')
+
+    # Prepare monthly chart data
+    months = []
+    sales_amounts = []
+    sales_counts = []
+    
+    for data in monthly_sales:
+        months.append(data['month'].strftime('%b %Y'))
+        sales_amounts.append(float(data['total']))
+        sales_counts.append(data['count'])
+    
+    # Monthly sales trend chart
+    if months:
+        fig5, (ax5a, ax5b) = plt.subplots(2, 1, figsize=(10, 8))
+        
+        # Revenue trend
+        ax5a.plot(months, sales_amounts, marker='o', color='purple')
+        ax5a.set_title('Динамика продаж (выручка)')
+        ax5a.set_ylabel('Сумма (руб)')
+        plt.setp(ax5a.xaxis.get_ticklabels(), rotation=45)
+        
+        # Orders count trend
+        ax5b.plot(months, sales_counts, marker='o', color='orange')
+        ax5b.set_title('Динамика продаж (количество)')
+        ax5b.set_ylabel('Количество заказов')
+        plt.setp(ax5b.xaxis.get_ticklabels(), rotation=45)
+        
+        plt.tight_layout()
+        sales_trend_chart = generate_chart(fig5)
+    else:
+        sales_trend_chart = None
     
     # Готовим данные для графиков
     popular_countries = [item['hotel__country__name'] for item in popular]
@@ -714,6 +813,14 @@ def statistics_view(request):
         'profitable_chart': profitable_chart,
         'amounts_chart': amounts_chart,
         'age_chart': age_chart,
+        'sales_trend_chart': sales_trend_chart,
+        # Sales statistics
+        'total_orders': total_orders,
+        'confirmed_orders': confirmed_orders,
+        'cancelled_orders': cancelled_orders,
+        'pending_orders': pending_orders,
+        'total_revenue': total_revenue,
+        'avg_order_value': avg_order_value,
     }
     
     return render(request, 'core/statistics.html', context)
@@ -1129,3 +1236,172 @@ def subscribe_newsletter(request):
     
     # Redirect back to the previous page or home
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', reverse('core:home')))
+
+@staff_member_required
+def export_orders_excel(request):
+    """Export orders to Excel format"""
+    import xlsxwriter
+    from io import BytesIO
+    
+    # Create output file
+    output = BytesIO()
+    workbook = xlsxwriter.Workbook(output)
+    worksheet = workbook.add_worksheet()
+    
+    # Add headers
+    headers = ['ID', 'Клиент', 'Тур', 'Статус', 'Дата создания', 'Сумма', 'Менеджер']
+    header_format = workbook.add_format({'bold': True, 'bg_color': '#0d6efd', 'color': 'white'})
+    for col, header in enumerate(headers):
+        worksheet.write(0, col, header, header_format)
+    
+    # Get filtered orders
+    orders = Order.objects.all().select_related(
+        'client',
+        'tour',
+        'tour__hotel',
+        'manager'
+    )
+    
+    # Apply filters from request
+    status = request.GET.get('status')
+    if status:
+        orders = orders.filter(status=status)
+    
+    date_from = request.GET.get('date_from')
+    date_to = request.GET.get('date_to')
+    if date_from and date_to:
+        orders = orders.filter(created_at__range=[date_from, date_to])
+    
+    # Write data
+    for row, order in enumerate(orders, start=1):
+        worksheet.write(row, 0, order.id)
+        worksheet.write(row, 1, order.client.get_full_name())
+        worksheet.write(row, 2, f"{order.tour.hotel.name} ({order.tour.departure_date.strftime('%d.%m.%Y')})")
+        worksheet.write(row, 3, order.get_status_display())
+        worksheet.write(row, 4, order.created_at.strftime('%d.%m.%Y %H:%M'))
+        worksheet.write(row, 5, float(order.total_price))
+        worksheet.write(row, 6, order.manager.get_full_name() if order.manager else '-')
+    
+    # Set column widths
+    worksheet.set_column(0, 0, 8)  # ID
+    worksheet.set_column(1, 1, 25)  # Client
+    worksheet.set_column(2, 2, 40)  # Tour
+    worksheet.set_column(3, 3, 15)  # Status
+    worksheet.set_column(4, 4, 20)  # Created At
+    worksheet.set_column(5, 5, 12)  # Total Price
+    worksheet.set_column(6, 6, 25)  # Manager
+    
+    workbook.close()
+    
+    # Create response
+    output.seek(0)
+    response = HttpResponse(
+        output.read(),
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    )
+    response['Content-Disposition'] = 'attachment; filename=orders.xlsx'
+    
+    return response
+
+@staff_member_required
+def export_orders_pdf(request):
+    """Export orders to PDF format"""
+    from reportlab.lib import colors
+    from reportlab.lib.pagesizes import A4, landscape
+    from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
+    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+    from io import BytesIO
+    
+    # Create output file
+    output = BytesIO()
+    doc = SimpleDocTemplate(output, pagesize=landscape(A4))
+    
+    # Get styles
+    styles = getSampleStyleSheet()
+    title_style = styles['Heading1']
+    normal_style = styles['Normal']
+    
+    # Get filtered orders
+    orders = Order.objects.all().select_related(
+        'client',
+        'tour',
+        'tour__hotel',
+        'manager'
+    )
+    
+    # Apply filters from request
+    status = request.GET.get('status')
+    if status:
+        orders = orders.filter(status=status)
+    
+    date_from = request.GET.get('date_from')
+    date_to = request.GET.get('date_to')
+    if date_from and date_to:
+        orders = orders.filter(created_at__range=[date_from, date_to])
+    
+    # Prepare data
+    elements = []
+    
+    # Add title
+    elements.append(Paragraph('Список заказов', title_style))
+    elements.append(Paragraph(f'Дата формирования: {timezone.now().strftime("%d.%m.%Y %H:%M")}', normal_style))
+    
+    # Table data
+    data = [['ID', 'Клиент', 'Тур', 'Статус', 'Дата создания', 'Сумма', 'Менеджер']]
+    
+    for order in orders:
+        data.append([
+            str(order.id),
+            order.client.get_full_name(),
+            f"{order.tour.hotel.name} ({order.tour.departure_date.strftime('%d.%m.%Y')})",
+            order.get_status_display(),
+            order.created_at.strftime('%d.%m.%Y %H:%M'),
+            f"{order.total_price} руб.",
+            order.manager.get_full_name() if order.manager else '-'
+        ])
+    
+    # Create table
+    table = Table(data)
+    table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#0d6efd')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 12),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.white),
+        ('TEXTCOLOR', (0, 1), (-1, -1), colors.black),
+        ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
+        ('FONTSIZE', (0, 1), (-1, -1), 10),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+    ]))
+    
+    elements.append(table)
+    
+    # Build PDF
+    doc.build(elements)
+    
+    # Create response
+    output.seek(0)
+    response = HttpResponse(output.read(), content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=orders.pdf'
+    
+    return response
+
+@staff_member_required
+def print_order(request, pk):
+    """Generate a printable version of an order"""
+    order = get_object_or_404(Order, pk=pk)
+    
+    context = {
+        'order': order,
+        'company_name': 'TravelDream',
+        'company_address': 'ул. Примерная, 123, Москва',
+        'company_phone': '+7 (999) 123-45-67',
+        'company_email': 'info@traveldream.ru',
+        'print_date': timezone.now(),
+    }
+    
+    return render(request, 'core/order_print.html', context)

@@ -1,8 +1,83 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container">
     <h1 class="my-4">Статистика турагентства</h1>
+
+    <!-- Sales Overview Cards -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h6 class="card-title">Всего заказов</h6>
+                    <h2 class="mb-0">{{ total_orders }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <h6 class="card-title">Подтвержденные</h6>
+                    <h2 class="mb-0">{{ confirmed_orders }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-warning text-dark">
+                <div class="card-body">
+                    <h6 class="card-title">Ожидающие</h6>
+                    <h2 class="mb-0">{{ pending_orders }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-danger text-white">
+                <div class="card-body">
+                    <h6 class="card-title">Отмененные</h6>
+                    <h2 class="mb-0">{{ cancelled_orders }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Financial Overview -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Финансовый обзор</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-muted mb-1">Общая выручка</p>
+                            <h3 class="mb-3">{{ total_revenue|floatformat:2 }} BYN</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-muted mb-1">Средний чек</p>
+                            <h3 class="mb-3">{{ avg_order_value|floatformat:2 }} BYN</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sales Trends -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Динамика продаж за последние 12 месяцев</h5>
+                    {% if sales_trend_chart %}
+                        <img src="data:image/png;base64,{{ sales_trend_chart }}" 
+                             alt="Динамика продаж" class="img-fluid">
+                    {% else %}
+                        <p>Нет данных для отображения</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="row">
         <!-- График популярных стран -->

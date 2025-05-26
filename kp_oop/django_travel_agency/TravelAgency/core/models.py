@@ -644,6 +644,14 @@ class Review(models.Model):
         related_name='reviews',
         verbose_name='Автор'
     )
+    hotel = models.ForeignKey(
+        Hotel,
+        on_delete=models.CASCADE,
+        related_name='reviews',
+        verbose_name='Отель',
+        null=True,
+        blank=True
+    )
     text = models.TextField(verbose_name='Текст отзыва')
     rating = models.PositiveSmallIntegerField(
         choices=RATING_CHOICES,

@@ -33,7 +33,7 @@ class NewsForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['text', 'rating']
+        fields = ['text', 'rating', 'hotel']
         widgets = {
             'text': forms.Textarea(attrs={
                 'class': 'form-control',
@@ -42,9 +42,11 @@ class ReviewForm(forms.ModelForm):
             }),
             'rating': forms.Select(attrs={
                 'class': 'form-select'
-            })
+            }),
+            'hotel': forms.HiddenInput()
         }
         labels = {
             'text': '',
-            'rating': 'Оценка'
+            'rating': 'Оценка',
+            'hotel': ''
         }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ #{{ order.id }} - Печать</title>
+    <style>
+        @media print {
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .company-info {
+                margin-bottom: 30px;
+            }
+            .order-info {
+                margin-bottom: 30px;
+            }
+            .client-info {
+                margin-bottom: 30px;
+            }
+            .tour-info {
+                margin-bottom: 30px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 30px;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f5f5f5;
+            }
+            .footer {
+                margin-top: 50px;
+                text-align: center;
+                font-size: 0.9em;
+                color: #666;
+            }
+            .print-date {
+                margin-top: 30px;
+                text-align: right;
+                font-size: 0.8em;
+                color: #666;
+            }
+            @page {
+                size: A4;
+                margin: 2cm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ company_name }}</h1>
+        <p>{{ company_address }}<br>
+        Тел: {{ company_phone }}<br>
+        Email: {{ company_email }}</p>
+    </div>
+
+    <div class="order-info">
+        <h2>Заказ #{{ order.id }}</h2>
+        <p><strong>Статус:</strong> {{ order.get_status_display }}</p>
+        <p><strong>Дата создания:</strong> {{ order.created_at|date:"d.m.Y H:i" }}</p>
+    </div>
+
+    <div class="client-info">
+        <h3>Информация о клиенте</h3>
+        <p><strong>ФИО:</strong> {{ order.client.get_full_name }}</p>
+        <p><strong>Email:</strong> {{ order.client.email }}</p>
+        <p><strong>Телефон:</strong> {{ order.client.phone_number|default:"Не указан" }}</p>
+    </div>
+
+    <div class="tour-info">
+        <h3>Информация о туре</h3>
+        <table>
+            <tr>
+                <th>Отель</th>
+                <td>{{ order.tour.hotel.name }}</td>
+            </tr>
+            <tr>
+                <th>Страна</th>
+                <td>{{ order.tour.hotel.country.name }}</td>
+            </tr>
+            <tr>
+                <th>Дата отправления</th>
+                <td>{{ order.tour.departure_date|date:"d.m.Y" }}</td>
+            </tr>
+            <tr>
+                <th>Дата возвращения</th>
+                <td>{{ order.tour.return_date|date:"d.m.Y" }}</td>
+            </tr>
+            <tr>
+                <th>Количество участников</th>
+                <td>{{ order.participants }}</td>
+            </tr>
+            <tr>
+                <th>Общая стоимость</th>
+                <td>{{ order.total_price }} руб.</td>
+            </tr>
+        </table>
+    </div>
+
+    {% if order.notes %}
+    <div class="notes">
+        <h3>Примечания</h3>
+        <p>{{ order.notes }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        <p>Благодарим за выбор {{ company_name }}!</p>
+    </div>
+
+    <div class="print-date">
+        Документ сформирован: {{ print_date|date:"d.m.Y H:i" }}
+    </div>
+
+    <script>
+        window.onload = function() {
+            window.print();
+        }
+    </script>
+</body>
+</html> 
