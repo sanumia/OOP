@@ -703,48 +703,76 @@ def statistics_view(request):
     cancelled_orders = Order.objects.filter(status='cancelled').count()
     pending_orders = Order.objects.filter(status='pending').count()
     
-    # Финансовая статистика
-    total_revenue = Order.objects.filter(status='confirmed').aggregate(total=Sum('total_price'))['total'] or 0
-    avg_order_value = Order.objects.filter(status='confirmed').aggregate(avg=Avg('total_price'))['avg'] or 0
+    # Финансовая статистика - используем кэшированные значения
+    from django.core.cache import cache
+    total_revenue = cache.get('total_revenue')
+    avg_order_value = cache.get('avg_order_value')
     
-    # Monthly sales data for the last 12 months
+    # Если кэш пуст, вычисляем значения и сохраняем их
+    if total_revenue is None:
+        total_revenue = Order.objects.filter(status='paid').aggregate(total=Sum('total_price'))['total'] or 0
+        cache.set('total_revenue', total_revenue)
+    
+    if avg_order_value is None:
+        avg_order_value = Order.objects.filter(status='paid').aggregate(avg=Avg('total_price'))['avg'] or 0
+        cache.set('avg_order_value', avg_order_value)
+    
+    # Daily sales data for the last 30 days
     today = date.today()
-    last_year = today - timedelta(days=365)
-    monthly_sales = Order.objects.filter(
-        created_at__gte=last_year,
-        status='confirmed'
-    ).annotate(
-        month=TruncMonth('created_at')
-    ).values('month').annotate(
+    last_month = today - timedelta(days=30)
+    daily_sales = Order.objects.filter(
+        created_at__gte=last_month,
+        status='paid'
+    ).values('created_at__date').annotate(
         total=Sum('total_price'),
         count=Count('id')
-    ).order_by('month')
+    ).order_by('created_at__date')
 
-    # Prepare monthly chart data
-    months = []
+    # Prepare daily chart data
+    days = []
     sales_amounts = []
     sales_counts = []
     
-    for data in monthly_sales:
-        months.append(data['month'].strftime('%b %Y'))
+    for data in daily_sales:
+        days.append(data['created_at__date'].strftime('%d.%m'))
         sales_amounts.append(float(data['total']))
         sales_counts.append(data['count'])
     
-    # Monthly sales trend chart
-    if months:
-        fig5, (ax5a, ax5b) = plt.subplots(2, 1, figsize=(10, 8))
+    # Daily sales trend chart
+    if days:
+        fig5, (ax5a, ax5b) = plt.subplots(2, 1, figsize=(12, 8))
         
         # Revenue trend
-        ax5a.plot(months, sales_amounts, marker='o', color='purple')
-        ax5a.set_title('Динамика продаж (выручка)')
+        ax5a.plot(days, sales_amounts, marker='o', color='purple', linestyle='-')
+        ax5a.set_title('Динамика продаж по дням (выручка)')
+        ax5a.set_xlabel('Дата')
         ax5a.set_ylabel('Сумма (руб)')
         plt.setp(ax5a.xaxis.get_ticklabels(), rotation=45)
+        ax5a.grid(True, linestyle='--', alpha=0.7)
+        
+        # Add value labels on points
+        for i, value in enumerate(sales_amounts):
+            ax5a.annotate(f'{int(value)}', 
+                         (i, value), 
+                         textcoords="offset points", 
+                         xytext=(0,10), 
+                         ha='center')
         
         # Orders count trend
-        ax5b.plot(months, sales_counts, marker='o', color='orange')
-        ax5b.set_title('Динамика продаж (количество)')
+        ax5b.plot(days, sales_counts, marker='o', color='orange', linestyle='-')
+        ax5b.set_title('Динамика продаж по дням (количество)')
+        ax5b.set_xlabel('Дата')
         ax5b.set_ylabel('Количество заказов')
         plt.setp(ax5b.xaxis.get_ticklabels(), rotation=45)
+        ax5b.grid(True, linestyle='--', alpha=0.7)
+        
+        # Add value labels on points
+        for i, value in enumerate(sales_counts):
+            ax5b.annotate(str(value), 
+                         (i, value), 
+                         textcoords="offset points", 
+                         xytext=(0,10), 
+                         ha='center')
         
         plt.tight_layout()
         sales_trend_chart = generate_chart(fig5)

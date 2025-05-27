@@ -2702,3 +2702,26 @@ Using categorical units to plot a list of strings that are all parsable as float
 Получены форматированные данные о погоде для Беларусь: {'temp': 13.58, 'feels_like': 13.55, 'description': 'небольшой дождь', 'icon': '10d', 'humidity': 98, 'wind_speed': 3.48, 'last_updated': datetime.datetime(2025, 5, 26, 8, 34, 28, 531376, tzinfo=datetime.timezone.utc)}
 Получены форматированные данные о погоде для Беларусь: {'temp': 13.58, 'feels_like': 13.55, 'description': 'небольшой дождь', 'icon': '10d', 'humidity': 98, 'wind_speed': 3.48, 'last_updated': datetime.datetime(2025, 5, 26, 8, 34, 28, 531376, tzinfo=datetime.timezone.utc)}
 Получены форматированные данные о погоде для Беларусь: {'temp': 13.58, 'feels_like': 13.55, 'description': 'небольшой дождь', 'icon': '10d', 'humidity': 98, 'wind_speed': 3.48, 'last_updated': datetime.datetime(2025, 5, 26, 8, 34, 28, 531376, tzinfo=datetime.timezone.utc)}
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+C:\university\oop\kp_oop\django_travel_agency\TravelAgency\core\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\university\oop\kp_oop\django_travel_agency\TravelAgency\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\university\oop\kp_oop\django_travel_agency\TravelAgency\core\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\university\oop\kp_oop\django_travel_agency\TravelAgency\core\models.py changed, reloading.
+Watching for file changes with StatReloader
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+Watching for file changes with StatReloader
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.

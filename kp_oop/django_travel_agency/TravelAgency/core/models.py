@@ -2,10 +2,15 @@
 from django.db import models
 from django.urls import reverse
 from users.models import User
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.text import slugify
 from django.utils import timezone
 import logging
+from django.db.models import Sum, Avg
+from django.core.cache import cache
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class Country(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название страны')
@@ -216,6 +221,19 @@ class Order(models.Model):
         # Only calculate total_price if it's not already set
         if self.total_price is None:
             self.total_price = self.tour.total_price * self.participants
+            
+        # Check if status is being changed to 'paid'
+        if self.pk:
+            old_order = Order.objects.get(pk=self.pk)
+            if old_order.status != 'paid' and self.status == 'paid':
+                # Update agency statistics
+                total_revenue = Order.objects.filter(status='paid').aggregate(Sum('total_price'))['total_price__sum'] or 0
+                avg_order_value = Order.objects.filter(status='paid').aggregate(Avg('total_price'))['total_price__avg'] or 0
+                
+                # You might want to store these values in a separate Statistics model or cache them
+                cache.set('total_revenue', total_revenue)
+                cache.set('avg_order_value', avg_order_value)
+                
         if self.status == 'confirmed' and not self.manager:
             # Назначить менеджера при подтверждении заказа
             from django.contrib.auth import get_user_model

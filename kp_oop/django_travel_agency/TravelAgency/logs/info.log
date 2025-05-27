@@ -1,0 +1,373 @@
+[26/May/2025 12:16:59] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[26/May/2025 12:18:01] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\core\views.py changed, reloading.
+[26/May/2025 12:18:02] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[26/May/2025 13:15:02] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[26/May/2025 13:15:06] INFO [django.server:213] "GET /core/tours/?search=%D0%93%D1%80%D0%B5%D1%86%D0%B8%D1%8F&departure_date= HTTP/1.1" 200 20333
+[26/May/2025 13:15:08] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:15:08] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 30867
+[26/May/2025 13:15:12] INFO [django.server:213] "GET /core/tours/?search=%D0%93%D1%80%D0%B5%D1%86%D0%B8%D1%8F&departure_date= HTTP/1.1" 200 20333
+[26/May/2025 13:15:14] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:15:14] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 30867
+[26/May/2025 13:15:22] INFO [django.server:213] "GET /core/tours/?search=%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F&departure_date= HTTP/1.1" 200 14013
+[26/May/2025 13:15:27] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:15:27] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 30867
+[26/May/2025 13:15:44] INFO [django.server:213] "GET /core/hotels/ HTTP/1.1" 200 41245
+[26/May/2025 13:15:47] INFO [django.server:213] "GET /core/hotels/14/ HTTP/1.1" 200 22561
+[26/May/2025 13:16:17] INFO [django.server:213] "GET /core/tours/ HTTP/1.1" 200 34678
+[26/May/2025 13:16:19] INFO [core.models:84] Получены форматированные данные о погоде для Беларусь: {'temp': 13.58, 'feels_like': 13.55, 'description': 'небольшой дождь', 'icon': '10d', 'humidity': 98, 'wind_speed': 3.48, 'last_updated': datetime.datetime(2025, 5, 26, 8, 34, 28, 531376, tzinfo=datetime.timezone.utc)}
+[26/May/2025 13:16:19] INFO [django.server:213] "GET /core/tours/2/ HTTP/1.1" 200 15613
+[26/May/2025 13:16:21] INFO [django.server:213] "GET /core/tours/ HTTP/1.1" 200 34678
+[26/May/2025 13:16:22] INFO [core.models:84] Получены форматированные данные о погоде для Турция: {'temp': 27.18, 'feels_like': 26.75, 'description': 'облачно с прояснениями', 'icon': '04d', 'humidity': 35, 'wind_speed': 4.63, 'last_updated': datetime.datetime(2025, 5, 26, 8, 33, 26, 650400, tzinfo=datetime.timezone.utc)}
+[26/May/2025 13:16:22] INFO [django.server:213] "GET /core/tours/6/ HTTP/1.1" 200 15244
+[26/May/2025 13:16:27] INFO [django.server:213] "GET /core/countries/ HTTP/1.1" 200 22279
+[26/May/2025 13:16:28] INFO [core.models:46] Запрос погоды для Турция (Ankara)
+[26/May/2025 13:16:28] INFO [core.models:52] Получены данные о погоде для Турция: {'coord': {'lon': 32.8543, 'lat': 39.9199}, 'weather': [{'id': 803, 'main': 'Clouds', 'description': 'облачно с прояснениями', 'icon': '04d'}], 'base': 'stations', 'main': {'temp': 30.05, 'feels_like': 28.49, 'temp_min': 28.51, 'temp_max': 30.58, 'pressure': 1002, 'humidity': 25, 'sea_level': 1002, 'grnd_level': 889}, 'visibility': 10000, 'wind': {'speed': 5.14, 'deg': 140}, 'clouds': {'all': 75}, 'dt': 1748254372, 'sys': {'type': 2, 'id': 267643, 'country': 'TR', 'sunrise': 1748226321, 'sunset': 1748279174}, 'timezone': 10800, 'id': 323786, 'name': 'Анкара', 'cod': 200}
+[26/May/2025 13:16:28] INFO [core.models:58] Данные о погоде для Турция успешно обновлены
+[26/May/2025 13:16:28] INFO [core.models:84] Получены форматированные данные о погоде для Турция: {'temp': 30.05, 'feels_like': 28.49, 'description': 'облачно с прояснениями', 'icon': '04d', 'humidity': 25, 'wind_speed': 5.14, 'last_updated': datetime.datetime(2025, 5, 26, 10, 16, 28, 524293, tzinfo=datetime.timezone.utc)}
+[26/May/2025 13:16:28] INFO [django.server:213] "GET /core/countries/2/ HTTP/1.1" 200 23338
+[26/May/2025 13:16:28] INFO [core.models:84] Получены форматированные данные о погоде для Турция: {'temp': 30.05, 'feels_like': 28.49, 'description': 'облачно с прояснениями', 'icon': '04d', 'humidity': 25, 'wind_speed': 5.14, 'last_updated': datetime.datetime(2025, 5, 26, 10, 16, 28, 524293, tzinfo=datetime.timezone.utc)}
+[26/May/2025 13:16:28] INFO [django.server:213] "GET /core/api/countries/2/weather/ HTTP/1.1" 200 182
+[26/May/2025 13:16:35] INFO [django.server:213] "GET /core/hotels/ HTTP/1.1" 200 41245
+[26/May/2025 13:16:35] INFO [django.server:213] "GET /media/hotels/%D0%B8%D0%BD%D0%B4%D0%B8%D1%8F1.jpg HTTP/1.1" 304 0
+[26/May/2025 13:16:47] INFO [django.server:213] "GET /core/hotels/14/ HTTP/1.1" 200 22561
+[26/May/2025 13:18:34] INFO [django.server:213] "GET /core/hotels/14/ HTTP/1.1" 200 21523
+[26/May/2025 13:19:31] INFO [django.server:213] "GET /core/hotels/14/ HTTP/1.1" 200 21509
+[26/May/2025 13:19:46] INFO [django.server:213] "POST /core/add-review/ HTTP/1.1" 302 0
+[26/May/2025 13:19:46] INFO [django.server:213] "GET /core/hotels/14/ HTTP/1.1" 200 23078
+[26/May/2025 13:19:59] INFO [django.server:213] "GET /core/countries/ HTTP/1.1" 200 22279
+[26/May/2025 13:20:01] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:20:01] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 32206
+[26/May/2025 13:23:08] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\core\views.py changed, reloading.
+[26/May/2025 13:23:09] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[26/May/2025 13:23:25] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\core\urls.py changed, reloading.
+[26/May/2025 13:23:26] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[26/May/2025 13:25:11] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:25:12] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 36234
+[26/May/2025 13:29:31] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\core\views.py changed, reloading.
+[26/May/2025 13:29:32] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[26/May/2025 13:29:45] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\core\urls.py changed, reloading.
+[26/May/2025 13:29:46] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[26/May/2025 13:29:56] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\TravelAgency\settings.py changed, reloading.
+[26/May/2025 13:29:57] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[26/May/2025 13:30:21] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:30:21] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 38420
+[26/May/2025 13:32:27] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:32:27] ERROR [django.server:213] "GET /core/ HTTP/1.1" 500 271278
+[26/May/2025 13:32:43] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:32:43] ERROR [django.server:213] "GET /core/ HTTP/1.1" 500 271141
+[26/May/2025 13:34:50] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:34:50] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 35063
+[26/May/2025 13:34:50] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[26/May/2025 13:35:13] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:35:13] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 35345
+[26/May/2025 13:35:13] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[26/May/2025 13:35:27] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:35:27] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 35258
+[26/May/2025 13:35:27] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[26/May/2025 13:35:30] WARNING [django.server:213] "GET /favicon.ico HTTP/1.1" 404 3009
+[26/May/2025 13:35:44] INFO [core:70] Home page accessed by user: diana
+[26/May/2025 13:35:44] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 34915
+[26/May/2025 13:35:44] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[26/May/2025 13:35:54] INFO [django.server:213] "GET /core/about/ HTTP/1.1" 200 16049
+[27/May/2025 10:48:36] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 10:48:50] INFO [core:70] Home page accessed by user: diana
+[27/May/2025 10:48:50] INFO [django.server:213] "GET / HTTP/1.1" 200 34813
+[27/May/2025 10:48:50] INFO [django.server:213] "GET /media/hotels/%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D1%8F2.jpg HTTP/1.1" 304 0
+[27/May/2025 10:48:50] INFO [django.server:213] "GET /media/hotels/%D0%BE%D0%B0%D1%8D2.jpg HTTP/1.1" 304 0
+[27/May/2025 10:48:50] INFO [django.server:213] "GET /media/hotels/%D1%82%D0%B0%D0%B8%D0%BB%D0%B0%D0%BD%D0%B41.jpg HTTP/1.1" 304 0
+[27/May/2025 10:48:50] INFO [django.server:213] "GET /media/countries/Belarus-Minsk_Grisha-Bruev_Shutterstock_DIghQVI.jpg HTTP/1.1" 304 0
+[27/May/2025 10:48:50] INFO [django.server:213] "GET /media/countries/%D1%82%D1%83%D1%80%D1%86%D0%B8%D1%8F.jpeg HTTP/1.1" 304 0
+[27/May/2025 10:48:50] INFO [django.server:213] "GET /media/countries/%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D1%8F.jpg HTTP/1.1" 304 0
+[27/May/2025 10:48:50] INFO [django.server:213] "GET /media/countries/%D1%82%D0%B0%D0%B8%D0%BB%D0%B0%D0%BD%D0%B4.jpg HTTP/1.1" 304 0
+[27/May/2025 10:48:50] INFO [django.server:213] "GET /media/countries/%D0%BE%D0%B0%D1%8D.jpeg HTTP/1.1" 304 0
+[27/May/2025 10:48:50] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[27/May/2025 10:48:50] INFO [django.server:213] "GET /media/countries/%D0%B3%D1%80%D0%B5%D1%86%D0%B8%D1%8F.jpeg HTTP/1.1" 304 0
+[27/May/2025 10:48:51] WARNING [django.server:213] "GET /favicon.ico HTTP/1.1" 404 3009
+[27/May/2025 10:48:56] INFO [django.server:213] "GET /users/profile/ HTTP/1.1" 200 54250
+[27/May/2025 10:48:56] INFO [django.server:213] "GET /media/hotels/%D0%B3%D1%80%D0%B5%D1%86%D0%B8%D1%8F1.jpg HTTP/1.1" 304 0
+[27/May/2025 10:48:56] INFO [django.server:213] "GET /static/vendor/img/users/default_avatar.jpg HTTP/1.1" 304 0
+[27/May/2025 10:50:39] INFO [core:721] Statistics view accessed by staff member: diana
+[27/May/2025 10:50:39] INFO [core:739] Statistics generated - Orders: total=2, confirmed=1, cancelled=0, pending=0
+[27/May/2025 10:50:39] INFO [django.server:213] "GET /core/statistics/ HTTP/1.1" 200 182980
+[27/May/2025 10:51:20] INFO [django.server:213] "GET /users/logout/ HTTP/1.1" 302 0
+[27/May/2025 10:51:20] INFO [core:70] Home page accessed by user: AnonymousUser
+[27/May/2025 10:51:20] INFO [django.server:213] "GET / HTTP/1.1" 200 32701
+[27/May/2025 10:51:20] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /media/hotels/%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D1%8F2.jpg HTTP/1.1" 200 92793
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /media/countries/%D1%82%D0%B0%D0%B8%D0%BB%D0%B0%D0%BD%D0%B4.jpg HTTP/1.1" 200 145809
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /media/countries/%D0%BE%D0%B0%D1%8D.jpeg HTTP/1.1" 200 453069
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /media/hotels/%D0%BE%D0%B0%D1%8D2.jpg HTTP/1.1" 200 118402
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /media/countries/%D0%B3%D1%80%D0%B5%D1%86%D0%B8%D1%8F.jpeg HTTP/1.1" 200 575068
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /media/countries/%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D1%8F.jpg HTTP/1.1" 200 394935
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /media/hotels/%D1%82%D0%B0%D0%B8%D0%BB%D0%B0%D0%BD%D0%B41.jpg HTTP/1.1" 200 155709
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /media/countries/Belarus-Minsk_Grisha-Bruev_Shutterstock_DIghQVI.jpg HTTP/1.1" 200 148346
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /media/countries/%D1%82%D1%83%D1%80%D1%86%D0%B8%D1%8F.jpeg HTTP/1.1" 200 869435
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /users/registration/ HTTP/1.1" 200 5457
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /static/vendor/css/auth.css HTTP/1.1" 304 0
+[27/May/2025 10:51:21] INFO [django.server:213] "GET /static/vendor/js/auth-admin.js HTTP/1.1" 304 0
+[27/May/2025 10:51:23] INFO [django.server:213] "GET /users/login/ HTTP/1.1" 200 3824
+[27/May/2025 10:51:32] INFO [django.server:213] "POST /users/login/ HTTP/1.1" 302 0
+[27/May/2025 10:51:32] INFO [core:70] Home page accessed by user: sanumia (diana21@gmail.com)
+[27/May/2025 10:51:32] INFO [django.server:213] "GET / HTTP/1.1" 200 33875
+[27/May/2025 10:51:33] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[27/May/2025 10:51:36] INFO [django.server:213] "GET /core/orders/ HTTP/1.1" 200 7343
+[27/May/2025 10:51:38] INFO [django.server:213] "GET /core/tours/ HTTP/1.1" 200 33740
+[27/May/2025 10:51:38] INFO [django.server:213] "GET /media/hotels/exterior.jpg HTTP/1.1" 200 100853
+[27/May/2025 10:51:38] INFO [django.server:213] "GET /media/hotels/%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D1%8F1.jpg HTTP/1.1" 200 102789
+[27/May/2025 10:51:38] INFO [django.server:213] "GET /media/hotels/%D1%88%D0%B2%D0%B5%D1%86%D0%B8%D1%8F2.jpg HTTP/1.1" 200 104193
+[27/May/2025 10:51:38] INFO [django.server:213] "GET /media/hotels/%D1%82%D1%83%D1%80%D1%86%D0%B8%D1%8F2.jpg HTTP/1.1" 200 119676
+[27/May/2025 10:51:38] INFO [django.server:213] "GET /media/hotels/%D0%BF%D1%80%D0%B8%D0%B2%D0%B0%D0%BB_%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C.png HTTP/1.1" 200 690839
+[27/May/2025 10:51:42] INFO [django.server:213] "POST /core/basket/add/13/ HTTP/1.1" 302 0
+[27/May/2025 10:51:42] INFO [django.server:213] "GET /core/tours/ HTTP/1.1" 200 34032
+[27/May/2025 10:51:46] INFO [django.server:213] "POST /core/basket/add/16/ HTTP/1.1" 302 0
+[27/May/2025 10:51:46] INFO [django.server:213] "GET /core/tours/ HTTP/1.1" 200 34032
+[27/May/2025 10:51:48] INFO [django.server:213] "GET /core/baskets/ HTTP/1.1" 200 19607
+[27/May/2025 10:51:50] INFO [django.server:213] "POST /core/basket/remove/2/ HTTP/1.1" 302 0
+[27/May/2025 10:51:50] INFO [django.server:213] "GET /core/baskets/ HTTP/1.1" 200 16224
+[27/May/2025 10:51:52] INFO [core:224] Checkout initiated by user: sanumia (diana21@gmail.com)
+[27/May/2025 10:51:52] INFO [django.server:213] "GET /core/checkout/ HTTP/1.1" 200 10900
+[27/May/2025 10:51:57] INFO [core:224] Checkout initiated by user: sanumia (diana21@gmail.com)
+[27/May/2025 10:51:57] INFO [core:253] Order #3 successfully created for user: sanumia (diana21@gmail.com)
+[27/May/2025 10:51:57] INFO [django.server:213] "POST /core/checkout/ HTTP/1.1" 302 0
+[27/May/2025 10:51:57] INFO [django.server:213] "GET /core/orders/3/ HTTP/1.1" 200 8781
+[27/May/2025 10:52:03] INFO [django.server:213] "GET /users/logout/ HTTP/1.1" 302 0
+[27/May/2025 10:52:03] INFO [core:70] Home page accessed by user: AnonymousUser
+[27/May/2025 10:52:03] INFO [django.server:213] "GET / HTTP/1.1" 200 32701
+[27/May/2025 10:52:03] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[27/May/2025 10:52:04] INFO [django.server:213] "GET /users/registration/ HTTP/1.1" 200 5457
+[27/May/2025 10:52:05] INFO [django.server:213] "GET /users/login/ HTTP/1.1" 200 3824
+[27/May/2025 10:52:13] INFO [django.server:213] "POST /users/login/ HTTP/1.1" 302 0
+[27/May/2025 10:52:13] INFO [core:70] Home page accessed by user: diana
+[27/May/2025 10:52:13] INFO [django.server:213] "GET / HTTP/1.1" 200 34813
+[27/May/2025 10:52:13] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[27/May/2025 10:52:20] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:20] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 43776
+[27/May/2025 10:52:24] INFO [django.server:213] "POST /core/orders/3/confirm/ HTTP/1.1" 302 0
+[27/May/2025 10:52:24] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:24] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 44112
+[27/May/2025 10:52:27] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:27] INFO [django.server:213] "GET /core/orders/manage/?status=pending&date_from=&date_to= HTTP/1.1" 200 15506
+[27/May/2025 10:52:28] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:28] INFO [django.server:213] "GET /core/orders/manage/?status=pending&status=confirmed&date_from=&date_to= HTTP/1.1" 200 34853
+[27/May/2025 10:52:30] INFO [django.server:213] "POST /core/orders/3/mark-paid/ HTTP/1.1" 302 0
+[27/May/2025 10:52:30] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:30] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 43286
+[27/May/2025 10:52:32] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:32] INFO [django.server:213] "GET /core/orders/manage/?status=paid&date_from=&date_to= HTTP/1.1" 200 33160
+[27/May/2025 10:52:33] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:33] INFO [django.server:213] "GET /core/orders/manage/?status=paid&status=cancelled&date_from=&date_to= HTTP/1.1" 200 15506
+[27/May/2025 10:52:33] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:33] INFO [django.server:213] "GET /core/orders/manage/?status=cancelled&status=completed&date_from=&date_to= HTTP/1.1" 200 15506
+[27/May/2025 10:52:40] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:40] INFO [django.server:213] "GET /core/orders/manage/?status=pending&status=completed&date_from=&date_to= HTTP/1.1" 200 15506
+[27/May/2025 10:52:40] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:40] INFO [django.server:213] "GET /core/orders/manage/?status=confirmed&status=completed&date_from=&date_to= HTTP/1.1" 200 15506
+[27/May/2025 10:52:43] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:43] INFO [django.server:213] "GET /core/orders/manage/?status=cancelled&status=completed&date_from=&date_to= HTTP/1.1" 200 15506
+[27/May/2025 10:52:44] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:44] INFO [django.server:213] "GET /core/orders/manage/?status=paid&status=completed&date_from=&date_to= HTTP/1.1" 200 15506
+[27/May/2025 10:52:45] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:45] INFO [django.server:213] "GET /core/orders/manage/?status=paid&status=completed&date_from=&date_to= HTTP/1.1" 200 15506
+[27/May/2025 10:52:45] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:45] INFO [django.server:213] "GET /core/orders/manage/?status=cancelled&status=completed&date_from=&date_to= HTTP/1.1" 200 15506
+[27/May/2025 10:52:46] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:46] INFO [django.server:213] "GET /core/orders/manage/?date_from=&date_to= HTTP/1.1" 200 42979
+[27/May/2025 10:52:46] INFO [django.server:213] "GET /core/tours/13/ HTTP/1.1" 200 14382
+[27/May/2025 10:52:57] INFO [django.server:213] "POST /core/orders/1/mark-paid/ HTTP/1.1" 302 0
+[27/May/2025 10:52:57] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:52:57] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 42455
+[27/May/2025 10:53:12] INFO [core:721] Statistics view accessed by staff member: diana
+[27/May/2025 10:53:12] INFO [core:739] Statistics generated - Orders: total=3, confirmed=0, cancelled=0, pending=0
+[27/May/2025 10:53:13] INFO [django.server:213] "GET /core/statistics/ HTTP/1.1" 200 136070
+[27/May/2025 10:54:05] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:54:05] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 42148
+[27/May/2025 10:54:28] INFO [django.server:213] "GET /users/profile/ HTTP/1.1" 200 54250
+[27/May/2025 10:54:35] INFO [core:224] Checkout initiated by user: diana
+[27/May/2025 10:54:35] INFO [django.server:213] "GET /core/checkout/ HTTP/1.1" 200 10889
+[27/May/2025 10:54:37] INFO [core:224] Checkout initiated by user: diana
+[27/May/2025 10:54:37] INFO [core:253] Order #4 successfully created for user: diana
+[27/May/2025 10:54:37] INFO [django.server:213] "POST /core/checkout/ HTTP/1.1" 302 0
+[27/May/2025 10:54:37] INFO [django.server:213] "GET /core/orders/4/ HTTP/1.1" 200 10397
+[27/May/2025 10:54:44] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:54:44] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 51922
+[27/May/2025 10:54:48] INFO [django.server:213] "POST /core/orders/4/cancel-order/ HTTP/1.1" 302 0
+[27/May/2025 10:54:48] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 10:54:48] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 50586
+[27/May/2025 10:54:52] INFO [django.server:213] "GET /admin/ HTTP/1.1" 200 15806
+[27/May/2025 10:54:55] INFO [core:721] Statistics view accessed by staff member: diana
+[27/May/2025 10:54:55] INFO [core:739] Statistics generated - Orders: total=4, confirmed=0, cancelled=1, pending=0
+[27/May/2025 10:54:55] INFO [django.server:213] "GET /core/statistics/ HTTP/1.1" 200 132594
+[27/May/2025 10:58:45] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 10:58:56] INFO [core:721] Statistics view accessed by staff member: diana
+[27/May/2025 10:58:56] INFO [core:739] Statistics generated - Orders: total=4, confirmed=0, cancelled=1, pending=0
+[27/May/2025 10:58:58] INFO [django.server:213] "GET /core/statistics/ HTTP/1.1" 200 183867
+[27/May/2025 11:00:10] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\core\views.py changed, reloading.
+[27/May/2025 11:00:11] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:00:14] INFO [core:721] Statistics view accessed by staff member: diana
+[27/May/2025 11:00:14] INFO [core:739] Statistics generated - Orders: total=4, confirmed=0, cancelled=1, pending=0
+[27/May/2025 11:00:15] INFO [django.server:213] "GET /core/statistics/ HTTP/1.1" 200 230735
+[27/May/2025 11:01:58] INFO [core:721] Statistics view accessed by staff member: diana
+[27/May/2025 11:01:58] INFO [core:739] Statistics generated - Orders: total=4, confirmed=0, cancelled=1, pending=0
+[27/May/2025 11:01:59] INFO [django.server:213] "GET /core/statistics/ HTTP/1.1" 200 230729
+[27/May/2025 11:02:10] INFO [django.server:213] "GET /users/logout/ HTTP/1.1" 302 0
+[27/May/2025 11:02:10] INFO [core:70] Home page accessed by user: AnonymousUser
+[27/May/2025 11:02:10] INFO [django.server:213] "GET / HTTP/1.1" 200 32701
+[27/May/2025 11:02:10] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[27/May/2025 11:02:11] INFO [django.server:213] "GET /media/countries/%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D1%8F.jpg HTTP/1.1" 200 394935
+[27/May/2025 11:02:11] INFO [django.server:213] "GET /media/countries/%D1%82%D0%B0%D0%B8%D0%BB%D0%B0%D0%BD%D0%B4.jpg HTTP/1.1" 200 145809
+[27/May/2025 11:02:11] INFO [django.server:213] "GET /media/countries/%D0%BE%D0%B0%D1%8D.jpeg HTTP/1.1" 200 453069
+[27/May/2025 11:02:11] INFO [django.server:213] "GET /media/hotels/%D1%82%D0%B0%D0%B8%D0%BB%D0%B0%D0%BD%D0%B41.jpg HTTP/1.1" 200 155709
+[27/May/2025 11:02:11] INFO [django.server:213] "GET /media/countries/%D0%B3%D1%80%D0%B5%D1%86%D0%B8%D1%8F.jpeg HTTP/1.1" 200 575068
+[27/May/2025 11:02:11] INFO [django.server:213] "GET /media/hotels/%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D1%8F2.jpg HTTP/1.1" 200 92793
+[27/May/2025 11:02:11] INFO [django.server:213] "GET /media/hotels/%D0%BE%D0%B0%D1%8D2.jpg HTTP/1.1" 200 118402
+[27/May/2025 11:02:11] INFO [django.server:213] "GET /media/countries/Belarus-Minsk_Grisha-Bruev_Shutterstock_DIghQVI.jpg HTTP/1.1" 200 148346
+[27/May/2025 11:02:11] INFO [django.server:213] "GET /media/countries/%D1%82%D1%83%D1%80%D1%86%D0%B8%D1%8F.jpeg HTTP/1.1" 200 869435
+[27/May/2025 11:02:12] INFO [django.server:213] "GET /users/login/ HTTP/1.1" 200 3824
+[27/May/2025 11:02:22] INFO [django.server:213] "POST /users/login/ HTTP/1.1" 302 0
+[27/May/2025 11:02:22] INFO [core:70] Home page accessed by user: teka (teka21@gmail.com)
+[27/May/2025 11:02:22] INFO [django.server:213] "GET / HTTP/1.1" 200 33872
+[27/May/2025 11:02:22] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[27/May/2025 11:02:25] INFO [django.server:213] "GET /core/tours/ HTTP/1.1" 200 33737
+[27/May/2025 11:02:25] INFO [django.server:213] "GET /media/hotels/%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D1%8F1.jpg HTTP/1.1" 200 102789
+[27/May/2025 11:02:25] INFO [django.server:213] "GET /media/hotels/%D1%88%D0%B2%D0%B5%D1%86%D0%B8%D1%8F2.jpg HTTP/1.1" 200 104193
+[27/May/2025 11:02:25] INFO [django.server:213] "GET /media/hotels/%D1%82%D1%83%D1%80%D1%86%D0%B8%D1%8F2.jpg HTTP/1.1" 200 119676
+[27/May/2025 11:02:25] INFO [django.server:213] "GET /media/hotels/exterior.jpg HTTP/1.1" 200 100853
+[27/May/2025 11:02:25] INFO [django.server:213] "GET /media/hotels/%D0%B3%D1%80%D0%B5%D1%86%D0%B8%D1%8F1.jpg HTTP/1.1" 200 143413
+[27/May/2025 11:02:25] INFO [django.server:213] "GET /media/hotels/%D0%BF%D1%80%D0%B8%D0%B2%D0%B0%D0%BB_%D0%B1%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C.png HTTP/1.1" 200 690839
+[27/May/2025 11:02:27] INFO [django.server:213] "GET /core/tours/?page=2&sort=departure_date HTTP/1.1" 200 33232
+[27/May/2025 11:02:28] INFO [django.server:213] "GET /media/hotels/%D1%82%D0%B0%D0%B8%D0%BB%D0%B0%D0%BD%D0%B42.jpg HTTP/1.1" 200 126759
+[27/May/2025 11:02:28] INFO [django.server:213] "GET /media/hotels/%D0%BE%D0%B0%D1%8D1.jpg HTTP/1.1" 200 77756
+[27/May/2025 11:02:28] INFO [django.server:213] "GET /media/hotels/%D0%B8%D1%81%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F1.jpg HTTP/1.1" 200 102398
+[27/May/2025 11:02:29] INFO [django.server:213] "POST /core/basket/add/8/ HTTP/1.1" 302 0
+[27/May/2025 11:02:29] INFO [django.server:213] "GET /core/tours/?page=2&sort=departure_date HTTP/1.1" 200 33524
+[27/May/2025 11:02:31] INFO [django.server:213] "POST /core/basket/add/12/ HTTP/1.1" 302 0
+[27/May/2025 11:02:31] INFO [django.server:213] "GET /core/tours/?page=2&sort=departure_date HTTP/1.1" 200 33524
+[27/May/2025 11:02:32] INFO [django.server:213] "GET /core/baskets/ HTTP/1.1" 200 15880
+[27/May/2025 11:02:37] INFO [core:224] Checkout initiated by user: teka (teka21@gmail.com)
+[27/May/2025 11:02:37] INFO [django.server:213] "GET /core/checkout/ HTTP/1.1" 200 10877
+[27/May/2025 11:02:40] INFO [core:224] Checkout initiated by user: teka (teka21@gmail.com)
+[27/May/2025 11:02:40] INFO [core:253] Order #5 successfully created for user: teka (teka21@gmail.com)
+[27/May/2025 11:02:40] INFO [django.server:213] "POST /core/checkout/ HTTP/1.1" 302 0
+[27/May/2025 11:02:40] INFO [django.server:213] "GET /core/orders/5/ HTTP/1.1" 200 8772
+[27/May/2025 11:02:49] INFO [django.server:213] "GET /core/baskets/ HTTP/1.1" 200 8205
+[27/May/2025 11:02:51] INFO [django.server:213] "GET /core/tours/ HTTP/1.1" 200 33737
+[27/May/2025 11:02:54] INFO [django.server:213] "GET /core/tours/?page=3&sort=departure_date HTTP/1.1" 200 33473
+[27/May/2025 11:02:54] INFO [django.server:213] "GET /media/hotels/%D1%82%D1%83%D1%80%D1%86%D0%B8%D1%8F1.jpg HTTP/1.1" 200 160896
+[27/May/2025 11:02:54] INFO [django.server:213] "GET /media/hotels/%D0%B3%D1%80%D0%B5%D1%86%D0%B8%D1%8F2.jpg HTTP/1.1" 200 94114
+[27/May/2025 11:02:54] INFO [django.server:213] "GET /media/hotels/%D0%B3%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D1%8F1.jpg HTTP/1.1" 200 115657
+[27/May/2025 11:02:54] INFO [django.server:213] "GET /media/hotels/%D0%B8%D0%BD%D0%B4%D0%B8%D1%8F2.jpg HTTP/1.1" 200 128322
+[27/May/2025 11:02:54] INFO [django.server:213] "GET /media/hotels/%D1%89%D0%B2%D0%B5%D1%86%D0%B8%D1%8F1.jpg HTTP/1.1" 200 207403
+[27/May/2025 11:02:54] INFO [django.server:213] "GET /media/hotels/%D0%B8%D1%81%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F2.jpg HTTP/1.1" 200 289852
+[27/May/2025 11:02:55] INFO [django.server:213] "POST /core/basket/add/4/ HTTP/1.1" 302 0
+[27/May/2025 11:02:55] INFO [django.server:213] "GET /core/tours/?page=3&sort=departure_date HTTP/1.1" 200 33765
+[27/May/2025 11:02:56] INFO [django.server:213] "GET /core/baskets/ HTTP/1.1" 200 12250
+[27/May/2025 11:02:57] INFO [core:224] Checkout initiated by user: teka (teka21@gmail.com)
+[27/May/2025 11:02:57] INFO [django.server:213] "GET /core/checkout/ HTTP/1.1" 200 9952
+[27/May/2025 11:02:58] INFO [core:224] Checkout initiated by user: teka (teka21@gmail.com)
+[27/May/2025 11:02:58] INFO [core:253] Order #6 successfully created for user: teka (teka21@gmail.com)
+[27/May/2025 11:02:58] INFO [django.server:213] "POST /core/checkout/ HTTP/1.1" 302 0
+[27/May/2025 11:02:58] INFO [django.server:213] "GET /core/orders/6/ HTTP/1.1" 200 8782
+[27/May/2025 11:03:02] INFO [django.server:213] "GET /core/orders/ HTTP/1.1" 200 15852
+[27/May/2025 11:03:04] INFO [django.server:213] "GET /core/orders/6/ HTTP/1.1" 200 8481
+[27/May/2025 11:03:06] INFO [django.server:213] "GET /core/orders/ HTTP/1.1" 200 15852
+[27/May/2025 11:03:18] INFO [django.server:213] "GET /core/orders/6/ HTTP/1.1" 200 8481
+[27/May/2025 11:03:22] INFO [django.server:213] "GET /users/logout/ HTTP/1.1" 302 0
+[27/May/2025 11:03:22] INFO [core:70] Home page accessed by user: AnonymousUser
+[27/May/2025 11:03:22] INFO [django.server:213] "GET / HTTP/1.1" 200 32701
+[27/May/2025 11:03:22] INFO [django.server:213] "GET /media/hotels/%D0%BE%D0%B0%D1%8D2.jpg HTTP/1.1" 200 118402
+[27/May/2025 11:03:22] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[27/May/2025 11:03:22] INFO [django.server:213] "GET /media/hotels/%D1%82%D0%B0%D0%B8%D0%BB%D0%B0%D0%BD%D0%B41.jpg HTTP/1.1" 200 155709
+[27/May/2025 11:03:22] INFO [django.server:213] "GET /media/countries/%D1%82%D0%B0%D0%B8%D0%BB%D0%B0%D0%BD%D0%B4.jpg HTTP/1.1" 200 145809
+[27/May/2025 11:03:22] INFO [django.server:213] "GET /media/countries/Belarus-Minsk_Grisha-Bruev_Shutterstock_DIghQVI.jpg HTTP/1.1" 200 148346
+[27/May/2025 11:03:22] INFO [django.server:213] "GET /media/countries/%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D1%8F.jpg HTTP/1.1" 200 394935
+[27/May/2025 11:03:22] INFO [django.server:213] "GET /media/countries/%D0%BE%D0%B0%D1%8D.jpeg HTTP/1.1" 200 453069
+[27/May/2025 11:03:22] INFO [django.server:213] "GET /media/countries/%D1%82%D1%83%D1%80%D1%86%D0%B8%D1%8F.jpeg HTTP/1.1" 200 869435
+[27/May/2025 11:03:22] INFO [django.server:213] "GET /media/countries/%D0%B3%D1%80%D0%B5%D1%86%D0%B8%D1%8F.jpeg HTTP/1.1" 200 575068
+[27/May/2025 11:03:24] INFO [django.server:213] "GET /users/login/ HTTP/1.1" 200 3824
+[27/May/2025 11:03:30] INFO [django.server:213] "POST /users/login/ HTTP/1.1" 302 0
+[27/May/2025 11:03:30] INFO [core:70] Home page accessed by user: diana
+[27/May/2025 11:03:30] INFO [django.server:213] "GET / HTTP/1.1" 200 34813
+[27/May/2025 11:03:30] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[27/May/2025 11:03:42] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 11:03:42] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 69969
+[27/May/2025 11:03:56] INFO [django.server:213] "POST /core/orders/5/confirm/ HTTP/1.1" 302 0
+[27/May/2025 11:03:56] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 11:03:56] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 70305
+[27/May/2025 11:03:58] INFO [django.server:213] "POST /core/orders/6/confirm/ HTTP/1.1" 302 0
+[27/May/2025 11:03:58] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 11:03:58] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 70339
+[27/May/2025 11:04:03] INFO [django.server:213] "POST /core/orders/6/mark-paid/ HTTP/1.1" 302 0
+[27/May/2025 11:04:03] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 11:04:03] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 69513
+[27/May/2025 11:04:10] INFO [core:721] Statistics view accessed by staff member: diana
+[27/May/2025 11:04:10] INFO [core:739] Statistics generated - Orders: total=6, confirmed=1, cancelled=1, pending=0
+[27/May/2025 11:04:12] INFO [django.server:213] "GET /core/statistics/ HTTP/1.1" 200 228665
+[27/May/2025 11:04:19] INFO [core:721] Statistics view accessed by staff member: diana
+[27/May/2025 11:04:19] INFO [core:739] Statistics generated - Orders: total=6, confirmed=1, cancelled=1, pending=0
+[27/May/2025 11:04:20] INFO [django.server:213] "GET /core/statistics/ HTTP/1.1" 200 228665
+[27/May/2025 11:04:24] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 11:04:24] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 69206
+[27/May/2025 11:04:30] INFO [django.server:213] "POST /core/orders/5/mark-paid/ HTTP/1.1" 302 0
+[27/May/2025 11:04:30] INFO [core:499] Order management accessed by staff member: diana
+[27/May/2025 11:04:30] INFO [django.server:213] "GET /core/orders/manage/ HTTP/1.1" 200 68682
+[27/May/2025 11:04:41] INFO [core:721] Statistics view accessed by staff member: diana
+[27/May/2025 11:04:41] INFO [core:739] Statistics generated - Orders: total=6, confirmed=0, cancelled=1, pending=0
+[27/May/2025 11:04:41] INFO [django.server:213] "GET /core/statistics/ HTTP/1.1" 200 228665
+[27/May/2025 11:04:54] INFO [django.server:213] "GET /core/news/ HTTP/1.1" 200 8706
+[27/May/2025 11:04:55] INFO [core:70] Home page accessed by user: diana
+[27/May/2025 11:04:55] INFO [django.server:213] "GET /core/ HTTP/1.1" 200 34813
+[27/May/2025 11:04:55] INFO [django.server:213] "GET /core/api/video-stream/ HTTP/1.1" 200 65
+[27/May/2025 11:06:37] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:08:40] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:08:40] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:08:51] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:08:52] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:08:58] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:08:59] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:09:16] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:09:17] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:09:21] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:09:22] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:09:27] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:09:28] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:09:30] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:09:31] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:09:42] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:09:43] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:09:45] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:09:46] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:09:49] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:09:49] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:09:52] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:09:53] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:09:58] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:09:59] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:10:05] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:10:05] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:10:09] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
+[27/May/2025 11:10:10] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:16:55] INFO [core.models:84] Получены форматированные данные о погоде для Test Country: {'temp': 20, 'feels_like': 22, 'description': 'clear sky', 'icon': '01d', 'humidity': 65, 'wind_speed': 5.5, 'last_updated': datetime.datetime(2025, 5, 27, 8, 16, 53, 789294, tzinfo=datetime.timezone.utc)}
+[27/May/2025 11:16:55] WARNING [core.models:71] Нет данных о погоде для Test Country
+[27/May/2025 11:16:55] INFO [core.models:46] Запрос погоды для Gibraltar (TestCity)
+[27/May/2025 11:16:55] INFO [core.models:52] Получены данные о погоде для Gibraltar: {'main': {'temp': 25}, 'weather': [{'description': 'sunny'}]}
+[27/May/2025 11:16:55] INFO [core.models:58] Данные о погоде для Gibraltar успешно обновлены
+[27/May/2025 11:16:55] WARNING [core.models:71] Нет данных о погоде для Test Country
+[27/May/2025 11:16:55] INFO [core.models:84] Получены форматированные данные о погоде для Test Country: {'temp': 20, 'feels_like': 22, 'description': 'clear sky', 'icon': '01d', 'humidity': 65, 'wind_speed': 5.5, 'last_updated': datetime.datetime(2025, 5, 27, 8, 16, 55, 334899, tzinfo=datetime.timezone.utc)}
+[27/May/2025 11:16:59] INFO [core:224] Checkout initiated by user: user0 (user0@example.com)
+[27/May/2025 11:16:59] INFO [core:253] Order #1 successfully created for user: user0 (user0@example.com)
+[27/May/2025 11:16:59] INFO [core:224] Checkout initiated by user: user1 (user1@example.com)
+[27/May/2025 11:16:59] INFO [core:253] Order #1 successfully created for user: user1 (user1@example.com)
+[27/May/2025 11:17:03] INFO [core:499] Order management accessed by staff member: admin (admin@example.com)
+[27/May/2025 11:17:03] INFO [core:70] Home page accessed by user: AnonymousUser
+[27/May/2025 11:17:06] INFO [core:224] Checkout initiated by user: testuser (test@example.com)
+[27/May/2025 11:17:06] WARNING [core:228] Checkout attempted with empty basket by user: testuser (test@example.com)
+[27/May/2025 11:17:07] INFO [core:224] Checkout initiated by user: testuser (test@example.com)
+[27/May/2025 11:17:07] INFO [core:224] Checkout initiated by user: testuser (test@example.com)
+[27/May/2025 11:17:07] INFO [core:253] Order #1 successfully created for user: testuser (test@example.com)
+[27/May/2025 11:17:07] INFO [core.models:46] Запрос погоды для Test Country (Test Capital)
+[27/May/2025 11:17:08] ERROR [core.models:62] Ошибка при запросе погоды для Test Country (Test Capital): 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Test%20Capital&appid=864273151a078bc7d24f9887a3691485&units=metric&lang=ru
+[27/May/2025 11:17:10] INFO [core:499] Order management accessed by staff member: staffuser (staff@example.com)
+[27/May/2025 11:22:39] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[27/May/2025 11:22:45] INFO [core:70] Home page accessed by user: diana
+[27/May/2025 11:22:45] ERROR [django.server:213] "GET /core/ HTTP/1.1" 500 96413
+[27/May/2025 11:24:57] INFO [django.utils.autoreload:266] C:\university\oop\kp_oop\django_travel_agency\TravelAgency\users\views.py changed, reloading.
