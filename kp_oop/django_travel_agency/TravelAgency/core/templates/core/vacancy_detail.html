@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ vacancy.title }} | TravelDream{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h1>{{ vacancy.title }}</h1>
+    
+    <div class="mb-4">
+        <span class="badge bg-primary me-2">{{ vacancy.get_department_display }}</span>
+        <span class="badge bg-secondary me-2">{{ vacancy.get_job_type_display }}</span>
+        <span class="badge bg-info text-dark me-2">{{ vacancy.experience_required }}</span>
+        {% if vacancy.salary %}
+        <span class="badge bg-success">{{ vacancy.salary }}</span>
+        {% endif %}
+    </div>
+    
+    <div class="mb-4">
+        <h3>Описание вакансии</h3>
+        <p>{{ vacancy.description }}</p>
+    </div>
+    
+    <div class="mb-4">
+        <h3>Обязанности</h3>
+        <p>{{ vacancy.responsibilities }}</p>
+    </div>
+    
+    <div class="mb-4">
+        <h3>Требования</h3>
+        <p>{{ vacancy.requirements }}</p>
+    </div>
+    
+    <div class="mb-4">
+        <h3>Условия работы</h3>
+        <p>{{ vacancy.conditions }}</p>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Откликнуться на вакансию</h3>
+            <p>Отправьте свое резюме на почту <strong>hr@traveldream.ru</strong></p>
+            <p>Тема письма: "Отклик на вакансию {{ vacancy.title }}"</p>
+            <a href="mailto:hr@traveldream.ru" class="btn btn-primary">
+                Отправить резюме
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

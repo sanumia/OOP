@@ -20,6 +20,8 @@ from .views import (
     NewsDetailView,
     TermsView,
     FAQView,
+    VacancyDetailView,
+    VacancyListView,
     basket_add,
     basket_detail_view,
     basket_remove,
@@ -91,7 +93,7 @@ urlpatterns = [
     path('discounts/', DiscountsListView.as_view(), name='discounts'),
 
     #ручная сериализация
-    # Можно использовать re_path для валидации форматов:
+
     re_path(r'^export/(?P<model_name>[a-z_]+)/(?P<pk>\d+)/(?P<format_type>(json|xml|csv))/$', views.export_view, name='universal-export'),
     path('import/<str:model_name>/', views.import_view, name='universal-import'),
     path('export-data/', views.export_data, name='export_data'),
@@ -99,6 +101,8 @@ urlpatterns = [
 
     # Newsletter
     path('subscribe/', views.subscribe_newsletter, name='subscribe_newsletter'),
-
+    # В urlpatterns добавьте:
+    path('vacancies/', VacancyListView.as_view(), name='vacancy_list'),
+    path('vacancies/<slug:slug>/', VacancyDetailView.as_view(), name='vacancy_detail'),
     # path('contacts/', views.contacts, name='contacts'),
 ]

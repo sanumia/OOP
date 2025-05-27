@@ -632,7 +632,7 @@ class Vacancy(models.Model):
         return f"{self.title} ({self.get_department_display()})"
 
     def get_absolute_url(self):
-        return reverse('vacancy_detail', kwargs={'slug': self.slug})
+        return reverse('core:vacancy_detail', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         if not self.slug:

@@ -8,6 +8,8 @@ from django.conf import settings
 import matplotlib
 matplotlib.use('Agg')  # Устанавливаем бэкенд Agg до импорта pyplot
 import matplotlib.pyplot as plt
+from django.views.generic import ListView, DetailView
+from .models import Vacancy
 
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
@@ -1433,3 +1435,19 @@ def print_order(request, pk):
     }
     
     return render(request, 'core/order_print.html', context)
+
+
+class VacancyListView(ListView):
+    model = Vacancy
+    template_name = 'core/vacancy_list.html'
+    context_object_name = 'vacancies'
+    
+    def get_queryset(self):
+        return Vacancy.objects.filter(is_published=True).order_by('-published_at')
+
+class VacancyDetailView(DetailView):
+    model = Vacancy
+    template_name = 'core/vacancy_detail.html'
+    context_object_name = 'vacancy'
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'

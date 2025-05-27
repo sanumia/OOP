@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Вакансии | TravelDream{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Вакансии в TravelDream</h1>
+    
+    <div class="row">
+        {% for vacancy in vacancies %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="{{ vacancy.get_absolute_url }}" class="text-decoration-none">
+                            {{ vacancy.title }}
+                        </a>
+                        {% if vacancy.is_new %}
+                        <span class="badge bg-success ms-2">Новая</span>
+                        {% endif %}
+                    </h3>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        {{ vacancy.get_department_display }} • {{ vacancy.get_job_type_display }}
+                    </h6>
+                    <p class="card-text">{{ vacancy.short_description }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge bg-primary">{{ vacancy.experience_required }}</span>
+                        {% if vacancy.salary %}
+                        <span class="text-success fw-bold">{{ vacancy.salary }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a href="{{ vacancy.get_absolute_url }}" class="btn btn-primary">
+                        Подробнее
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">
+                В данный момент открытых вакансий нет.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
