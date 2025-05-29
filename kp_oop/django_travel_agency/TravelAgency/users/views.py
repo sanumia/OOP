@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, HttpResponseRedirect
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from users.models import User
@@ -77,14 +76,14 @@ class UserCreateView(PermissionRequiredMixin, CreateView):
     model = User
     form_class = UserForm
     template_name = 'users/user_form.html'
-    success_url = reverse_lazy('user_list')
+    success_url = reverse_lazy('users:user_list')
 
 class UserUpdateView(PermissionRequiredMixin, UpdateView):
     permission_required = 'auth.change_user'
     model = User
     form_class = UserUpdateForm
     template_name = 'users/user_form.html'
-    success_url = reverse_lazy('user_list')
+    success_url = reverse_lazy('users:user_list')
 
     def get_object(self, queryset=None):
         if self.kwargs.get('pk') == 'me':
@@ -95,7 +94,7 @@ class UserDeleteView(PermissionRequiredMixin, DeleteView):
     permission_required = 'auth.delete_user'
     model = User
     template_name = 'users/user_confirm_delete.html'
-    success_url = reverse_lazy('user_list')
+    success_url = reverse_lazy('users:user_list')
 
     def get_object(self, queryset=None):
         if self.kwargs.get('pk') == 'me':

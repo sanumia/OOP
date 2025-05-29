@@ -332,6 +332,46 @@
     </div>
 </section>
 
+<!-- Latest News Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Последние новости</h2>
+            <a href="{% url 'core:news_list' %}" class="btn btn-outline-primary">
+                Все новости <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+        <div class="row g-4">
+            {% for news in latest_news %}
+            <div class="col-md-4">
+                <div class="card h-100 feature-card">
+                    {% if news.image %}
+                        <img src="{{ news.image.url }}" class="card-img-top" alt="{{ news.title }}" style="height: 200px; object-fit: cover;">
+                    {% else %}
+                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-newspaper fa-3x"></i>
+                        </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <span class="badge bg-primary">{{ news.get_category_display }}</span>
+                            <small class="text-muted">{{ news.created_at|date:"d.m.Y" }}</small>
+                        </div>
+                        <h5 class="card-title">{{ news.title }}</h5>
+                        <p class="card-text text-muted">{{ news.summary|truncatewords:20 }}</p>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <a href="{% url 'core:news_detail' news.slug %}" class="btn btn-outline-primary w-100">
+                            <i class="fas fa-arrow-right"></i> Читать далее
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <!-- Newsletter Section -->
 <section class="py-5">
     <div class="container">
