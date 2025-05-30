@@ -1,0 +1,3808 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2025-05-13T14:43:40.506Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "Беларусь",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2025-05-13T14:46:20.997Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "DoubleTree by Hilton Hotels (Беларусь)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2025-05-13T14:49:04.094Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Тур в DoubleTree by Hilton Hotels (2025-05-13)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2025-05-13T16:19:05.915Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "sanumia (diana21032006w@gmail.com)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2025-05-17T08:36:49.007Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "Беларусь",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2025-05-19T17:04:00.211Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "Беларусь",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u043e\\u043b\\u0438\\u0446\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2025-05-24T20:35:19.844Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "2",
+      "object_repr": "Турция",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2025-05-24T20:40:29.705Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "3",
+      "object_repr": "Италия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2025-05-24T20:43:28.244Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "Таиланд",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2025-05-24T20:43:36.007Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "2",
+      "object_repr": "Турция",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2025-05-24T20:44:01.277Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "3",
+      "object_repr": "Италия",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2025-05-24T20:48:08.033Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "5",
+      "object_repr": "ОАЭ",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2025-05-24T20:48:55.347Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "5",
+      "object_repr": "ОАЭ",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2025-05-24T20:51:39.149Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "6",
+      "object_repr": "Греция",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2025-05-24T20:54:18.890Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "7",
+      "object_repr": "Испания",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2025-05-24T20:56:31.797Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "8",
+      "object_repr": "Швеция",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2025-05-24T20:58:09.986Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "9",
+      "object_repr": "Германия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2025-05-24T21:02:52.820Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "10",
+      "object_repr": "Индия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2025-05-24T21:17:45.796Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "Привал (Беларусь)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2025-05-24T21:24:36.260Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "NH Collection Barcelona Gran Hotel Calderón (Испания)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2025-05-24T21:34:55.426Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Hostal Rivera - Atocha (Испания)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2025-05-24T21:37:10.238Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "Green Roof Hotel & Spa (Турция)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2025-05-24T21:38:25.835Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "The Great Airport Hotel (Турция)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2025-05-24T21:40:31.650Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "7",
+      "object_repr": "Kessler's Mountain Lodge (Италия)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2025-05-24T21:41:46.573Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "The Great Airport Hotel (Турция)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2025-05-24T21:43:22.587Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "8",
+      "object_repr": "Esidenza Spada (Италия)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2025-05-25T14:28:50.906Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "9",
+      "object_repr": "Villa Sirilanna Hotel (Таиланд)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2025-05-25T14:31:12.621Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Lucky Hotel Bangkok (Таиланд)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2025-05-25T14:31:19.787Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "9",
+      "object_repr": "Villa Sirilanna Hotel (Таиланд)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2025-05-25T14:33:24.142Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "11",
+      "object_repr": "Dusit Thani Abu Dhabi (ОАЭ)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2025-05-25T14:34:20.710Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "12",
+      "object_repr": "Hyde Park Hotel (ОАЭ)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2025-05-25T14:35:33.722Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "13",
+      "object_repr": "Cora Hotel & Spa (Греция)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2025-05-25T14:36:29.281Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "14",
+      "object_repr": "Camara Hotel (Греция)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+      "action_time": "2025-05-25T14:37:59.642Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "15",
+      "object_repr": "Элитный Гранд Отель Евле (Швеция)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+      "action_time": "2025-05-25T14:43:25.939Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "16",
+      "object_repr": "Klara Hostel Stockholm (Швеция)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+      "action_time": "2025-05-25T15:22:37.728Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "17",
+      "object_repr": "Lagovida Das Ferienresort Am Störmthaler See (Германия)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+      "action_time": "2025-05-25T15:23:25.574Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "18",
+      "object_repr": "ibis budget Augsburg Gersthofen (Германия)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+      "action_time": "2025-05-25T15:25:17.273Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "19",
+      "object_repr": "Hotel White House (Индия)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+      "action_time": "2025-05-25T15:26:16.598Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "20",
+      "object_repr": "Valley View Bhowali - Haldwani to Neem Karoli Bypass - free parking - mountain view (Индия)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+      "action_time": "2025-05-26T08:38:31.828Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Тур в DoubleTree by Hilton Hotels (2025-05-13)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u0431\\u0449\\u0430\\u044f \\u0446\\u0435\\u043d\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+      "action_time": "2025-05-26T08:39:16.515Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "Тур в Привал (2025-05-26)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+      "action_time": "2025-05-26T08:39:51.615Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "Тур в NH Collection Barcelona Gran Hotel Calderón (2025-06-12)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+      "action_time": "2025-05-26T08:41:10.854Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "Тур в Hostal Rivera - Atocha (2025-06-18)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+      "action_time": "2025-05-26T08:41:50.387Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "5",
+      "object_repr": "Тур в Green Roof Hotel & Spa (2025-06-12)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+      "action_time": "2025-05-26T08:42:26.336Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "Тур в The Great Airport Hotel (2025-05-26)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+      "action_time": "2025-05-26T08:43:07.586Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "7",
+      "object_repr": "Тур в Kessler's Mountain Lodge (2025-05-26)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+      "action_time": "2025-05-26T08:43:38.012Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "Тур в Esidenza Spada (2025-05-28)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+      "action_time": "2025-05-26T08:44:19.758Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "9",
+      "object_repr": "Тур в Villa Sirilanna Hotel (2025-05-30)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+      "action_time": "2025-05-26T08:44:48.161Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "10",
+      "object_repr": "Тур в Lucky Hotel Bangkok (2025-05-31)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+      "action_time": "2025-05-26T08:45:31.706Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "11",
+      "object_repr": "Тур в Dusit Thani Abu Dhabi (2025-06-10)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+      "action_time": "2025-05-26T08:46:00.723Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "12",
+      "object_repr": "Тур в Hyde Park Hotel (2025-05-29)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+      "action_time": "2025-05-26T08:46:33.688Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "13",
+      "object_repr": "Тур в Cora Hotel & Spa (2025-05-26)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+      "action_time": "2025-05-26T08:46:58.947Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "14",
+      "object_repr": "Тур в Camara Hotel (2025-06-26)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+      "action_time": "2025-05-26T08:47:38.944Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "15",
+      "object_repr": "Тур в Элитный Гранд Отель Евле (2025-06-20)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+      "action_time": "2025-05-26T08:48:09.021Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "16",
+      "object_repr": "Тур в Klara Hostel Stockholm (2025-05-26)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+      "action_time": "2025-05-26T08:48:29.818Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "17",
+      "object_repr": "Тур в Lagovida Das Ferienresort Am Störmthaler See (2025-06-18)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+      "action_time": "2025-05-26T08:49:02.984Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "18",
+      "object_repr": "Тур в ibis budget Augsburg Gersthofen (2025-07-31)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+      "action_time": "2025-05-26T08:49:25.664Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "19",
+      "object_repr": "Тур в Hotel White House (2025-08-21)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+      "action_time": "2025-05-26T08:50:00.142Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "20",
+      "object_repr": "Тур в Valley View Bhowali - Haldwani to Neem Karoli Bypass - free parking - mountain view (2025-07-19)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+      "action_time": "2025-05-26T09:00:05.171Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Тур в DoubleTree by Hilton Hotels (2025-05-13)",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+      "action_time": "2025-05-26T09:00:17.615Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "DoubleTree by Hilton Hotels (Беларусь)",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+      "action_time": "2025-05-27T12:06:49.924Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "Вандруй. Адчуй. Натхняйся: список участников акции 2025 года",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+      "action_time": "2025-05-27T12:07:22.414Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "Вандруй. Адчуй. Натхняйся: список участников акции 2025 года",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+      "action_time": "2025-05-27T12:09:30.023Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "2",
+      "object_repr": "Беларусь укрепляет туристическое сотрудничество с Китаем",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+      "action_time": "2025-05-27T12:09:42.672Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "2",
+      "object_repr": "Беларусь укрепляет туристическое сотрудничество с Китаем",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+      "action_time": "2025-05-27T12:13:45.216Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "3",
+      "object_repr": "Летим в Дубай по специальной цене, чтобы не терять ни минуты солнца!",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+      "action_time": "2025-05-27T12:15:36.694Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "4",
+      "object_repr": "В Казахстане зарегистрировано 98 самолётов: какие авиакомпании лидируют",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+      "action_time": "2025-05-27T12:17:30.364Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "5",
+      "object_repr": "«Черная пятница» в «Виаполь» — скидка 32% по случаю 32-летия компании!",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+      "action_time": "2025-05-27T12:18:55.695Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "6",
+      "object_repr": "Распродажа туров на лето. Отели Египта дают скидки до 60%",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+      "action_time": "2025-05-27T13:06:03.601Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "4",
+      "object_repr": "kaate (katya02@gmail.com)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+      "action_time": "2025-05-27T13:08:43.581Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "5",
+      "object_repr": "helloworld (hello@gmail.com)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+      "action_time": "2025-05-27T13:09:39.434Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "6",
+      "object_repr": "test1 (test@gmail.com)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+      "action_time": "2025-05-27T13:10:44.145Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "7",
+      "object_repr": "test2 (testik@gmail.com)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+      "action_time": "2025-05-27T13:11:46.074Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "8",
+      "object_repr": "test3 (testoviy@gmail.com)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+      "action_time": "2025-05-27T13:15:04.889Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "7",
+      "object_repr": "Визовый центр Италии приостановил процедуру верификации. Что это значит для желающих получить визу",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+      "action_time": "2025-05-27T13:15:51.442Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "8",
+      "object_repr": "В немецком посольстве нельзя будет обжаловать отказ в визе. Взамен должны сократить время ожидания записи",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+      "action_time": "2025-05-27T13:17:20.760Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "9",
+      "object_repr": "Могут возникнуть интересные идеи  и возрастет потребность в романтике. Что ждет ваш знак зодиака, читайте в нашем традиционном гороскопе на неделю.",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+      "action_time": "2025-05-27T13:19:37.108Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "10",
+      "object_repr": "Lib-дайджест: «Наука в деталях», новые книжные выставки, новости БНТУ и афиша мероприятий  Источник: https://times.bntu.by/news/17400-lib-dajdzhest-nauka-v-detalyah-novye-knizhnye-vystavki-novosti-bnt",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+      "action_time": "2025-05-27T13:20:43.565Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "4",
+      "object_repr": "kaate (katya02@gmail.com)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+      "action_time": "2025-05-27T13:30:49.610Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "sanumia (diana21@gmail.com)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+      "action_time": "2025-05-27T13:31:01.248Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "sanumia (diana21@gmail.com)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+      "action_time": "2025-05-27T13:37:27.539Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Городецкая Диана Анатольевна (Менеджер)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+      "action_time": "2025-05-27T13:55:09.562Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "1",
+      "object_repr": "Менеджер (Продажи)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+      "action_time": "2025-05-27T14:15:08.187Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "Работник Работник Работник (Работник)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+      "action_time": "2025-05-27T14:18:37.043Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "2",
+      "object_repr": "Менеджер по продажам туров (Туроперация)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+      "action_time": "2025-05-27T14:41:19.485Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "3",
+      "object_repr": "Требования: (Туроперация)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+      "action_time": "2025-05-27T14:41:43.507Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "4",
+      "object_repr": "Менеджер по визовым вопросам (Маркетинг)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+      "action_time": "2025-05-27T14:42:10.597Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "5",
+      "object_repr": "Туроператор (специалист по формированию туров) (HR)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+      "action_time": "2025-05-27T14:42:33.578Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "6",
+      "object_repr": "Маркетолог в турагентство (Финансы)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+      "action_time": "2025-05-27T14:43:07.115Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "7",
+      "object_repr": "Администратор турагентства (HR)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+      "action_time": "2025-05-27T14:43:43.182Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "8",
+      "object_repr": "Администратор (Клиентский сервис)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+      "action_time": "2025-05-27T14:44:28.087Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "9",
+      "object_repr": "Менеджер по продажам (Клиентский сервис)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+      "action_time": "2025-05-27T14:47:59.726Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "3",
+      "object_repr": "Иванова Анна Сергеевна (Менеджер по продажам туров)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+      "action_time": "2025-05-27T14:48:47.451Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "4",
+      "object_repr": "Петров Дмитрий Владимирович (Менеджер по визам)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+      "action_time": "2025-05-27T14:54:11.627Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "6",
+      "object_repr": "Маркетолог в турагентство (Финансы)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0440\\u043f\\u043b\\u0430\\u0442\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+      "action_time": "2025-05-29T20:34:55.304Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "9",
+      "object_repr": "Менеджер по работе с клиентами (Турагентство) (Клиентский сервис)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432\\u0430\\u043a\\u0430\\u043d\\u0441\\u0438\\u0438\", \"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u041f\\u043e\\u043b\\u043d\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u0422\\u0440\\u0435\\u0431\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\", \"\\u041e\\u0431\\u044f\\u0437\\u0430\\u043d\\u043d\\u043e\\u0441\\u0442\\u0438\", \"\\u0423\\u0441\\u043b\\u043e\\u0432\\u0438\\u044f \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b\", \"\\u0417\\u0430\\u0440\\u043f\\u043b\\u0430\\u0442\\u0430\", \"\\u0422\\u0438\\u043f \\u0437\\u0430\\u043d\\u044f\\u0442\\u043e\\u0441\\u0442\\u0438\", \"\\u0422\\u0440\\u0435\\u0431\\u0443\\u0435\\u043c\\u044b\\u0439 \\u043e\\u043f\\u044b\\u0442\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+      "action_time": "2025-05-29T20:36:26.644Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "8",
+      "object_repr": "Специалист кол-центра (Обработка входящих заявок) (Клиентский сервис)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432\\u0430\\u043a\\u0430\\u043d\\u0441\\u0438\\u0438\", \"URL-\\u0430\\u0434\\u0440\\u0435\\u0441 \\u0432\\u0430\\u043a\\u0430\\u043d\\u0441\\u0438\\u0438\", \"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u041f\\u043e\\u043b\\u043d\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u0422\\u0440\\u0435\\u0431\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\", \"\\u041e\\u0431\\u044f\\u0437\\u0430\\u043d\\u043d\\u043e\\u0441\\u0442\\u0438\", \"\\u0423\\u0441\\u043b\\u043e\\u0432\\u0438\\u044f \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b\", \"\\u0417\\u0430\\u0440\\u043f\\u043b\\u0430\\u0442\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+      "action_time": "2025-05-29T20:37:55.204Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "7",
+      "object_repr": "HR-менеджер (Подбор и адаптация) (HR)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432\\u0430\\u043a\\u0430\\u043d\\u0441\\u0438\\u0438\", \"URL-\\u0430\\u0434\\u0440\\u0435\\u0441 \\u0432\\u0430\\u043a\\u0430\\u043d\\u0441\\u0438\\u0438\", \"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u041f\\u043e\\u043b\\u043d\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u0422\\u0440\\u0435\\u0431\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\", \"\\u041e\\u0431\\u044f\\u0437\\u0430\\u043d\\u043d\\u043e\\u0441\\u0442\\u0438\", \"\\u0423\\u0441\\u043b\\u043e\\u0432\\u0438\\u044f \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b\", \"\\u0422\\u0438\\u043f \\u0437\\u0430\\u043d\\u044f\\u0442\\u043e\\u0441\\u0442\\u0438\", \"\\u0422\\u0440\\u0435\\u0431\\u0443\\u0435\\u043c\\u044b\\u0439 \\u043e\\u043f\\u044b\\u0442\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+      "action_time": "2025-05-29T20:39:05.532Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "5",
+      "object_repr": "HR-аналитик (Кадровая аналитика) (HR)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432\\u0430\\u043a\\u0430\\u043d\\u0441\\u0438\\u0438\", \"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u041f\\u043e\\u043b\\u043d\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u0422\\u0440\\u0435\\u0431\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\", \"\\u041e\\u0431\\u044f\\u0437\\u0430\\u043d\\u043d\\u043e\\u0441\\u0442\\u0438\", \"\\u0423\\u0441\\u043b\\u043e\\u0432\\u0438\\u044f \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b\", \"\\u0417\\u0430\\u0440\\u043f\\u043b\\u0430\\u0442\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+      "action_time": "2025-05-29T20:39:58.950Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "6",
+      "object_repr": "Бухгалтер (Турагентство) (Финансы)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432\\u0430\\u043a\\u0430\\u043d\\u0441\\u0438\\u0438\", \"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u041f\\u043e\\u043b\\u043d\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u041e\\u0431\\u044f\\u0437\\u0430\\u043d\\u043d\\u043e\\u0441\\u0442\\u0438\", \"\\u0423\\u0441\\u043b\\u043e\\u0432\\u0438\\u044f \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b\", \"\\u0417\\u0430\\u0440\\u043f\\u043b\\u0430\\u0442\\u0430\", \"\\u0422\\u0438\\u043f \\u0437\\u0430\\u043d\\u044f\\u0442\\u043e\\u0441\\u0442\\u0438\", \"\\u0422\\u0440\\u0435\\u0431\\u0443\\u0435\\u043c\\u044b\\u0439 \\u043e\\u043f\\u044b\\u0442\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+      "action_time": "2025-05-29T20:40:56.278Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "10",
+      "object_repr": "Финансовый менеджер (Финансы)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+      "action_time": "2025-05-29T21:29:54.482Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "4",
+      "object_repr": "Маркетолог (Digital-продвижение турагентства) (Маркетинг)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432\\u0430\\u043a\\u0430\\u043d\\u0441\\u0438\\u0438\", \"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u041f\\u043e\\u043b\\u043d\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u0422\\u0440\\u0435\\u0431\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\", \"\\u041e\\u0431\\u044f\\u0437\\u0430\\u043d\\u043d\\u043e\\u0441\\u0442\\u0438\", \"\\u0423\\u0441\\u043b\\u043e\\u0432\\u0438\\u044f \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b\", \"\\u0417\\u0430\\u0440\\u043f\\u043b\\u0430\\u0442\\u0430\", \"\\u0422\\u0438\\u043f \\u0437\\u0430\\u043d\\u044f\\u0442\\u043e\\u0441\\u0442\\u0438\", \"\\u0422\\u0440\\u0435\\u0431\\u0443\\u0435\\u043c\\u044b\\u0439 \\u043e\\u043f\\u044b\\u0442\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+      "action_time": "2025-05-29T21:31:08.494Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "11",
+      "object_repr": "SMM-менеджер (Ведение соцсетей) (Маркетинг)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+      "action_time": "2025-05-29T21:32:41.662Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "1",
+      "object_repr": "Менеджер по продажам туров (B2C) (Продажи)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432\\u0430\\u043a\\u0430\\u043d\\u0441\\u0438\\u0438\", \"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u041f\\u043e\\u043b\\u043d\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u0422\\u0440\\u0435\\u0431\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\", \"\\u041e\\u0431\\u044f\\u0437\\u0430\\u043d\\u043d\\u043e\\u0441\\u0442\\u0438\", \"\\u0423\\u0441\\u043b\\u043e\\u0432\\u0438\\u044f \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b\", \"\\u0417\\u0430\\u0440\\u043f\\u043b\\u0430\\u0442\\u0430\", \"\\u0422\\u0438\\u043f \\u0437\\u0430\\u043d\\u044f\\u0442\\u043e\\u0441\\u0442\\u0438\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+      "action_time": "2025-05-29T21:33:57.028Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "12",
+      "object_repr": "КОРПОРАТИВНЫЙ менеджер (B2B-продажи) (Продажи)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+      "action_time": "2025-05-29T21:34:57.564Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "3",
+      "object_repr": "Менеджер по работе с отелями (Контрактация) (Туроперация)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432\\u0430\\u043a\\u0430\\u043d\\u0441\\u0438\\u0438\", \"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u041f\\u043e\\u043b\\u043d\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u0422\\u0440\\u0435\\u0431\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\", \"\\u041e\\u0431\\u044f\\u0437\\u0430\\u043d\\u043d\\u043e\\u0441\\u0442\\u0438\", \"\\u0423\\u0441\\u043b\\u043e\\u0432\\u0438\\u044f \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b\", \"\\u0417\\u0430\\u0440\\u043f\\u043b\\u0430\\u0442\\u0430\", \"\\u0422\\u0440\\u0435\\u0431\\u0443\\u0435\\u043c\\u044b\\u0439 \\u043e\\u043f\\u044b\\u0442\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+      "action_time": "2025-05-30T06:52:51.211Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "3",
+      "object_repr": "Иванова Анна Сергеевна (Менеджер по продажам туров)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+      "action_time": "2025-05-30T06:53:00.671Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "4",
+      "object_repr": "Петров Дмитрий Владимирович (Менеджер по визам)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+      "action_time": "2025-05-30T06:56:17.159Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "Петров Дмитрий Владимирович (Туроператор)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u0418\\u041e\", \"\\u0414\\u043e\\u043b\\u0436\\u043d\\u043e\\u0441\\u0442\\u044c\", \"\\u041e\\u0442\\u0434\\u0435\\u043b\", \"\\u0424\\u043e\\u0442\\u043e\", \"\\u041e \\u0441\\u043e\\u0442\\u0440\\u0443\\u0434\\u043d\\u0438\\u043a\\u0435\", \"Email\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 110,
+    "fields": {
+      "action_time": "2025-05-30T06:56:50.212Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Городецкая Диана Анатольевна (Администратор)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0414\\u043e\\u043b\\u0436\\u043d\\u043e\\u0441\\u0442\\u044c\", \"\\u041e\\u0442\\u0434\\u0435\\u043b\", \"Email\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 111,
+    "fields": {
+      "action_time": "2025-05-30T06:57:50.095Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "5",
+      "object_repr": "Смирнова Елена Игоревна (Маркетолог)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 112,
+    "fields": {
+      "action_time": "2025-05-30T06:59:22.923Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "6",
+      "object_repr": "Козлов Артем Олегович (Гид-экскурсовод)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 113,
+    "fields": {
+      "action_time": "2025-05-30T07:00:41.873Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Городецкая Диана Анатольевна (Администратор)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e \\u0441\\u043e\\u0442\\u0440\\u0443\\u0434\\u043d\\u0438\\u043a\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add Страна",
+      "content_type": 6,
+      "codename": "add_country"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change Страна",
+      "content_type": 6,
+      "codename": "change_country"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete Страна",
+      "content_type": 6,
+      "codename": "delete_country"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view Страна",
+      "content_type": 6,
+      "codename": "view_country"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add Отель",
+      "content_type": 7,
+      "codename": "add_hotel"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change Отель",
+      "content_type": 7,
+      "codename": "change_hotel"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete Отель",
+      "content_type": 7,
+      "codename": "delete_hotel"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view Отель",
+      "content_type": 7,
+      "codename": "view_hotel"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add Турпакет",
+      "content_type": 8,
+      "codename": "add_tourpackage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change Турпакет",
+      "content_type": 8,
+      "codename": "change_tourpackage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete Турпакет",
+      "content_type": 8,
+      "codename": "delete_tourpackage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view Турпакет",
+      "content_type": 8,
+      "codename": "view_tourpackage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add Заказ",
+      "content_type": 9,
+      "codename": "add_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change Заказ",
+      "content_type": 9,
+      "codename": "change_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete Заказ",
+      "content_type": 9,
+      "codename": "delete_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view Заказ",
+      "content_type": 9,
+      "codename": "view_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add Корзина",
+      "content_type": 10,
+      "codename": "add_basket"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change Корзина",
+      "content_type": 10,
+      "codename": "change_basket"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete Корзина",
+      "content_type": 10,
+      "codename": "delete_basket"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view Корзина",
+      "content_type": 10,
+      "codename": "view_basket"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add Пользователь",
+      "content_type": 11,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change Пользователь",
+      "content_type": 11,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete Пользователь",
+      "content_type": 11,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view Пользователь",
+      "content_type": 11,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add Реквизиты агентства",
+      "content_type": 12,
+      "codename": "add_agencydetails"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change Реквизиты агентства",
+      "content_type": 12,
+      "codename": "change_agencydetails"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete Реквизиты агентства",
+      "content_type": 12,
+      "codename": "delete_agencydetails"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view Реквизиты агентства",
+      "content_type": 12,
+      "codename": "view_agencydetails"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add Новость",
+      "content_type": 13,
+      "codename": "add_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change Новость",
+      "content_type": 13,
+      "codename": "change_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete Новость",
+      "content_type": 13,
+      "codename": "delete_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view Новость",
+      "content_type": 13,
+      "codename": "view_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can add Сотрудник",
+      "content_type": 14,
+      "codename": "add_employee"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can change Сотрудник",
+      "content_type": 14,
+      "codename": "change_employee"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can delete Сотрудник",
+      "content_type": 14,
+      "codename": "delete_employee"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can view Сотрудник",
+      "content_type": 14,
+      "codename": "view_employee"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+      "name": "Can add Термин словаря",
+      "content_type": 15,
+      "codename": "add_glossaryterm"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+      "name": "Can change Термин словаря",
+      "content_type": 15,
+      "codename": "change_glossaryterm"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+      "name": "Can delete Термин словаря",
+      "content_type": 15,
+      "codename": "delete_glossaryterm"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+      "name": "Can view Термин словаря",
+      "content_type": 15,
+      "codename": "view_glossaryterm"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+      "name": "Can add Вакансия",
+      "content_type": 16,
+      "codename": "add_vacancy"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+      "name": "Can change Вакансия",
+      "content_type": 16,
+      "codename": "change_vacancy"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+      "name": "Can delete Вакансия",
+      "content_type": 16,
+      "codename": "delete_vacancy"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+      "name": "Can view Вакансия",
+      "content_type": 16,
+      "codename": "view_vacancy"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+      "name": "Can add Отзыв",
+      "content_type": 17,
+      "codename": "add_review"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+      "name": "Can change Отзыв",
+      "content_type": 17,
+      "codename": "change_review"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+      "name": "Can delete Отзыв",
+      "content_type": 17,
+      "codename": "delete_review"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+      "name": "Can view Отзыв",
+      "content_type": 17,
+      "codename": "view_review"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+      "name": "Can add Промокод",
+      "content_type": 18,
+      "codename": "add_promocode"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+      "name": "Can change Промокод",
+      "content_type": 18,
+      "codename": "change_promocode"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+      "name": "Can delete Промокод",
+      "content_type": 18,
+      "codename": "delete_promocode"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+      "name": "Can view Промокод",
+      "content_type": 18,
+      "codename": "view_promocode"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+      "name": "Can add Подписка на рассылку",
+      "content_type": 19,
+      "codename": "add_newslettersubscription"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+      "name": "Can change Подписка на рассылку",
+      "content_type": 19,
+      "codename": "change_newslettersubscription"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+      "name": "Can delete Подписка на рассылку",
+      "content_type": 19,
+      "codename": "delete_newslettersubscription"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+      "name": "Can view Подписка на рассылку",
+      "content_type": 19,
+      "codename": "view_newslettersubscription"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": { "app_label": "admin", "model": "logentry" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": { "app_label": "auth", "model": "permission" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": { "app_label": "auth", "model": "group" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": { "app_label": "contenttypes", "model": "contenttype" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": { "app_label": "sessions", "model": "session" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": { "app_label": "core", "model": "country" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": { "app_label": "core", "model": "hotel" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": { "app_label": "core", "model": "tourpackage" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": { "app_label": "core", "model": "order" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": { "app_label": "core", "model": "basket" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": { "app_label": "users", "model": "user" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": { "app_label": "core", "model": "agencydetails" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": { "app_label": "core", "model": "news" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": { "app_label": "core", "model": "employee" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": { "app_label": "core", "model": "glossaryterm" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": { "app_label": "core", "model": "vacancy" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": { "app_label": "core", "model": "review" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": { "app_label": "core", "model": "promocode" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": { "app_label": "core", "model": "newslettersubscription" }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "7phopdalef49b86jus70ph7v1qk7uhsx",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSE8pkBduvcbyMAMUjU0Ke3K-O_apAvd3nPOfYmI21rj1nmJE4mz0OL0uyXMD247oDu22yzz3NZlSnJX5EG7vM7Ez8vh_h1U7PVbFyikwLLP4wg6hyGRdwYyqmALQKCgvMVkHTMRs0pk3MBkSiAg7Vi8P_ALOJ4:1uKjsV:jG2L7uZbZ6RG4JXXptqYxlgt3q3Z97RcIW6aoBuMecc",
+      "expire_date": "2025-06-12T20:29:27.363Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "lf6ebwgwjf7g7i0wa0524kzadozmy9fc",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSE8pkBduvcbyMAMUjU0Ke3K-O_apAvd3nPOfYmI21rj1nmJE4mz0OL0uyXMD247oDu22yzz3NZlSnJX5EG7vM7Ez8vh_h1U7PVbFyikwLLP4wg6hyGRdwYyqmALQKCgvMVkHTMRs0pk3MBkSiAg7Vi8P_ALOJ4:1uIvOf:ixCMWggpbwJwmQKnpsHl8ZSdBC79OG-nC8fd5DvyO0A",
+      "expire_date": "2025-06-07T20:23:09.171Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "ucmpfyruhgi862a0q7qy4u4ercnrmcoh",
+    "fields": {
+      "session_data": "e30:1uEXXL:v9VBxzc8RI8pWIsJspvhDfewETYH-p6-r4im3B4dSmM",
+      "expire_date": "2025-05-26T18:05:59.352Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "x66m3ev76q4oio2kh7icnuekookrqz6j",
+    "fields": {
+      "session_data": "e30:1uEXfC:jN78x1Ye9bUQSyM634h8k2C19iD7zK_FfJNLQGkeSds",
+      "expire_date": "2025-05-26T18:14:06.086Z"
+    }
+  },
+  {
+    "model": "core.country",
+    "pk": 1,
+    "fields": {
+      "name": "Беларусь",
+      "winter_climate": "-10",
+      "summer_climate": "+25",
+      "description": "Очень красивая страна",
+      "image": "countries/Belarus-Minsk_Grisha-Bruev_Shutterstock_DIghQVI.jpg",
+      "weather_data": {
+        "coord": { "lon": 27.5667, "lat": 53.9 },
+        "weather": [
+          {
+            "id": 500,
+            "main": "Rain",
+            "description": "небольшой дождь",
+            "icon": "10d"
+          }
+        ],
+        "base": "stations",
+        "main": {
+          "temp": 13.58,
+          "feels_like": 13.55,
+          "temp_min": 13.58,
+          "temp_max": 13.58,
+          "pressure": 1010,
+          "humidity": 98,
+          "sea_level": 1010,
+          "grnd_level": 983
+        },
+        "visibility": 10000,
+        "wind": { "speed": 3.48, "deg": 187, "gust": 7.41 },
+        "rain": { "1h": 0.15 },
+        "clouds": { "all": 100 },
+        "dt": 1748248220,
+        "sys": { "country": "BY", "sunrise": 1748224297, "sunset": 1748283736 },
+        "timezone": 10800,
+        "id": 625144,
+        "name": "Минск",
+        "cod": 200
+      },
+      "weather_last_updated": "2025-05-26T08:34:28.531Z",
+      "capital": "Minsk"
+    }
+  },
+  {
+    "model": "core.country",
+    "pk": 2,
+    "fields": {
+      "name": "Турция",
+      "winter_climate": "+5",
+      "summer_climate": "+23",
+      "description": "Турция – это государство, расположенное на стыке Европы и Азии, с богатой историей, разнообразной природой и развитой туристической инфраструктурой. Основная часть территории страны находится в Азии (Малая Азия, или Анатолия), а меньшая – в Европе (Восточная Фракия). Турция граничит с несколькими странами, омывается четырьмя морями и предлагает множество вариантов отдыха на любой вкус.",
+      "image": "countries/турция.jpeg",
+      "weather_data": {
+        "coord": { "lon": 32.8543, "lat": 39.9199 },
+        "weather": [
+          {
+            "id": 803,
+            "main": "Clouds",
+            "description": "облачно с прояснениями",
+            "icon": "04d"
+          }
+        ],
+        "base": "stations",
+        "main": {
+          "temp": 27.18,
+          "feels_like": 26.75,
+          "temp_min": 25.51,
+          "temp_max": 27.58,
+          "pressure": 1008,
+          "humidity": 35,
+          "sea_level": 1008,
+          "grnd_level": 890
+        },
+        "visibility": 10000,
+        "wind": { "speed": 4.63, "deg": 80 },
+        "clouds": { "all": 75 },
+        "dt": 1748248372,
+        "sys": {
+          "type": 2,
+          "id": 267643,
+          "country": "TR",
+          "sunrise": 1748226321,
+          "sunset": 1748279174
+        },
+        "timezone": 10800,
+        "id": 323786,
+        "name": "Анкара",
+        "cod": 200
+      },
+      "weather_last_updated": "2025-05-26T08:33:26.650Z",
+      "capital": "Ankara"
+    }
+  },
+  {
+    "model": "core.country",
+    "pk": 3,
+    "fields": {
+      "name": "Италия",
+      "winter_climate": "+9",
+      "summer_climate": "+24",
+      "description": "Италия – государство в Южной Европе, расположенное на Апеннинском полуострове, южных склонах Альп, Паданской равнине, островах Сицилия и Сардиния, а также многочисленных мелких островах. Она занимает центральное положение в Средиземном море. Италия – унитарная парламентская республика с президентской формой правления.",
+      "image": "countries/италия.jpg",
+      "weather_data": null,
+      "weather_last_updated": null,
+      "capital": "Rome"
+    }
+  },
+  {
+    "model": "core.country",
+    "pk": 4,
+    "fields": {
+      "name": "Таиланд",
+      "winter_climate": "+29",
+      "summer_climate": "+35",
+      "description": "Таиланд – государство в Юго-Восточной Азии, расположенное на полуостровах Индокитай и Малакка. Страна известна своими тропическими пляжами, богатой культурой, историческими достопримечательностями и разнообразной кухней.",
+      "image": "countries/таиланд.jpg",
+      "weather_data": null,
+      "weather_last_updated": null,
+      "capital": "Bangkok"
+    }
+  },
+  {
+    "model": "core.country",
+    "pk": 5,
+    "fields": {
+      "name": "ОАЭ",
+      "winter_climate": "+23",
+      "summer_climate": "+45",
+      "description": "Арабские Эмираты – сказочный мир, где под жарким солнцем, посреди пустыни возникают перед туристами фантастические видения, которые оборачиваются самыми настоящими чудесами. Самые – здесь слово ключевое, ведь ОАЭ давно и прочно занимают первые строчки в Книге рекордов Гиннеса. Самое высокое здание, самый большой парк аттракционов, самый крупный искусственный остров, самый высотный отель и самый огромный торговый центр находятся именно здесь.",
+      "image": "countries/оаэ.jpeg",
+      "weather_data": null,
+      "weather_last_updated": null,
+      "capital": "Abu Dhabi"
+    }
+  },
+  {
+    "model": "core.country",
+    "pk": 6,
+    "fields": {
+      "name": "Греция",
+      "winter_climate": "+10",
+      "summer_climate": "+32",
+      "description": "Грецию называют колыбелью европейской цивилизации, хранительницей античного наследия, родиной олимпийских богов, источником классического искусства. Прославили Грецию и православные святыни — два десятка монастырей Святого Афона, слившиеся со скалами монастыри Метеоры. Но, словно этого мало, природа щедро добавила свои дары: создала пещерное озеро Мелиссани и лазурно-белый Санторини, синие и бирюзовые бухты, живописные скалы и уютные пляжи с белыми, розовыми песками... И придала уникальность каждому из островов, разбросанных ожерельем вокруг материковой Греции.",
+      "image": "countries/греция.jpeg",
+      "weather_data": null,
+      "weather_last_updated": null,
+      "capital": "Athens"
+    }
+  },
+  {
+    "model": "core.country",
+    "pk": 7,
+    "fields": {
+      "name": "Испания",
+      "winter_climate": "+10",
+      "summer_climate": "+33",
+      "description": "Испания — это средиземноморские и атлантические пляжи с золотистым песком, азарт корриды и страстность фламенко, суровое величие Эскориала и затейливое буйство форм Саграда Фамилия. Испания многолика: её история и культура сотканы из мавританских и рыцарских мотивов, приправлены иронией Сервантеса и сюрреализмом Дали. Испанцы — очень жизнерадостный народ, и умеют получать от жизни удовольствие.",
+      "image": "countries/испания.jpeg",
+      "weather_data": null,
+      "weather_last_updated": null,
+      "capital": "Madrid"
+    }
+  },
+  {
+    "model": "core.country",
+    "pk": 8,
+    "fields": {
+      "name": "Швеция",
+      "winter_climate": "-20",
+      "summer_climate": "+17",
+      "description": "Швеция — небольшая страна на севере Европы, где прошлое гармонично сочетается с духом современности. Большинство туристов приезжают в Швецию в рамках общего тура по Скандинавии, чтобы посетить Стокгольм и увидеть достопримечательности разных исторических эпох.",
+      "image": "countries/швеция.jpeg",
+      "weather_data": null,
+      "weather_last_updated": null,
+      "capital": "Stockholm"
+    }
+  },
+  {
+    "model": "core.country",
+    "pk": 9,
+    "fields": {
+      "name": "Германия",
+      "winter_climate": "+3",
+      "summer_climate": "+20",
+      "description": "Германия — это готика и фахверковые дома на уютных бюргерских улочках, сказочный замок Нойшванштайн и знаменитая Дрезденская галерея, лав-парады и рок-концерты, Рожественские ярмарки и Октоберфёст. Страна, как лоскутное одеяло, сложена из колоритных земель с уникальными культурными особенностями и традициями — Баварии, Саксонии, Пруссии, Тюрингии, а также других бывших немецких княжеств и королевств. Располагаясь в самом центре Европы, Германия не раз играла ключевую роль в глобальных исторических событиях, а её писатели, философы, композиторы и учёные внесли бесценный вклад в развитие цивилизации.",
+      "image": "countries/германия.jpeg",
+      "weather_data": null,
+      "weather_last_updated": null,
+      "capital": "Berlin"
+    }
+  },
+  {
+    "model": "core.country",
+    "pk": 10,
+    "fields": {
+      "name": "Индия",
+      "winter_climate": "+20",
+      "summer_climate": "+45",
+      "description": "Индия — страна, манящая своей экзотичностью и тёплым климатом. Одних она шокирует, а других влюбляет в себя навсегда. Шумные мегаполисы соседствуют тут с древними руинами, величественные дворцы — с бедными лачугами, а дикие джунгли — со знойной пустыней и высокими горами.",
+      "image": "countries/индия.jpg",
+      "weather_data": null,
+      "weather_last_updated": null,
+      "capital": "New Delhi"
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 1,
+    "fields": {
+      "country": 1,
+      "name": "DoubleTree by Hilton Hotels",
+      "stars": 5,
+      "price_per_day": "1200.00",
+      "description": "Очень красивый отель",
+      "amenities": "-Спа\r\n-Бассейн",
+      "image": "hotels/exterior.jpg",
+      "available_rooms": 3
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 2,
+    "fields": {
+      "country": 1,
+      "name": "Привал",
+      "stars": 5,
+      "price_per_day": "300.00",
+      "description": "Prival Hotel — отель класса люкс в Гродненской области, который расположился в экологической зоне вдали от шумного города на берегу исторической реки Неман.\r\n\r\nИнтерьер Prival Hotel поражает и завораживает гостей с первого взгляда. Первый этаж здания оформлен красивым мрамором, а весь номерной фонд вместе с банкетным залом — эксклюзивным текстилем (нежный шифон, вуаль, бархат, благородный сатен от лучших европейских производителей). Гости могут разместиться в номерах разных категорий, а также воспользоваться бесплатной охраняемой парковкой. Весь номерной фонд класса люкс оснащен современной техникой: Wi-Fi, спутниковое ТВ, кондиционер, фен и др.",
+      "amenities": "Для дополнительного комфорта в номерах есть удобные кровати с ортопедическими матрацами. Повара приготовят для гостей горячие и вкусные блюда из традиционной белорусской кухни. У гостей есть возможность заказать обед и ужин по предварительному меню. Гостиница Prival Hotel находится на территории базы отдыха  «Привaл», поэтому все развлечения для гостей, проживающих в отеле, находятся в шаговой доступности, и входят в стоимость проживания. К услугам гостей различные аттракционы (веревочный городок, лазертаг, лучные бои, стрельба из лука т.д.), игровая зона для детей разного возраста, беседки с мангалами, катание на веломобилях и многое другое.",
+      "image": "hotels/привал_беларусь.png",
+      "available_rooms": 5
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 3,
+    "fields": {
+      "country": 7,
+      "name": "NH Collection Barcelona Gran Hotel Calderón",
+      "stars": 5,
+      "price_per_day": "800.00",
+      "description": "NH Collection Barcelona Gran Hotel Calderón — это потрясающий пятизвездочный отель, расположенный в районе Quadrat d'Or города. Таким образом, отель идеально расположен для туристов, так как находится всего в нескольких минутах ходьбы от некоторых из лучших достопримечательностей Барселоны, включая бульвар Лас-Рамблас и площадь Каталонии.",
+      "amenities": "В отеле NH Collection Barcelona Gran Hotel Calderón гостям предлагается большой выбор удобств и услуг, включая тренажерный зал и очаровательный бассейн на крыше.\r\n\r\nКроме того, к вашим услугам химчистка, экспресс-прачечная, зарядка электромобилей, техническое обслуживание автомобилей, прокат велосипедов и бесплатные газеты.",
+      "image": "hotels/испания1.jpg",
+      "available_rooms": 4
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 4,
+    "fields": {
+      "country": 7,
+      "name": "Hostal Rivera - Atocha",
+      "stars": 2,
+      "price_per_day": "90.00",
+      "description": "2-звездочный Hostal Rivera - Atocha находится приблизительно в 5 минутах ходьбы от Баррио де лас Летрас и предлагает 12 номеров. Также к услугам гостей отеля Wi-Fi в зонах общественного пользования.\r\n\r\nЭтот гостевой дом расположен в районе Мадрид — центр города, недалеко от станции метро Anton Martin. Отель привлекает своим расположением менее чем в 20 минутах ходьбы от Собора Альмудена. Расположение отеля позволит вам насладиться природными достопримечательностями, например озером Estanque de la Noria, расположенным примерно в 1 км. Кроме того, Hostal Rivera - Atocha находится в нескольких минутах ходьбы от Королевского ботанического сада Мадрида. Всего в 5 минутах ходьбы от отеля находится автобусная остановка Desamparados, а также неподалеку расположена площадь Святой Анны.",
+      "amenities": "Гостевой дом Rivera расположен в центре Мадрида, в 5 минутах ходьбы от железнодорожного вокзала Аточа и музея Прадо. К услугам гостей круглосуточная стойка регистрации и бесплатный Wi-Fi в местах общего пользования.\r\n\r\nНомера оснащены кондиционером и системой отопления. Также в числе удобств балкон и телевизор с плоским экраном. В номерах есть шкаф для одежды и собственная ванная комната с ванной или душем.\r\n\r\nВ распоряжении гостей камера хранения багажа, лифт и экскурсионное бюро. До станции метро Anton Martin — менее 100 метров. За 10 минут можно дойти до площади Пуэрта-дель-Соль.",
+      "image": "hotels/испания2.jpg",
+      "available_rooms": 4
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 5,
+    "fields": {
+      "country": 2,
+      "name": "Green Roof Hotel & Spa",
+      "stars": 5,
+      "price_per_day": "356.00",
+      "description": "Green Roof Hotel & Spa — это отель в городе Durusu, в 50 км от такой достопримечательности, как Nef Stadium. Среди удобств — сезонный открытый бассейн, сад, общий лаундж и бесплатная частная парковка. Среди удобств отеля с 5 звездами — терраса, а также номера с кондиционером, бесплатным Wi-Fi и собственной ванной комнатой. В распоряжении гостей доставка еды и напитков, круглосуточная стойка регистрации и услуга обмена валют.",
+      "amenities": "В Green Roof Hotel & Spa в номерах есть платяной шкаф. Во всех номерах имеется собственная ванная комната с душем, бесплатными туалетно-косметическими принадлежностями и феном. В Green Roof Hotel & Spa во всех номерах имеется телевизор с плоским экраном со спутниковыми каналами и сейф.\r\n\r\nДля гостей сервируется завтрак «шведский стол», завтрак по меню и вегетарианский завтрак. При Green Roof Hotel & Spa работает ресторан, где подают блюда турецкой кухни. Гости могут попросить приготовить вегетарианские, халяльные и веганские блюда.\r\n\r\nGreen Roof Hotel & Spa располагается на расстоянии 50 км и 50 км соответственно от таких достопримечательностей, как Небоскреб «Сапфир» и Turk Telekom Stadium. Аэропорт Стамбул находится в 6 км. Предоставляется платный трансфер от/до аэропорта.",
+      "image": "hotels/турция1.jpg",
+      "available_rooms": 3
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 6,
+    "fields": {
+      "country": 2,
+      "name": "The Great Airport Hotel",
+      "stars": 3,
+      "price_per_day": "121.00",
+      "description": "The Great Airport Hotel — это отель в городе Arnavutköy, в 31 км от такой достопримечательности, как Nef Stadium. Среди удобств — сад, общий лаундж, терраса и бесплатная частная парковка. К услугам гостей бар, а также ресторан, где подают блюда турецкой кухни. Гости могут обратиться к сотрудникам круглосуточной стойки регистрации, воспользоваться трансфером от/до аэропорта или доставкой еды и напитков, а также подключиться к бесплатному Wi-Fi на всей территории.",
+      "amenities": "В номерах The Great Airport Hotel установлен кондиционер, сейф и телевизор с плоским экраном. Среди прочих удобств — письменный стол, чайник и мини-бар, а также собственная ванная комната с душем. В собственной ванной комнате есть бесплатные туалетно-косметические принадлежности. В номерах имеется платяной шкаф.\r\n\r\nГостям The Great Airport Hotel предлагается континентальный завтрак.\r\n\r\nThe Great Airport Hotel располагается на расстоянии 31 км и 31 км соответственно от таких достопримечательностей, как Небоскреб «Сапфир» и Turk Telekom Stadium. Аэропорт Стамбул находится в 8 км.",
+      "image": "hotels/турция2.jpg",
+      "available_rooms": 5
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 7,
+    "fields": {
+      "country": 3,
+      "name": "Kessler's Mountain Lodge",
+      "stars": 5,
+      "price_per_day": "980.00",
+      "description": "Kessler's Mountain Lodge — это загородный дом в городе Нац-Шавес. Здесь есть сезонный открытый бассейн, сад и общий лаундж, а также терраса и бар. Из окон открывается вид на горы. Гостям предоставляется бесплатный Wi-Fi на всей территории. Также на территории имеется частная парковка.",
+      "amenities": "В каждой единице размещения имеется полностью оборудованная кухня с обеденным столом, а также собственная ванная комната с биде, бесплатными туалетно-косметическими принадлежностями и феном. Гости могут посмотреть телевизор с плоским экраном со спутниковыми каналами. Также есть холодильник, посудомоечная машина, духовка и кофемашина.\r\n\r\nГостям подают завтрак по меню, вегетарианский завтрак или веганский завтрак.\r\n\r\nГости Kessler's Mountain Lodge могут посетить сауну.\r\n\r\nГости Kessler's Mountain Lodge могут провести время за игрой в настольный теннис или заняться пешими прогулками и лыжным спортом в окрестностях.\r\n\r\nKessler's Mountain Lodge располагается в 8,2 км и 12 км соответственно от таких достопримечательностей, как Аббатство Новачелла и Железнодорожный вокзал Брессаноне. Аэропорт Больцано находится в 56 км.",
+      "image": "hotels/италия1.jpg",
+      "available_rooms": 4
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 8,
+    "fields": {
+      "country": 3,
+      "name": "Esidenza Spada",
+      "stars": 3,
+      "price_per_day": "630.00",
+      "description": "Комплекс Residenza Spada с видом на город расположен в римском районе Навона, в 200 м от площади Кампо-деи-Фиори.",
+      "amenities": "Во всех апартаментах есть телевизор с плоским экраном и спутниковыми каналами, полностью оборудованная мини-кухня с холодильником, а также собственная ванная комната с душем, бесплатными туалетно-косметическими принадлежностями, плитой и кофемашиной.\r\n\r\nРасстояние до Большой синагоги Рима и площади Санта-Мария-ин-Трастевере составляет 500 м.",
+      "image": "hotels/италия2.jpg",
+      "available_rooms": 8
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 9,
+    "fields": {
+      "country": 4,
+      "name": "Villa Sirilanna Hotel",
+      "stars": 5,
+      "price_per_day": "369.00",
+      "description": "Отель Sirilanna расположен в удобном районе Старого города Чиангмая, в нескольких минутах ходьбы от нескольких достопримечательностей. К услугам гостей стильные номера с традиционным северным тайским декором, открытый плавательный бассейн и бесплатный Wi-Fi на всей территории. В ресторане Sirilanna ежедневно подают блюда азиатской и интернациональной кухни.\r\n\r\nВсе номера со вкусом оформлены и обставлены резной деревянной мебелью.",
+      "amenities": "В числе удобств кондиционер, 48-дюймовый телевизор с плоским экраном и международными каналами, DVD-плеер, мини-бар и письменный стол. В просторной ванной комнате установлена гидромассажная ванна. Для удобства гостей предоставляются тапочки, халаты и бесплатные туалетно-косметические принадлежности. Также в номере имеется бесплатная питьевая вода. Гости могут провести время в тихой библиотеке отеля.\r\n\r\nОтель Sirilanna расположен всего в 3 км от международного аэропорта Чиангмая. Местные достопримечательности, такие как ворота Тапэ и воскресная пешеходная улица, находятся в 10 минутах ходьбы от отеля.",
+      "image": "hotels/таиланд1.jpg",
+      "available_rooms": 5
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 10,
+    "fields": {
+      "country": 4,
+      "name": "Lucky Hotel Bangkok",
+      "stars": 3,
+      "price_per_day": "167.00",
+      "description": "Lucky Hotel Bangkok — это отель в городе Khlong Toei, в 500 м и 3,6 км соответственно от таких достопримечательностей, как Торговый центр Emporium и Торговый центр Central Embassy. К услугам гостей ресторан, бесплатный Wi-Fi на всей территории, а также бесплатная частная парковка. В распоряжении гостей отеля с 3 звездами — доставка еды и напитков и круглосуточная стойка регистрации. Этот вариант размещения с номерами для некурящих находится в 3,6 км от следующей достопримечательности: Национальный конгресс-центр имени королевы Сирикит.",
+      "amenities": "Во всех номерах в Lucky Hotel Bangkok имеется чайник. В Lucky Hotel Bangkok во всех номерах имеется телевизор с плоским экраном, а также установлен кондиционер.\r\n\r\nДля гостей сервируется завтрак по меню, полный английский/ирландский завтрак и вегетарианский завтрак.\r\n\r\nLucky Hotel Bangkok располагается на расстоянии 4,1 км и 4,2 км соответственно от таких достопримечательностей, как Торговый центр Amarin Plaza и Торговый центр Gaysorn Village. Международный аэрпорт Дон Мыанг находится в 26 км.",
+      "image": "hotels/таиланд2.jpg",
+      "available_rooms": 5
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 11,
+    "fields": {
+      "country": 5,
+      "name": "Dusit Thani Abu Dhabi",
+      "stars": 5,
+      "price_per_day": "485.00",
+      "description": "Отель Dusit Thani Abu Dhabi расположен в новом правительственном районе в центре города, неподалеку от района Истерн-Мангровс и в нескольких минутах езды от набережной Корниш. К услугам гостей открытый бассейн и спа-центр. На всей территории работает бесплатный Wi-Fi.\r\n\r\nКаждый номер отеля Dusit Thani оформлен в изысканном стиле в теплых тонах. Из больших французских окон открывается вид на город. Во всех номерах есть телевизор с плоским экраном, док-станция для iPod и просторное место для работы. В распоряжении гостей ванная комната с душем и ванной.",
+      "amenities": "В отеле работают несколько ресторанов, в том числе открытый в течение всего дня ресторан интернациональной кухни, ирландский спорт-бар, индийский ресторан и ресторан аутентичной тайской кухни с индивидуальным обслуживанием и приятной атмосферой.\r\n\r\nГости могут позаниматься в полностью оснащенном тренажерном зале или поплавать в открытом бассейне. В спа-центре Namm можно посетить гидромассажную ванну или заказать фирменные массажные процедуры. За пользование некоторыми удобствами взимается дополнительная плата.\r\n\r\nОтель Dusit Thani находится в 15 минутах езды на автомобиле от выставочного центра Абу-Даби. Автомобильная поездка до международного аэропорта Абу-Даби занимает 25 минут. По запросу и за дополнительную плату для гостей организуют трансфер от/до аэропорта.",
+      "image": "hotels/оаэ1.jpg",
+      "available_rooms": 3
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 12,
+    "fields": {
+      "country": 5,
+      "name": "Hyde Park Hotel",
+      "stars": 2,
+      "price_per_day": "90.00",
+      "description": "Отель Hyde Park находится в самом центре Дубая. Гостям предлагаются кондиционируемые номера с собственным балконом. Стойка регистрации работает круглосуточно. На территории отеля есть ресторан, предлагающий \"шведский стол\", и 4 ночных клуба.\r\n\r\nНомера отеля Hyde Park оформлены в современном стиле. Во всех номерах имеется спутниковое телевидение, мини-бар и собственная ванная комната.",
+      "amenities": "Кофейня работает круглосуточно. В кофейне подают изысканные блюда интернациональной кухни. В спортивном баре предлагаются освежающие напитки. Кроме того, в баре есть бильярдный стол.\r\n\r\nВ экскурсионном бюро отеля Hyde Park можно заказать туры к основным дубайским достопримечательностям. Кроме того, в отеле предлагаются услуги прачечной, есть пункт обмена валют.\r\n\r\nДо Золотого рынка — всего 1,4 км. Международный конференц- и выставочный центр Дубая расположен в 4,1 км от отеля.",
+      "image": "hotels/оаэ2.jpg",
+      "available_rooms": 4
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 13,
+    "fields": {
+      "country": 6,
+      "name": "Cora Hotel & Spa",
+      "stars": 5,
+      "price_per_day": "633.00",
+      "description": "Cora Hotel & Spa — это отель, расположенный в городе Афитос. К услугам гостей сезонный открытый бассейн, фитнес-центр, сад и частный пляж. Из окон отеля с 5 звездами открывается вид на бассейн. Гости могут воспользоваться террасой и баром. Гости могут обратиться к сотрудникам круглосуточной стойки регистрации, воспользоваться трансфером от/до аэропорта или общим лаунджем, а также подключиться к бесплатному Wi-Fi на всей территории.",
+      "amenities": "В номерах Cora Hotel & Spa установлен кондиционер, сейф и телевизор с плоским экраном. Среди прочих удобств — письменный стол, кофемашина, холодильник и мини-бар, а также собственная ванная комната с душем. В собственной ванной комнате есть бесплатные туалетно-косметические принадлежности. Гостям Cora Hotel & Spa предоставляются постельное белье и полотенца.\r\n\r\nЕжедневно гостям подают завтрак «шведский стол», континентальный завтрак или американский завтрак. При Cora Hotel & Spa работает ресторан, где подают блюда итальянской кухни, блюда средиземноморской кухни и блюда международной кухни. Гости могут попросить приготовить вегетарианские, безлактозные и веганские блюда.\r\n\r\nК услугам гостей отеля прокат велосипедов и аренда автомобилей. В окрестностях популярно заниматься велосипедными прогулками.\r\n\r\nCora Hotel & Spa располагается на расстоянии 100 м и 2,1 км соответственно от таких достопримечательностей, как Пляж Вотонас и Пляж Варкес. Аэропорт Салоники находится в 69 км.",
+      "image": "hotels/греция1.jpg",
+      "available_rooms": 4
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 14,
+    "fields": {
+      "country": 6,
+      "name": "Camara Hotel",
+      "stars": 2,
+      "price_per_day": "100.00",
+      "description": "Отель Camara расположен на острове Наксос, всего в 5 минутах ходьбы от пляжа Агиос-Прокопиос. В распоряжении гостей терраса на крыше с видом на море. На всей территории предоставляется бесплатный WiFi.\r\n\r\nОтель предлагает теплое гостеприимство и хорошо оборудованные номера для отдыха. В каждом номере есть кондиционер, мини-бар, спутниковое телевидение, телефон и фен. Во всех номерах есть отдельная веранда и выбор подушек.",
+      "amenities": "Ежедневно в зале для завтрака сервируется завтрак «шведский стол» с традиционными продуктами острова Наксос.\r\n\r\nОтель удобно расположен в тихом месте, что делает его идеальным местом для тех, кто хочет отдохнуть рядом с красивым пляжем и осмотреть остров. Автобусная остановка находится всего в 30 метрах, а город Наксос - в 10 минутах езды. Поблизости обустроена бесплатная частная парковка.",
+      "image": "hotels/греция2.jpg",
+      "available_rooms": 0
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 15,
+    "fields": {
+      "country": 8,
+      "name": "Элитный Гранд Отель Евле",
+      "stars": 4,
+      "price_per_day": "400.00",
+      "description": "Этот элегантный отель расположен в отреставрированном здании 1901 года постройки рядом с центральным вокзалом Евле. Из ресторана отеля открывается вид на реку Евле. Телевизоры с плоским экраном, зоны отдыха и современный декор являются стандартными удобствами в отеле Elite Grand Hotel Gävle.",
+      "amenities": "В некоторых номерах есть дополнительные удобства, такие как диван или вид на реку. Гости могут насладиться блюдами из меню à la carte отеля Elite Grand с понедельника по субботу. В этом отеле есть недавно отремонтированный тренажерный зал и джакузи. Mackmyra Whisky Village находится в 3 км от отеля. Аэропорт Стокгольм-Арланда находится в 1,5 часах езды.",
+      "image": "hotels/щвеция1.jpg",
+      "available_rooms": 6
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 16,
+    "fields": {
+      "country": 8,
+      "name": "Klara Hostel Stockholm",
+      "stars": 1,
+      "price_per_day": "298.00",
+      "description": "Этот хостел находится всего в 2 минутах ходьбы от центрального железнодорожного вокзала Стокгольма и в 200 м от торговой улицы Дроттнинггатан. Предоставляется бесплатный Wi-Fi.\r\n\r\nВ каждом номере хостела City Lodge Stockholm установлены персональные запирающиеся шкафчики. Ванные комнаты являются общими, а в некоторых номерах есть умывальник. В распоряжении гостей прачечная с гладильными принадлежностями.",
+      "amenities": "В распоряжении гостей общая кухня. Гости могут отдохнуть в общем лаундже с телевизором, почитать книгу или поиграть в настольные игры.\r\n\r\nСтанция метро T-Centralen находится в 200 м. Старый город Стокгольма, Гамла Стан, находится в 1 станции метро.",
+      "image": "hotels/швеция2.jpg",
+      "available_rooms": 6
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 17,
+    "fields": {
+      "country": 9,
+      "name": "Lagovida Das Ferienresort Am Störmthaler See",
+      "stars": 4,
+      "price_per_day": "329.00",
+      "description": "Отель Lagovida Das Ferienresort Am Störmthaler See идеально расположен прямо на берегу озера Штёрмхаль в городе Гроспёсна. К услугам гостей частный пляж, ресторан и бесплатный Wi-Fi. Эти современные люксы и дома для отпуска стильно оформлены и обставлены современной мебелью. В каждом номере есть гостиный уголок и телевизор с плоским экраном, а в некоторых есть собственный балкон с видом на озеро. Каждое утро сервируется сытный завтрак «шведский стол», а по вечерам в ресторане подают классические блюда немецкой и региональной кухни.",
+      "amenities": "В окрестностях популярны пешие походы, велоспорт и водные виды спорта. На территории отеля Lagovida Das Ferienresort Am Störmthaler See можно взять напрокат велосипеды и снаряжение для водных видов спорта. Лейпциг находится в 20 минутах езды. Железнодорожный вокзал Марклеберга находится в 18 км от отеля, а автомагистраль A38 — в 10 минутах езды на машине.",
+      "image": "hotels/германия1.jpg",
+      "available_rooms": 8
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 18,
+    "fields": {
+      "country": 9,
+      "name": "ibis budget Augsburg Gersthofen",
+      "stars": 1,
+      "price_per_day": "189.00",
+      "description": "Ibis budget Augsburg Gersthofen — это отель с 1 звездой в городе Аугсбург, в 9,4 км и 15 км соответственно от таких достопримечательностей, как Главный железнодорожный вокзал Аугсбурга и Конгресс-центр Аугсбурга. Парк развлечений «Леголенд» в Германии — примерно в 49 км, а Центр города Аугсбурга и Ратушная площадь — в 10 км и 10 км соответственно. За дополнительную плату можно воспользоваться частной парковкой. Гостям предоставляется бесплатный Wi-Fi.",
+      "amenities": "В ibis budget Augsburg Gersthofen в каждом номере имеется письменный стол и телевизор с плоским экраном. Гостям ibis budget Augsburg Gersthofen предоставляются постельное белье и полотенца.\r\n\r\nГостям ibis budget Augsburg Gersthofen предоставляется завтрак «шведский стол».\r\n\r\nIbis budget Augsburg Gersthofen располагается на расстоянии 10 км и 10 км соответственно от таких достопримечательностей, как Стадион \"Розенауштадион\" и Zeughaus.",
+      "image": "hotels/германия2.jpg",
+      "available_rooms": 7
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 19,
+    "fields": {
+      "country": 10,
+      "name": "Hotel White House",
+      "stars": 1,
+      "price_per_day": "80.00",
+      "description": "Hotel White House — это отель в городе Калькутта, в 400 м от такой достопримечательности, как M G Road Metro Station. Среди удобств — сад, общий лаундж, терраса и бесплатная частная парковка. К услугам гостей отеля с 1 звездой — номера с кондиционером, бесплатным Wi-Fi и собственной ванной комнатой. В распоряжении гостей доставка еды и напитков, круглосуточная стойка регистрации и камера хранения багажа.",
+      "amenities": "В Hotel White House в номерах есть телевизор с плоским экраном, платяной шкаф и собственная ванная комната, а также предоставляется постельное белье. В Hotel White House в каждом номере имеется гостиная зона.\r\n\r\nHotel White House располагается на расстоянии 2,1 км и 2,4 км соответственно от таких достопримечательностей, как Станция метро Esplanade и Железнодорожный вокзал Хаора. Международный аэропорт имени Нетаджи Субхас Чандра Боса находится в 13 км. Предоставляется платный трансфер от/до аэропорта.",
+      "image": "hotels/индия1.jpg",
+      "available_rooms": 10
+    }
+  },
+  {
+    "model": "core.hotel",
+    "pk": 20,
+    "fields": {
+      "country": 10,
+      "name": "Valley View Bhowali - Haldwani to Neem Karoli Bypass - free parking - mountain view",
+      "stars": 4,
+      "price_per_day": "65.00",
+      "description": "Valley View Bhowali - Haldwani to Neem Karoli Bypass - free parking - mountain view — это отель с 4 звездами в городе Найнитал. В распоряжении гостей собственная терраса. На территории имеется частная парковка.",
+      "amenities": "В Valley View Bhowali - Haldwani to Neem Karoli Bypass - free parking - mountain view во всех номерах имеется телевизор с плоским экраном, письменный стол и собственная ванная комната, а также предоставляются постельное белье и полотенца. В собственной ванной комнате есть душ, бесплатные туалетно-косметические принадлежности и тапочки. Во всех номерах есть платяной шкаф.",
+      "image": "hotels/индия2.jpg",
+      "available_rooms": 8
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 1,
+    "fields": {
+      "hotel": 1,
+      "duration_weeks": 2,
+      "departure_date": "2025-05-13",
+      "return_date": "2025-05-27",
+      "total_price": "4000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 15
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 2,
+    "fields": {
+      "hotel": 2,
+      "duration_weeks": 1,
+      "departure_date": "2025-05-26",
+      "return_date": "2025-06-02",
+      "total_price": "1500.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 15
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 3,
+    "fields": {
+      "hotel": 3,
+      "duration_weeks": 2,
+      "departure_date": "2025-06-12",
+      "return_date": "2025-06-26",
+      "total_price": "7000.00",
+      "is_active": true,
+      "max_participants": 30,
+      "current_participants": 17
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 4,
+    "fields": {
+      "hotel": 4,
+      "duration_weeks": 3,
+      "departure_date": "2025-06-18",
+      "return_date": "2025-07-09",
+      "total_price": "9000.00",
+      "is_active": true,
+      "max_participants": 40,
+      "current_participants": 18
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 5,
+    "fields": {
+      "hotel": 5,
+      "duration_weeks": 2,
+      "departure_date": "2025-06-12",
+      "return_date": "2025-06-26",
+      "total_price": "6000.00",
+      "is_active": true,
+      "max_participants": 50,
+      "current_participants": 28
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 6,
+    "fields": {
+      "hotel": 6,
+      "duration_weeks": 1,
+      "departure_date": "2025-05-26",
+      "return_date": "2025-06-02",
+      "total_price": "2000.00",
+      "is_active": true,
+      "max_participants": 35,
+      "current_participants": 13
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 7,
+    "fields": {
+      "hotel": 7,
+      "duration_weeks": 4,
+      "departure_date": "2025-05-26",
+      "return_date": "2025-06-23",
+      "total_price": "12000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 7
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 8,
+    "fields": {
+      "hotel": 8,
+      "duration_weeks": 2,
+      "departure_date": "2025-05-28",
+      "return_date": "2025-06-11",
+      "total_price": "4000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 16
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 9,
+    "fields": {
+      "hotel": 9,
+      "duration_weeks": 3,
+      "departure_date": "2025-05-30",
+      "return_date": "2025-06-20",
+      "total_price": "8000.00",
+      "is_active": true,
+      "max_participants": 25,
+      "current_participants": 8
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 10,
+    "fields": {
+      "hotel": 10,
+      "duration_weeks": 2,
+      "departure_date": "2025-05-31",
+      "return_date": "2025-06-14",
+      "total_price": "4000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 17
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 11,
+    "fields": {
+      "hotel": 11,
+      "duration_weeks": 2,
+      "departure_date": "2025-06-10",
+      "return_date": "2025-06-24",
+      "total_price": "8000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 10
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 12,
+    "fields": {
+      "hotel": 12,
+      "duration_weeks": 3,
+      "departure_date": "2025-05-29",
+      "return_date": "2025-06-19",
+      "total_price": "8000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 13
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 13,
+    "fields": {
+      "hotel": 13,
+      "duration_weeks": 1,
+      "departure_date": "2025-05-26",
+      "return_date": "2025-06-02",
+      "total_price": "4000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 17
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 14,
+    "fields": {
+      "hotel": 14,
+      "duration_weeks": 2,
+      "departure_date": "2025-06-26",
+      "return_date": "2025-07-10",
+      "total_price": "7000.00",
+      "is_active": true,
+      "max_participants": 30,
+      "current_participants": 17
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 15,
+    "fields": {
+      "hotel": 15,
+      "duration_weeks": 1,
+      "departure_date": "2025-06-20",
+      "return_date": "2025-06-27",
+      "total_price": "3000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 12
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 16,
+    "fields": {
+      "hotel": 16,
+      "duration_weeks": 4,
+      "departure_date": "2025-05-26",
+      "return_date": "2025-06-23",
+      "total_price": "10000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 19
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 17,
+    "fields": {
+      "hotel": 17,
+      "duration_weeks": 1,
+      "departure_date": "2025-06-18",
+      "return_date": "2025-06-25",
+      "total_price": "4000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 15
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 18,
+    "fields": {
+      "hotel": 18,
+      "duration_weeks": 2,
+      "departure_date": "2025-07-31",
+      "return_date": "2025-08-14",
+      "total_price": "7000.00",
+      "is_active": true,
+      "max_participants": 30,
+      "current_participants": 20
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 19,
+    "fields": {
+      "hotel": 19,
+      "duration_weeks": 1,
+      "departure_date": "2025-08-21",
+      "return_date": "2025-08-28",
+      "total_price": "5000.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 17
+    }
+  },
+  {
+    "model": "core.tourpackage",
+    "pk": 20,
+    "fields": {
+      "hotel": 20,
+      "duration_weeks": 3,
+      "departure_date": "2025-07-19",
+      "return_date": "2025-08-09",
+      "total_price": "10200.00",
+      "is_active": true,
+      "max_participants": 20,
+      "current_participants": 10
+    }
+  },
+  {
+    "model": "core.order",
+    "pk": 1,
+    "fields": {
+      "client": 1,
+      "manager": null,
+      "tour": 1,
+      "status": "confirmed",
+      "created_at": "2025-05-26T08:03:51.117Z",
+      "updated_at": "2025-05-26T08:03:51.117Z",
+      "notes": "",
+      "participants": 1,
+      "total_price": "16800.00"
+    }
+  },
+  {
+    "model": "core.order",
+    "pk": 2,
+    "fields": {
+      "client": 1,
+      "manager": null,
+      "tour": 2,
+      "status": "paid",
+      "created_at": "2025-05-26T08:54:10.901Z",
+      "updated_at": "2025-05-26T08:54:10.901Z",
+      "notes": "",
+      "participants": 1,
+      "total_price": "1500.00"
+    }
+  },
+  {
+    "model": "core.order",
+    "pk": 3,
+    "fields": {
+      "client": 1,
+      "manager": null,
+      "tour": 13,
+      "status": "paid",
+      "created_at": "2025-05-27T11:18:41.590Z",
+      "updated_at": "2025-05-27T11:18:41.590Z",
+      "notes": "",
+      "participants": 1,
+      "total_price": "4000.00"
+    }
+  },
+  {
+    "model": "core.order",
+    "pk": 4,
+    "fields": {
+      "client": 2,
+      "manager": null,
+      "tour": 2,
+      "status": "cancelled",
+      "created_at": "2025-05-27T15:25:34.607Z",
+      "updated_at": "2025-05-27T15:25:34.607Z",
+      "notes": "",
+      "participants": 1,
+      "total_price": "1500.00"
+    }
+  },
+  {
+    "model": "core.news",
+    "pk": 1,
+    "fields": {
+      "title": "Вандруй. Адчуй. Натхняйся: список участников акции 2025 года",
+      "slug": "vandruj-adchuj-nathnyajsya-spisok-uchastnikov-akcii-2025-goda",
+      "summary": "С 2 по 8 июня 2025 года в Беларуси пройдет масштабная IV Республиканская акция «Вандруй. Адчуй. Натхняйся», призванная популяризировать внутренний туризм и открыть белорусам и гостям страны все разнообразие туристических возможностей.",
+      "content": "Организаторами акции выступают Министерство спорта и туризма Республики Беларусь и Национальное агентство по туризму.\r\nВ акции примут участие туристические объекты всех областей Беларуси: агроэкоусадьбы, учреждения культуры, образования, объекты питания и проживания, санаторно-курортные учреждения, туристические комплексы, экологические парки, заказники, художественные и картинные галереи, производственные предприятия, спортивные учреждения, физические лица и многие другие.\r\n\r\nВ период акции объекты предлагают посетителям:\r\nбесплатные экскурсии и квесты;\r\nдни открытых дверей;\r\nмастер-классы;\r\nдегустации блюд национальной кухни;\r\nпрезентации услуг и специальные предложения.",
+      "image": "news/images/2025/05/27/vgh20n56lrhs0wz6rnm9ej1d3m08tmdu.png",
+      "category": "country",
+      "author": 1,
+      "created_at": "2025-05-27T12:06:49.916Z",
+      "updated_at": "2025-05-27T12:07:22.410Z",
+      "is_published": true,
+      "views": 0
+    }
+  },
+  {
+    "model": "core.news",
+    "pk": 2,
+    "fields": {
+      "title": "Беларусь укрепляет туристическое сотрудничество с Китаем",
+      "slug": "belarus-ukreplyaet-turisticheskoe-sotrudnichestvo-s-kitaem",
+      "summary": "Белорусская делегация приняла участие в Синцзянской международной конференции по развитию туризма и Конференции туристических агентств, приуроченных к 70-летию образования Синьцзян-Уйгурского автономного района (СУАР) КНР. Мероприятие проходило 24-26",
+      "content": "Стороны рассмотрели возможности:\r\nразработки комбинированных туров для других провинций Китая, используя прямой рейс «Белавиа» Урумчи-Минск. Это позволит привлечь больше китайских туристов в Беларусь, предлагая им насыщенные и разнообразные программы;\r\nподготовки к участию белорусской делегации в международной выставке ЭКСПО «Китай-Евразия», которая пройдет 26-30 июня 2025 года в Урумчи. Участие в выставке станет отличной площадкой для продвижения белорусского туристического продукта на китайском рынке.",
+      "image": "news/images/2025/05/27/dqs80nlora1qpwk03smrquhwanode3w0.jpg",
+      "category": "country",
+      "author": 1,
+      "created_at": "2025-05-27T12:09:30.016Z",
+      "updated_at": "2025-05-27T12:09:42.663Z",
+      "is_published": true,
+      "views": 0
+    }
+  },
+  {
+    "model": "core.news",
+    "pk": 3,
+    "fields": {
+      "title": "Летим в Дубай по специальной цене, чтобы не терять ни минуты солнца!",
+      "slug": "letim-v-dubaj-po-specialnoj-cene-chtoby-ne-teryat-ni-minuty-solnca",
+      "summary": "Из Минска:  от 576 BYN в одну сторону от 1042 BYN туда-обратно Также до конца весны – промобилеты со скидкой 50% от тарифа на следующие трансферные направления (как туда, так и обратно):",
+      "content": "Из Минска:\r\n\r\nот 576 BYN в одну сторону\r\nот 1042 BYN туда-обратно\r\nТакже до конца весны – промобилеты со скидкой 50% от тарифа на следующие трансферные направления (как туда, так и обратно):\r\n\r\nМосква-Минск-Дубай\r\nСанкт-Петербург-Минск-Дубай\r\nАктуальные цены смотрите на belavia.by\r\n\r\nПериод путешествия: по 31 мая 2025\r\n \r\n\r\nКоличество билетов ограничено!\r\n \r\nВводить какой-либо промокод, чтобы купить билет со скидкой, не нужно. Укажите нужный вам маршрут и ищите тарифный бренд «Промо». Билеты по специальным ценам обозначены зеленым васильком.\r\n \r\nМожно ли воспользоваться одним сегментом билета? Это когда приобрели, например, билет Москва-Минск-Дубай, но  хотите лететь только из Минска в Дубай. Нет, по условиям акции непоследовательное использование полетных купонов запрещено.\r\n \r\nКомбинация тарифного бренда «Промо» с другими доступными брендами разрешена. При этом в случае комбинации тарифных брендов ко всему авиабилету применяются правила обмена/возврата тарифного бренда «Промо».\r\n \r\nМаксимальный срок пребывания в пункте назначения по маршруту туда-обратно – 1 месяц.\r\n \r\nК билетам, приобретенным по тарифу «Промо», не применяются скидки для детей в возрасте до 12 лет.\r\n \r\nВспомнить все нюансы применения тарифа можно здесь.",
+      "image": "news/images/2025/05/27/1642934430_36-hdpic-club-p-rrj-95-samolet-foto-52.jpg",
+      "category": "airlines",
+      "author": 1,
+      "created_at": "2025-05-27T12:13:45.212Z",
+      "updated_at": "2025-05-27T12:13:45.212Z",
+      "is_published": true,
+      "views": 0
+    }
+  },
+  {
+    "model": "core.news",
+    "pk": 4,
+    "fields": {
+      "title": "В Казахстане зарегистрировано 98 самолётов: какие авиакомпании лидируют",
+      "slug": "v-kazahstane-zaregistrirovano-98-samolyotov-kakie-aviakompanii-lidiruyut",
+      "summary": "На 6 мая текущего года в странах СНГ насчитывалось 96 авиакомпаний, на балансе которых, по данным Airfleets.net, зарегистрировано около 1,1 тыс. самолётов.  У Казахстана 10 авиакомпаний с совокупным парком в 98 самолётов. По количеству авиакомпаний Р",
+      "content": "В Кыргызстане насчитывается 9 авиакомпаний и 21 самолёт, в Украине* — 8 авиакомпаний и 22 самолёта, в Молдове — 6 авиакомпаний и 15 самолётов, в Армении — 5 авиакомпаний и 13 самолётов. В Азербайджане зарегистрированы 2 авиакомпании с 42 самолётами, в Туркменистане — также 2 авиакомпании, но с 18 самолётами. У Беларуси 2 авиакомпании и 15 самолётов, у Таджикистана — всего 1 авиакомпания с парком из 6 самолётов.",
+      "image": "news/images/2025/05/27/c28d413c959dab04b9ba717b294b5fd0-1280px.webp",
+      "category": "airlines",
+      "author": 1,
+      "created_at": "2025-05-27T12:15:36.684Z",
+      "updated_at": "2025-05-27T12:15:36.684Z",
+      "is_published": true,
+      "views": 0
+    }
+  },
+  {
+    "model": "core.news",
+    "pk": 5,
+    "fields": {
+      "title": "«Черная пятница» в «Виаполь» — скидка 32% по случаю 32-летия компании!",
+      "slug": "chernaya-pyatnica-v-viapol-skidka-32-po-sluchayu-32-letiya-kompanii",
+      "summary": "скидка 32% по случаю 32-летия компании! «Черная пятница» в «Виаполь» — скидка 32% по случаю 32-летия компании! «Черная пятница» в «Виаполь» — скидка 32% по случаю 32-летия компании! 11.11.2024 10:54 / Автор: РСТО / Акции, Внутренний туризм, Новости к",
+      "content": "скидка 32% по случаю 32-летия компании!\r\n«Черная пятница» в «Виаполь» — скидка 32% по случаю 32-летия компании!\r\n«Черная пятница» в «Виаполь» — скидка 32% по случаю 32-летия компании!\r\n11.11.2024 10:54 / Автор: РСТО / Акции, Внутренний туризм, Новости компаний, Экскурсии / Комментариев: 0\r\nРаспродажа  будет длиться два дня: 11 и 12 ноября.\r\n\r\n\r\nЛидер экскурсионного туризма Беларуси объявил скидки на все сборные экскурсии 2025 года — с 1 января по 31 декабря 2025 года.\r\n\r\nБронирование – в офисе и онлайн (на сайте, почте и по телефону) — 11 и 12 ноября.\r\n\r\nОплата — 11-14 ноября включительно.\r\n\r\n1 950 экскурсий по Беларуси на 1, 2 и 3 дня.",
+      "image": "news/images/2025/05/27/1456-960x695.jpg",
+      "category": "promo",
+      "author": 1,
+      "created_at": "2025-05-27T12:17:30.355Z",
+      "updated_at": "2025-05-27T12:17:30.355Z",
+      "is_published": true,
+      "views": 0
+    }
+  },
+  {
+    "model": "core.news",
+    "pk": 6,
+    "fields": {
+      "title": "Распродажа туров на лето. Отели Египта дают скидки до 60%",
+      "slug": "rasprodazha-turov-na-leto-oteli-egipta-dayut-skidki-do-60",
+      "summary": "Отели Египта на летний сезон 2025 года дают хорошие скидки по акции раннего бронирования. Узнали, сколько стоят в начале февраля летние туры «все включено» в Хургаду и Шарм-эль-Шейх, и какие пляжные отели пользуются максимальной популярностью у росси",
+      "content": "У туроператоров открыто раннее бронирование туров на курорты Египта на лето 2025 года. Туры в Хургаду и Шарм-эль-Шейх со скидками на размещение до 45-50% можно забронировать до 30 апреля.\r\n\r\n«В среднем скидки на размещение в Египте летом составляют 30-40%, однако у некоторых объектов на часть номеров доходят до 60%», – сказали «Вестнику АТОР» в PEGAS Touristik.\r\n\r\nКак пояснили в TEZ TOUR, сроки и условия раннего бронирования устанавливаются непосредственно отелями и могут разниться. Например, некоторые предлагают скидки при бронировании только до конца февраля, в то время как отдельные гостиницы – до 15 мая.\r\n\r\nДолго выжидать не стоит: отели могут досрочно завершить акцию при достижении желаемого уровня продаж, добавляют в «Русском Экспрессе».\r\n\r\nУ PEGAS Touristik пакетные туры в Хургаду рассчитаны до середины ноября, в Шарм-эль-Шейх – до конца декабря. Также можно купить пакетный тур на северное побережье Египта – на средиземноморский курорт Эль-Аламейн. С конца апреля туроператор запускает собственную полетную программу по маршруту Москва (Шереметьево) – Анталья – Эль-Дабаа (аэропорт Эль-Аламейн) – Анталья – Москва.",
+      "image": "news/images/2025/05/27/обложка_фото__TEZ_TOUR.jpg.webp",
+      "category": "promo",
+      "author": 1,
+      "created_at": "2025-05-27T12:18:55.684Z",
+      "updated_at": "2025-05-27T12:18:55.684Z",
+      "is_published": true,
+      "views": 0
+    }
+  },
+  {
+    "model": "core.news",
+    "pk": 7,
+    "fields": {
+      "title": "Визовый центр Италии приостановил процедуру верификации. Что это значит для желающих получить визу",
+      "slug": "vizovyj-centr-italii-priostanovil-proceduru-verifikacii-chto-eto-znachit-dlya-zhelayushih-poluchit-vizu",
+      "summary": "С 21 мая итальянский визовый центр в Минске перестал принимать заявления на верификацию личности — это обязательный этап перед подачей документов на визу. Об этом сообщили на сайте TLScontact.",
+      "content": "Причина приостановки — слишком большой поток обращений. Ожидается, что прием заявлений возобновится не раньше конца июля 2025 года. Однако некоторые профильные источники высказывают опасения, что итальянцы насовсем закрыли последнюю возможность самостоятельно записаться на визу без приглашений и иных привилегий.\r\n\r\nТем, кто успел подать документы до 20 мая, советуют не писать повторно и просто дождаться своей очереди — обращения будут обработаны в обычном порядке.\r\n\r\nО том, что из себя представляет верификация личности и о чем факт ее приостановки говорит желающим податься на итальянскую визу, нам пояснил директор агентства tutvisa.by Глеб Ларионов:\r\n\r\n— До конца прошлого года в итальянском визовом центре существовала живая очередь. Человек просто подходил к офису на Немиге, записывался в небезызвестную «тетрадь Олега», получал квиток с номером места в очереди и ждал подачи. К январю 2025-го таких желающих набралось года на два вперед. К тому же люди, которые уже получили визы, сразу же становились в очередь по новой плюс приводили своих родственников и друзей. Получился эдакий «МММ» — в ВЦ поняли, что не справляются.\r\n\r\nВ итоге живую очередь приостановили — но только для прописанных в Минске и Минской области. Для жителей регионов оставили возможность записаться через сайт с верификацией. После внесения данных в систему заявителю через некоторое время по видеосвязи звонил оператор и просил показать паспорт. Если процедура проходила успешно — человеку выдавали номер в очереди.",
+      "image": "news/images/2025/05/27/b40a79fdf4ad541cdab445b980f28420.webp",
+      "category": "visa",
+      "author": null,
+      "created_at": "2025-05-27T13:15:04.879Z",
+      "updated_at": "2025-05-27T13:15:04.879Z",
+      "is_published": true,
+      "views": 0
+    }
+  },
+  {
+    "model": "core.news",
+    "pk": 8,
+    "fields": {
+      "title": "В немецком посольстве нельзя будет обжаловать отказ в визе. Взамен должны сократить время ожидания записи",
+      "slug": "v-nemeckom-posolstve-nelzya-budet-obzhalovat-otkaz-v-vize-vzamen-dolzhny-sokratit-vremya-ozhidaniya-zapisi",
+      "summary": "Посольство Германии в Минске отменит процедуру апелляции на отклонение заявлений о выдаче визы с 1 июля. Теперь отказ можно будет обжаловать только в административном суде Берлина, подав иск на немецком языке.",
+      "content": "На сайте дипмиссии упомянуто, что нововведения касаются не только белорусов: апелляции больше нельзя будет подавать в немецких посольствах по всему миру. Более того, некоторые консульские отделы прекратили их обрабатывать с середины 2023 года и, как утверждается, сильно освободили время работникам для обработки новых визовых заявлений.\r\n\r\n«Возможность обработки большего количества заявлений о выдаче визы и сокращение сроков ожидания идут на пользу всем заявителям. Надлежащая правовая защита остается обеспеченной и в будущем, так как отмена возможности подачи апелляции не влияет на предусмотренное законом право обращаться в суд», — сообщает консульско-правовой отдел.\r\n\r\nСейчас среднее время ожидания записи на «шенген» в посольстве Германии растянулось до рекордных 16 месяцев. Насколько оно сократится после внедрения нововведений, пока не ясно.\r\n\r\nПроцент отказов по визам у немцев небольшой, однако они все же бывают, причем периодически по не самым очевидным причинам. Осенью мы рассказывали историю минчанина, заявление которого консул отклонил, не поверив, что молодой человек был в Германии по предыдущему «шенгену». Тогда оспорить решение и все-таки получить визу удалось как раз с помощью апелляции — то есть эта процедура не была чистой формальностью, а действительно работала.",
+      "image": "news/images/2025/05/27/b8da3896343129c275260f63907c4a18.webp",
+      "category": "visa",
+      "author": 2,
+      "created_at": "2025-05-27T13:15:51.434Z",
+      "updated_at": "2025-05-27T13:15:51.434Z",
+      "is_published": true,
+      "views": 0
+    }
+  },
+  {
+    "model": "core.news",
+    "pk": 9,
+    "fields": {
+      "title": "Могут возникнуть интересные идеи  и возрастет потребность в романтике. Что ждет ваш знак зодиака, читайте в нашем традиционном гороскопе на неделю.",
+      "slug": "mogut-vozniknut-interesnye-idei-i-vozrastet-potrebnost-v-romantike-chto-zhdet-vash-znak-zodiaka-chitajte-v-nashem-tradicionnom-goroskope-na-nedelyu",
+      "summary": "Овен  Начало недели принесет неожиданное изменение в привычном ритме жизни. В понедельник и вторник возможны приятные события, связанные с творческой деятельностью или хобби. Середина недели откроет новые перспективы в профессиональной сфере – могут",
+      "content": "К выходным у Овнов возрастет потребность в отдыхе и восстановлении сил. В эти дни лучше всего заняться домашними делами или провести время с близкими людьми.\r\n\r\nНекоторые представители знака почувствуют прилив энергии в пятницу вечером, что может привести к спонтанным решениям. В субботу и воскресенье вероятны приятные встречи или неформальное общение, которое может оказать влияние на дальнейшие планы.\r\n\r\nТелец\r\n\r\nДля Тельцов эта неделя станет временем переоценки ценностей и внутренних размышлений. В начале периода может возникнуть необходимость решать финансовые вопросы или планировать бюджет.\r\n\r\nОсобое внимание стоит уделить вторнику – день может преподнести как приятные, так и неожиданные события. Среда и четверг подойдут для работы над долгосрочными проектами или обучения новым навыкам. К концу недели появится желание изменить что-то в своем окружении или быту.",
+      "image": "news/images/2025/05/27/goroskop-e1616255199947.png",
+      "category": "events",
+      "author": 2,
+      "created_at": "2025-05-27T13:17:20.756Z",
+      "updated_at": "2025-05-27T13:17:20.756Z",
+      "is_published": true,
+      "views": 0
+    }
+  },
+  {
+    "model": "core.news",
+    "pk": 10,
+    "fields": {
+      "title": "Lib-дайджест: «Наука в деталях», новые книжные выставки, новости БНТУ и афиша мероприятий  Источник: https://times.bntu.by/news/17400-lib-dajdzhest-nauka-v-detalyah-novye-knizhnye-vystavki-novosti-bnt",
+      "slug": "lib-dajdzhest-nauka-v-detalyah-novye-knizhnye-vystavki-novosti-bntu-i-afisha-meropriyatij-istochnik-httpstimesbntubynews17400-lib-dajdzhest-nauka-v-detalyah-novye-knizhnye-vystavki-novosti-bnt",
+      "summary": "«Мечты Иосифа Лангбарда. Как гениальный архитектор строил новый Минск»: открытая лекция #11 проекта «Наука в деталях» О жизненном пути и наследии Иосифа Лангбарда, об истории Минска, судьбах его жителей и архитектурных стилях расскажет Антон Денисов,",
+      "content": "Минск – город, в котором каждый уголок хранит воплощенную историю. Мы шагаем по его улицам, любуемся величественными фасадами строений, которые стали знаковыми для нашей столицы, но знаем ли мы тайны, скрытые за массивными стенами и колоннами? Проект «Наука в деталях» предлагает поближе познакомиться с амбициозным зодчим, новатором и мечтателем, чьи идеи когда-то существенно преобразили облик Минска. Открытая научно-популярная лекция «Мечты Иосифа Лангбарда. Как гениальный архитектор строил новый Минск» состоится 30 мая в 18:00 в коворкинге Научной библиотеки БНТУ (ул. Якуба Коласа, 16, ауд. 203, второй этаж). Больше информации о мероприятии и ссылку на предварительную регистрацию можно найти на сайте.\r\n\r\nИсточник: https://times.bntu.by/news/17400-lib-dajdzhest-nauka-v-detalyah-novye-knizhnye-vystavki-novosti-bntu-i-afisha-meropriyatij\r\n© TIMES.BNTU.BY",
+      "image": "news/images/2025/05/27/image_17400_aa4fa29d1eb902fd9a23a69eb0a855be.jpg",
+      "category": "events",
+      "author": 3,
+      "created_at": "2025-05-27T13:19:37.098Z",
+      "updated_at": "2025-05-27T13:19:37.098Z",
+      "is_published": true,
+      "views": 0
+    }
+  },
+  {
+    "model": "core.employee",
+    "pk": 1,
+    "fields": {
+      "is_active": true,
+      "name": "Городецкая Диана Анатольевна",
+      "slug": "gorodeckaya-diana-anatolevna",
+      "position": "Администратор",
+      "department": "management",
+      "photo": "employees/2025/05/27/90d4bd8dd91c591efd58ed99998af2a7.jpg",
+      "bio": "Самый лучший администратор",
+      "phone": "+375445645656",
+      "email": "diana@gmail.com",
+      "is_contact": true,
+      "order": 0
+    }
+  },
+  {
+    "model": "core.employee",
+    "pk": 2,
+    "fields": {
+      "is_active": true,
+      "name": "Петров Дмитрий Владимирович",
+      "slug": "rabotnik-rabotnik-rabotnik",
+      "position": "Туроператор",
+      "department": "sales",
+      "photo": "employees/2025/05/30/d026798534eac7d6db5006f0d8673946.jpg",
+      "bio": "Взаимодействие с отелями и авиакомпаниями, формирование пакетных туров",
+      "phone": "+375446464646",
+      "email": "petrov@gmail.com",
+      "is_contact": true,
+      "order": 0
+    }
+  },
+  {
+    "model": "core.employee",
+    "pk": 3,
+    "fields": {
+      "is_active": true,
+      "name": "Иванова Анна Сергеевна",
+      "slug": "ivanova-anna-sergeevna",
+      "position": "Менеджер по продажам туров",
+      "department": "sales",
+      "photo": "employees/2025/05/30/bd63329a5f05b1d40f36dd7f0d3fb7e2.jpg",
+      "bio": "Опыт работы в туризме — 5 лет. Специализация: пляжные туры, Европа, экскурсионные программы.",
+      "phone": "+375298908978",
+      "email": "anna.ivanova@touragency.ru",
+      "is_contact": true,
+      "order": 0
+    }
+  },
+  {
+    "model": "core.employee",
+    "pk": 4,
+    "fields": {
+      "is_active": true,
+      "name": "Петров Дмитрий Владимирович",
+      "slug": "petrov-dmitrij-vladimirovich",
+      "position": "Менеджер по визам",
+      "department": "marketing",
+      "photo": "employees/2025/05/30/4118f28442ecb1da6e532980698b7d47.jpg",
+      "bio": "Оформление виз в Шенген, США и Азию. Работа с консульствами — 3 года.",
+      "phone": "+375335467890",
+      "email": "dmitry.petrov@touragency.ru",
+      "is_contact": true,
+      "order": 0
+    }
+  },
+  {
+    "model": "core.employee",
+    "pk": 5,
+    "fields": {
+      "is_active": true,
+      "name": "Смирнова Елена Игоревна",
+      "slug": "smirnova-elena-igorevna",
+      "position": "Маркетолог",
+      "department": "marketing",
+      "photo": "employees/2025/05/30/f3f8ce4fc7a1ed72eb11eedab678442b.jpg",
+      "bio": "Встреча клиентов, обработка входящих звонков, ведение документации",
+      "phone": "+375448907867",
+      "email": "smirnova@gmail.com",
+      "is_contact": true,
+      "order": 0
+    }
+  },
+  {
+    "model": "core.employee",
+    "pk": 6,
+    "fields": {
+      "is_active": true,
+      "name": "Козлов Артем Олегович",
+      "slug": "kozlov-artem-olegovich",
+      "position": "Гид-экскурсовод",
+      "department": "support",
+      "photo": "employees/2025/05/30/415509f9da92d443f9d52b0adde09ea5.jpg",
+      "bio": "Организация экскурсий, сопровождение групп",
+      "phone": "+375298975643",
+      "email": "kozlov@gmail.com",
+      "is_contact": true,
+      "order": 0
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 1,
+    "fields": {
+      "title": "Менеджер по продажам туров (B2C)",
+      "slug": "menedzher",
+      "short_description": "Прямые продажи туров клиентам через офис, телефонные звонки и онлайн-чаты.",
+      "description": "Прямые продажи туров клиентам через офис, телефонные звонки и онлайн-чаты.",
+      "requirements": "Опыт в продажах услуг (туризм, страхование, недвижимость).\r\nЗнание систем бронирования (Touroperator, TravelLine).\r\nНавыки активных продаж (SPIN, AIDA).",
+      "responsibilities": "Консультирование по направлениям, отелям и экскурсиям.\r\nДокрутка клиентов до покупки (работа с возражениями).\r\nВедение сделок от первого контакта до оплаты.\r\nВыполнение плана продаж (минимум 10 туров в месяц).",
+      "conditions": "Офис (Минск).\r\nОклад 1500 руб. + % (до 3000 тыс. руб. в сезон).\r\nКорпоративные туры по направлениям агентства.",
+      "salary": "3000",
+      "job_type": "internship",
+      "department": "sales",
+      "is_published": true,
+      "created_at": "2025-05-27T13:55:09.555Z",
+      "updated_at": "2025-05-29T21:32:41.660Z",
+      "published_at": "2025-05-27T13:54:04Z",
+      "experience_required": "Без опыта"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 2,
+    "fields": {
+      "title": "Менеджер по продажам туров",
+      "slug": "menedzher-po-prodazham-turov",
+      "short_description": "Менеджер по продажам туров",
+      "description": "Консультирование клиентов по туристическим направлениям, визам, страховкам.\r\n\r\nПодбор и бронирование туров, авиабилетов, отелей, экскурсий.\r\n\r\nРабота с CRM-системой, ведение клиентской базы.\r\n\r\nВзаимодействие с туроператорами, контроль оплат и документов.\r\n\r\nПродажа дополнительных услуг (страховки, трансферы и т. д.).",
+      "requirements": "Консультирование клиентов по туристическим направлениям, визам, страховкам.\r\n\r\nПодбор и бронирование туров, авиабилетов, отелей, экскурсий.\r\n\r\nРабота с CRM-системой, ведение клиентской базы.\r\n\r\nВзаимодействие с туроператорами, контроль оплат и документов.\r\n\r\nПродажа дополнительных услуг (страховки, трансферы и т. д.).",
+      "responsibilities": "Опыт работы в туризме или продажах от 1 года.\r\n\r\nЗнание популярных туристических направлений.\r\n\r\nНавыки работы с системами бронирования (Amadeus, Sabre или аналоги).\r\n\r\nКоммуникабельность, клиентоориентированность.",
+      "conditions": "Опыт работы в туризме или продажах от 1 года.\r\n\r\nЗнание популярных туристических направлений.\r\n\r\nНавыки работы с системами бронирования (Amadeus, Sabre или аналоги).\r\n\r\nКоммуникабельность, клиентоориентированность.",
+      "salary": "3400",
+      "job_type": "remote",
+      "department": "tour_ops",
+      "is_published": true,
+      "created_at": "2025-05-27T14:18:37.031Z",
+      "updated_at": "2025-05-27T14:18:37.035Z",
+      "published_at": "2025-05-27T14:16:49Z",
+      "experience_required": "Без опыта"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 3,
+    "fields": {
+      "title": "Менеджер по работе с отелями (Контрактация)",
+      "slug": "trebovaniya",
+      "short_description": "Переговоры с отелями и поставщиками услуг, формирование эксклюзивных условий для агентства.",
+      "description": "Переговоры с отелями и поставщиками услуг, формирование эксклюзивных условий для агентства.",
+      "requirements": "Опыт в туроператорском бизнесе.\r\nЗнание английского (B2+).",
+      "responsibilities": "Заключение договоров с отелями и трансферами.\r\nКонтроль цен и квот (аллотменты).\r\nРешение проблем с перебронированием.",
+      "conditions": "Командировки в страны (Турция, ОАЭ).\r\nОклад 2700-3000 руб.",
+      "salary": "3000",
+      "job_type": "full_time",
+      "department": "tour_ops",
+      "is_published": true,
+      "created_at": "2025-05-27T14:41:19.477Z",
+      "updated_at": "2025-05-29T21:34:57.562Z",
+      "published_at": "2025-05-27T14:40:56Z",
+      "experience_required": "7 лет"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 4,
+    "fields": {
+      "title": "Маркетолог (Digital-продвижение турагентства)",
+      "slug": "menedzher-po-vizovym-voprosam",
+      "short_description": "Разработка и реализация digital-стратегии для привлечения клиентов через онлайн-каналы (соцсети, контекстная реклама, email-рассылки).",
+      "description": "Разработка и реализация digital-стратегии для привлечения клиентов через онлайн-каналы (соцсети, контекстная реклама, email-рассылки).",
+      "requirements": "Опыт в digital-маркетинге от 2 лет (желательно в туризме или b2c).\r\nЗнание Google Analytics, Яндекс.Метрики, Power BI.\r\nНавыки работы с CRM (AmoCRM, Bitrix24).\r\nКреативность, аналитическое мышление.",
+      "responsibilities": "Настройка и ведение таргетированной рекламы (Facebook Ads, Google Ads, TikTok).\r\nSEO-оптимизация сайта, работа с контентом и блогом.\r\nАнализ конкурентов и формирование УТП (уникального торгового предложения).\r\nЗапуск акций, скидок, партнерских программ.\r\nПодготовка отчетов по эффективности рекламных кампаний (ROI, CPA).",
+      "conditions": "Гибкий график (офис/гибрид).\r\nОклад 2700-3000 руб. + бонусы за выполнение KPI.\r\nВозможность посещать отраслевые ивенты (WTM, MITT).",
+      "salary": "2700",
+      "job_type": "part_time",
+      "department": "marketing",
+      "is_published": true,
+      "created_at": "2025-05-27T14:41:43.497Z",
+      "updated_at": "2025-05-29T21:29:54.480Z",
+      "published_at": "2025-05-27T14:41:21Z",
+      "experience_required": "2 года"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 5,
+    "fields": {
+      "title": "HR-аналитик (Кадровая аналитика)",
+      "slug": "turoperator-specialist-po-formirovaniyu-turov",
+      "short_description": "Анализ текучести, эффективности обучения, разработка мотивационных программ.",
+      "description": "Анализ текучести, эффективности обучения, разработка мотивационных программ.",
+      "requirements": "Опыт в аналитике.\r\nЗнание Excel/Google Sheets.",
+      "responsibilities": "Сбор данных по KPI.\r\nПодготовка отчетов.",
+      "conditions": "Гибкий график.\r\nОклад 2000–2200 тыс. руб.",
+      "salary": "2200",
+      "job_type": "part_time",
+      "department": "hr",
+      "is_published": true,
+      "created_at": "2025-05-27T14:42:10.588Z",
+      "updated_at": "2025-05-29T20:39:05.530Z",
+      "published_at": "2025-05-27T14:41:45Z",
+      "experience_required": "Без опыта"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 6,
+    "fields": {
+      "title": "Бухгалтер (Турагентство)",
+      "slug": "marketolog-v-turagentstvo",
+      "short_description": "Ведение финансового учета, работа с платежами, отчетность.",
+      "description": "Опыт в бухгалтерии от 3 лет.",
+      "requirements": "Маркетолог в турагентство",
+      "responsibilities": "Начисление зарплат.\r\nСверка с контрагентами.",
+      "conditions": "Офис/удаленка.\r\nОклад 1800-2000 тыс. руб.",
+      "salary": "2000",
+      "job_type": "remote",
+      "department": "finance",
+      "is_published": true,
+      "created_at": "2025-05-27T14:42:33.574Z",
+      "updated_at": "2025-05-29T20:39:58.947Z",
+      "published_at": "2025-05-27T14:42:12Z",
+      "experience_required": "3 года"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 7,
+    "fields": {
+      "title": "HR-менеджер (Подбор и адаптация)",
+      "slug": "hr-turagentstva",
+      "short_description": "Подбор сотрудников в офисы продаж и кол-центр, проведение собеседований, адаптация новичков.",
+      "description": "Подбор сотрудников в офисы продаж и кол-центр, проведение собеседований, адаптация новичков.",
+      "requirements": "Опыт в HR от 2 лет.\r\nЗнание рынка труда в туризме.",
+      "responsibilities": "Поиск кандидатов (менеджеры, операторы).\r\nПроведение интервью.\r\nОрганизация обучения.",
+      "conditions": "Офис (Минск).\r\nОклад 1500-1900 тыс. руб.",
+      "salary": "2321313",
+      "job_type": "part_time",
+      "department": "hr",
+      "is_published": true,
+      "created_at": "2025-05-27T14:43:07.106Z",
+      "updated_at": "2025-05-29T20:37:55.202Z",
+      "published_at": "2025-05-27T14:42:37Z",
+      "experience_required": "2 год"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 8,
+    "fields": {
+      "title": "Специалист кол-центра (Обработка входящих заявок)",
+      "slug": "spezialist",
+      "short_description": "Обработка входящих звонков, консультации по акциям и горящим турам, первичное оформление заказов.",
+      "description": "Обработка входящих звонков, консультации по акциям и горящим турам, первичное оформление заказов.",
+      "requirements": "Опыт в кол-центре/туризме приветствуется.\r\nНавыки активного слушания.",
+      "responsibilities": "Прием 50+ звонков в день.\r\nКонсультация по ценам, условиям бронирования.\r\nФиксация обращений в CRM.\r\nНазначение встреч менеджерам.",
+      "conditions": "Удаленная работа.\r\nГрафик 5/2, оклад 1700 руб. + бонусы.",
+      "salary": "1700",
+      "job_type": "remote",
+      "department": "customer_service",
+      "is_published": true,
+      "created_at": "2025-05-27T14:43:43.173Z",
+      "updated_at": "2025-05-29T20:36:26.643Z",
+      "published_at": "2025-05-27T14:43:09Z",
+      "experience_required": "Без опыта"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 9,
+    "fields": {
+      "title": "Менеджер по работе с клиентами (Турагентство)",
+      "slug": "menedzher-po-prodazham",
+      "short_description": "Специалист по работе с клиентами в турагентстве",
+      "description": "Специалист по работе с клиентами в турагентстве отвечает за полное сопровождение клиента: от первичной консультации до завершения поездки. Включает продажи, оформление документов, решение нестандартных ситуаций и поддержание лояльности.",
+      "requirements": "Опыт в туризме/продажах услуг от 1 года.\r\nЗнание популярных направлений (Турция, ОАЭ, Таиланд, Европа).\r\nУмение работать с системами бронирования (Amadeus, Sabre, Local Travel CRM).\r\nГрамотная речь, стрессоустойчивость.",
+      "responsibilities": "Консультирование клиентов по турам, визам, страховкам и дополнительным услугам.\r\nПодбор индивидуальных туров (пляжный отдых, экскурсии, круизы).\r\nОформление договоров, бронирование авиабилетов и отелей.\r\nКонтроль оплат и подготовка документов (ваучеры, страховки).\r\nРабота с рекламациями, помощь в форс-мажорах (перенос рейсов, отмены отелей).\r\nВедение клиентской базы в CRM.",
+      "conditions": "Офис/гибрид (Минск, Центр).\r\nОклад + % от продаж (средний доход 2000–2500 руб.).\r\nОбучение за счет компании, скидки на туры.",
+      "salary": "2500",
+      "job_type": "full_time",
+      "department": "customer_service",
+      "is_published": true,
+      "created_at": "2025-05-27T14:44:28.078Z",
+      "updated_at": "2025-05-29T20:34:55.302Z",
+      "published_at": "2025-05-27T14:43:50Z",
+      "experience_required": "1-3 года"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 10,
+    "fields": {
+      "title": "Финансовый менеджер",
+      "slug": "finansovyj-menedzher",
+      "short_description": "Контроль денежных потоков, планирование бюджета.",
+      "description": "Контроль денежных потоков, планирование бюджета.",
+      "requirements": "Опыт в финменеджменте.",
+      "responsibilities": "Анализ доходов/расходов.\r\nОптимизация затрат.",
+      "conditions": "Оклад 2400-2700 руб.",
+      "salary": "2700",
+      "job_type": "full_time",
+      "department": "finance",
+      "is_published": true,
+      "created_at": "2025-05-29T20:40:56.275Z",
+      "updated_at": "2025-05-29T20:40:56.275Z",
+      "published_at": "2025-05-29T20:40:04Z",
+      "experience_required": "5 лет"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 11,
+    "fields": {
+      "title": "SMM-менеджер (Ведение соцсетей)",
+      "slug": "smm-menedzher-vedenie-socsetej",
+      "short_description": "Создание контента для соцсетей (Instagram, ВКонтакте, Telegram), взаимодействие с аудиторией, повышение вовлеченности.",
+      "description": "Создание контента для соцсетей (Instagram, ВКонтакте, Telegram), взаимодействие с аудиторией, повышение вовлеченности.",
+      "requirements": "Опыт ведения соцсетей (портфолио с примерами).\r\nЗнание Canva, Figma, Adobe Premiere (для монтажа видео).\r\nПонимание трендов в туризме (например, форматы \"Топ-5 мест на Бали\").",
+      "responsibilities": "Разработка контент-плана (посты, сторис, Reels).\r\nВедение сообществ, ответы на комментарии и DM.\r\nОрганизация конкурсов и коллабораций с блогерами.\r\nАнализ статистики (охваты, конверсии в заявки).",
+      "conditions": "Удаленная работа.\r\nОклад 2000-2100 руб. + премии за рост аудитории.",
+      "salary": "2100",
+      "job_type": "remote",
+      "department": "marketing",
+      "is_published": true,
+      "created_at": "2025-05-29T21:31:08.492Z",
+      "updated_at": "2025-05-29T21:31:08.492Z",
+      "published_at": "2025-05-29T21:29:56Z",
+      "experience_required": "Без опыта"
+    }
+  },
+  {
+    "model": "core.vacancy",
+    "pk": 12,
+    "fields": {
+      "title": "КОРПОРАТИВНЫЙ менеджер (B2B-продажи)",
+      "slug": "korporativnyj-menedzher-b2b-prodazhi",
+      "short_description": "Продажи турпакетов компаниям (корпоративные поездки, тимбилдинги, MICE-туры).",
+      "description": "Продажи турпакетов компаниям (корпоративные поездки, тимбилдинги, MICE-туры).",
+      "requirements": "Опыт в B2B-продажах от 3 лет.\r\nЗнание MICE-рынка (отели для бизнес-ивентов).",
+      "responsibilities": "Поиск и привлечение B2B-клиентов (HR-департаменты, event-агентства).\r\nПодготовка коммерческих предложений.\r\nВедение переговоров и заключение договоров.",
+      "conditions": "Разъездной характер работы (встречи с клиентами).\r\nОклад 1900 тыс. руб. + % от сделок.",
+      "salary": "1900",
+      "job_type": "part_time",
+      "department": "sales",
+      "is_published": true,
+      "created_at": "2025-05-29T21:33:57.027Z",
+      "updated_at": "2025-05-29T21:33:57.027Z",
+      "published_at": "2025-05-29T21:32:49Z",
+      "experience_required": "6 лет"
+    }
+  },
+  {
+    "model": "core.review",
+    "pk": 1,
+    "fields": {
+      "author": 2,
+      "hotel": null,
+      "text": "крутой сайт",
+      "rating": 5,
+      "created_at": "2025-05-27T15:25:57.256Z",
+      "updated_at": "2025-05-27T15:25:57.256Z",
+      "is_published": true
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$OrvDD8ohWaNPK7fhwI9Run$nTAmnW2aZNf16B6ZjnZh5Qo3dtvRlPAKUWP1McOVTjc=",
+      "last_login": "2025-05-29T20:29:27.359Z",
+      "is_superuser": true,
+      "username": "diana",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-05-12T18:05:31.781Z",
+      "image": "",
+      "phone_number": null,
+      "birth_date": null,
+      "timezone": "UTC",
+      "is_client": true,
+      "created_at": "2025-05-12T18:05:33.550Z",
+      "updated_at": "2025-05-12T18:05:33.550Z",
+      "created_at_local": "2025-05-12T18:05:33.550Z",
+      "updated_at_local": "2025-05-12T18:05:33.550Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$uyh6BAgWhZA7JSdwNvP6Lc$+4o2IihAPImGMjwuXo0haKL+llx2WSDLSuxbR2/GVnA=",
+      "last_login": "2025-05-27T15:24:56.775Z",
+      "is_superuser": false,
+      "username": "sanumia",
+      "first_name": "Diana",
+      "last_name": "Gorodetskaya",
+      "email": "diana21@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-05-13T19:00:07Z",
+      "image": "users_images/90d4bd8dd91c591efd58ed99998af2a7_UsH5FV9.jpg",
+      "phone_number": "+375445883532",
+      "birth_date": "2006-02-02",
+      "timezone": "UTC",
+      "is_client": true,
+      "created_at": "2025-05-13T19:00:08.010Z",
+      "updated_at": "2025-05-27T13:31:01.236Z",
+      "created_at_local": "2025-05-13T19:00:08Z",
+      "updated_at_local": "2025-05-27T13:31:01.232Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$LAYIUvta42nzGOS1jLCYaU$3fQyOfIKe4Fv8nKIk24AT64wVS0bO0sAiMAh4U3JP50=",
+      "last_login": "2025-05-27T13:22:54.757Z",
+      "is_superuser": false,
+      "username": "teka",
+      "first_name": "Сергей",
+      "last_name": "Буранов",
+      "email": "teka21@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-05-24T20:21:59.662Z",
+      "image": "",
+      "phone_number": "+375335432312",
+      "birth_date": "2002-03-02",
+      "timezone": "UTC",
+      "is_client": true,
+      "created_at": "2025-05-24T20:22:01.613Z",
+      "updated_at": "2025-05-24T20:22:01.613Z",
+      "created_at_local": "2025-05-24T20:22:01.613Z",
+      "updated_at_local": "2025-05-24T20:22:01.613Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "test345",
+      "last_login": "2025-05-27T13:09:46Z",
+      "is_superuser": false,
+      "username": "test2",
+      "first_name": "test",
+      "last_name": "test",
+      "email": "testik@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-05-27T13:09:41Z",
+      "image": "users_images/греция.jpeg",
+      "phone_number": "+375445553322",
+      "birth_date": "2003-05-27",
+      "timezone": "UTC",
+      "is_client": true,
+      "created_at": "2025-05-27T13:10:44.129Z",
+      "updated_at": "2025-05-27T13:10:44.129Z",
+      "created_at_local": "2025-05-27T13:10:44.125Z",
+      "updated_at_local": "2025-05-27T13:10:44.125Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+      "password": "testik",
+      "last_login": "2025-05-27T13:10:53Z",
+      "is_superuser": false,
+      "username": "test3",
+      "first_name": "test",
+      "last_name": "test",
+      "email": "testoviy@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-05-27T13:10:48Z",
+      "image": "users_images/оаэ.jpeg",
+      "phone_number": "+375338907867",
+      "birth_date": "2004-05-27",
+      "timezone": "UTC",
+      "is_client": true,
+      "created_at": "2025-05-27T13:11:46.061Z",
+      "updated_at": "2025-05-27T13:11:46.061Z",
+      "created_at_local": "2025-05-27T13:11:46.053Z",
+      "updated_at_local": "2025-05-27T13:11:46.053Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$xphEc0zRuJn3fCHwjCCKRy$JXOH/jNM4kyp4G9lReYT8wJQfkku0C8xdZpNh9087ns=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "test34",
+      "first_name": "testik",
+      "last_name": "testoviy",
+      "email": "test34@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-05-27T15:23:11.235Z",
+      "image": "",
+      "phone_number": "+375446786767",
+      "birth_date": null,
+      "timezone": "UTC",
+      "is_client": true,
+      "created_at": "2025-05-27T15:23:13.204Z",
+      "updated_at": "2025-05-27T15:23:13.204Z",
+      "created_at_local": "2025-05-27T15:23:13.204Z",
+      "updated_at_local": "2025-05-27T15:23:13.204Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

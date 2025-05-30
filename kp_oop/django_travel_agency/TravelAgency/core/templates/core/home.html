@@ -4,16 +4,27 @@
 
 {% block extra_css %}
 <style>
-    .hero-section {
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-        background-size: cover;
-        background-position: center;
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        color: white;
-    }
+main, #root, .wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+}
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем контент вертикально */
+    align-items: center; /* Центрируем контент горизонтально */
+    width: 100vw; /* 100% от ширины viewport */
+    min-height: 80vh; /* Минимальная высота */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
 
     .feature-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -86,10 +97,11 @@
 
 {% block content %}
 <!-- Hero Section -->
+ 
 <section class="hero-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+    <div class="container ">
+        <div class="row justify-content-center mx-0">
+            <div class="col-12">
                 <h1 class="display-3 fw-bold mb-4">Откройте мир с TravelDream</h1>
                 <p class="lead mb-4">Лучшие направления, незабываемые впечатления и комфортный отдых</p>
                 <form action="{% url 'core:tour_list' %}" method="get" class="mb-4">
